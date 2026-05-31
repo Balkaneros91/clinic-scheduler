@@ -9,5 +9,114 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
+}
+
+model Employee {
+  id        String  @id @default(cuid())
+  firstName String
+  lastName  String
+  isActive  Boolean @default(true)
+
+  roleId String
+  role   Role   @relation(fields: [roleId], references: [id])
+
+  employmentTypeId String
+  employmentType   EmploymentType @relation(fields: [employmentTypeId], references: [id])
+
+  skills    EmployeeSkill[]
+  schedules ScheduleAssignment[]
+  absences  Absence[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Role {
+  id   String @id @default(cuid())
+  name String @unique
+
+  employees Employee[]
+}
+
+model EmploymentType {
+  id   String @id @default(cuid())
+  name String @unique
+
+  employees Employee[]
+}
+
+model Skill {
+  id   String @id @default(cuid())
+  name String @unique
+
+  employees EmployeeSkill[]
+}
+
+model EmployeeSkill {
+  employeeId String
+  skillId    String
+
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  skill    Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@id([employeeId, skillId])
+}
+
+model Department {
+  id   String @id @default(cuid())
+  name String @unique
+
+  schedules ScheduleAssignment[]
+}
+
+model ShiftTemplate {
+  id        String @id @default(cuid())
+  name      String
+  startTime String
+  endTime   String
+
+  schedules ScheduleAssignment[]
+}
+
+model ScheduleAssignment {
+  id   String   @id @default(cuid())
+  date DateTime
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  shiftId String
+  shift   ShiftTemplate @relation(fields: [shiftId], references: [id])
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Absence {
+  id        String   @id @default(cuid())
+  startDate DateTime
+  endDate   DateTime
+  notes     String?
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  absenceTypeId String
+  absenceType   AbsenceType @relation(fields: [absenceTypeId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AbsenceType {
+  id   String @id @default(cuid())
+  name String @unique
+
+  absences Absence[]
 }
