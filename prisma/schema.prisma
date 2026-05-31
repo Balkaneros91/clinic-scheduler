@@ -24,7 +24,7 @@ model Employee {
   employmentTypeId String
   employmentType   EmploymentType @relation(fields: [employmentTypeId], references: [id])
 
-  skills    EmployeeSkill[]
+  responsibilities EmployeeResponsibility[]
   schedules ScheduleAssignment[]
   absences  Absence[]
 
@@ -46,21 +46,23 @@ model EmploymentType {
   employees Employee[]
 }
 
-model Skill {
+model Responsibility {
   id   String @id @default(cuid())
   name String @unique
 
-  employees EmployeeSkill[]
+  employeeResponsibilities EmployeeResponsibility[]
 }
 
-model EmployeeSkill {
-  employeeId String
-  skillId    String
+model EmployeeResponsibility {
+  employeeId       String
+  responsibilityId String
 
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  skill    Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  employee       Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  responsibility Responsibility @relation(fields: [responsibilityId], references: [id], onDelete: Cascade)
 
-  @@id([employeeId, skillId])
+  proficiency Int @default(3)
+
+  @@id([employeeId, responsibilityId])
 }
 
 model Department {
@@ -72,9 +74,10 @@ model Department {
 
 model ShiftTemplate {
   id        String @id @default(cuid())
-  name      String
+  name      String @unique
   startTime String
   endTime   String
+  isBreak   Boolean @default(false)
 
   schedules ScheduleAssignment[]
 }
