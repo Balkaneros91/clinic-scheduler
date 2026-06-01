@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { employeeService } from "@/server/services/employee.service";
 
@@ -25,4 +26,12 @@ export async function createEmployeeAction(formData: FormData) {
   });
 
   redirect("/employees");
+}
+
+export async function deleteEmployeeAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await employeeService.deleteEmployee(id);
+
+  revalidatePath("/employees");
 }

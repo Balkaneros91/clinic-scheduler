@@ -1,4 +1,5 @@
 import { employeeService } from "@/server/services/employee.service";
+import { deleteEmployeeAction } from "@/app/employees/actions/employee.actions";
 
 export default async function EmployeesPage() {
   const employees = await employeeService.getAllEmployees();
@@ -14,6 +15,13 @@ export default async function EmployeesPage() {
             <p>Role: {employee.role}</p>
             <p>Employment type: {employee.employmentType}</p>
             <p>Status: {employee.isActive ? "Active" : "Inactive"}</p>
+
+            <form action={deleteEmployeeAction} className="mt-4">
+              <input type="hidden" name="id" value={employee.id} />
+              <button className="rounded bg-red-600 px-4 py-2 text-white">
+                Delete
+              </button>
+            </form>
           </div>
         ))}
       </div>
