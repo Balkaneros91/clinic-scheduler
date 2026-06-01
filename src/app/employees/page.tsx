@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { employeeService } from "@/server/services/employee.service";
 import { deleteEmployeeAction } from "@/app/employees/actions/employee.actions";
 
@@ -22,6 +24,12 @@ export default async function EmployeesPage() {
                 Delete
               </button>
             </form>
+
+            <Link
+              href={`/employees/${employee.id}/edit`}
+              className="mr-3 inline-block rounded bg-gray-800 px-4 py-2 text-white">
+              Edit
+            </Link>
           </div>
         ))}
       </div>
