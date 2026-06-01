@@ -10,28 +10,51 @@ export default async function EmployeesPage() {
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Employees</h1>
 
-      <div className="grid gap-4">
-        {employees.map((employee) => (
-          <div key={employee.id} className="rounded-lg border p-4 shadow-sm">
-            <h2 className="text-xl font-semibold">{employee.fullName}</h2>
-            <p>Role: {employee.role}</p>
-            <p>Employment type: {employee.employmentType}</p>
-            <p>Status: {employee.isActive ? "Active" : "Inactive"}</p>
+      <Link
+        href="/employees/new"
+        className="mb-6 inline-block rounded bg-blue-600 px-4 py-2 text-white">
+        Create employee
+      </Link>
 
-            <form action={deleteEmployeeAction} className="mt-4">
-              <input type="hidden" name="id" value={employee.id} />
-              <button className="rounded bg-red-600 px-4 py-2 text-white">
-                Delete
-              </button>
-            </form>
+      <div className="overflow-hidden rounded-lg border shadow-sm">
+        <table className="w-full text-left text-sm">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="p-4">Name</th>
+              <th className="p-4">Role</th>
+              <th className="p-4">Employment type</th>
+              <th className="p-4">Status</th>
+              <th className="p-4">Actions</th>
+            </tr>
+          </thead>
 
-            <Link
-              href={`/employees/${employee.id}/edit`}
-              className="mr-3 inline-block rounded bg-gray-800 px-4 py-2 text-white">
-              Edit
-            </Link>
-          </div>
-        ))}
+          <tbody>
+            {employees.map((employee) => (
+              <tr key={employee.id} className="border-t">
+                <td className="p-4 font-medium">{employee.fullName}</td>
+                <td className="p-4">{employee.role}</td>
+                <td className="p-4">{employee.employmentType}</td>
+                <td className="p-4">
+                  {employee.isActive ? "Active" : "Inactive"}
+                </td>
+                <td className="flex gap-2 p-4">
+                  <Link
+                    href={`/employees/${employee.id}/edit`}
+                    className="rounded bg-gray-800 px-3 py-2 text-white">
+                    Edit
+                  </Link>
+
+                  <form action={deleteEmployeeAction}>
+                    <input type="hidden" name="id" value={employee.id} />
+                    <button className="rounded bg-red-600 px-3 py-2 text-white">
+                      Delete
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </main>
   );
