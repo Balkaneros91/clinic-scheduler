@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { createEmployeeSchema } from "@/lib/validations/employee";
-import { z, ZodError } from "zod";
+import { ZodError } from "zod";
 
 export async function GET() {
   try {
