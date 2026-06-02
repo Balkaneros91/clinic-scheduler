@@ -1,7 +1,9 @@
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 import {
   createDepartmentAction,
   deleteDepartmentAction,
+  updateDepartmentAction,
 } from "@/app/dashboard/departments/actions/department.actions";
 
 export default async function DepartmentsPage() {
@@ -44,9 +46,11 @@ export default async function DepartmentsPage() {
                 <td className="p-4 font-medium">{department.name}</td>
 
                 <td className="flex gap-2 p-4">
-                  <button className="rounded bg-gray-800 px-3 py-2 text-white">
+                  <Link
+                    href={`/dashboard/departments/${department.id}/edit`}
+                    className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
-                  </button>
+                  </Link>
 
                   <form action={deleteDepartmentAction}>
                     <input type="hidden" name="id" value={department.id} />
