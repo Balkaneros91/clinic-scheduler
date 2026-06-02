@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+import { DeleteButton } from "@/components/DeleteButton";
+
 import {
   createShiftTemplateAction,
   deleteShiftTemplateAction,
@@ -73,9 +75,7 @@ export default async function ShiftTemplatesPage() {
                   <form action={deleteShiftTemplateAction}>
                     <input type="hidden" name="id" value={shiftTemplate.id} />
 
-                    <button className="rounded bg-red-600 px-3 py-2 text-white">
-                      Delete
-                    </button>
+                    <DeleteButton />
                   </form>
                 </td>
               </tr>
