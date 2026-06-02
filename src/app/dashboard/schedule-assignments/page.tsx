@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
 import {
   createScheduleAssignmentAction,
@@ -123,9 +124,11 @@ export default async function ScheduleAssignmentsPage() {
                 <td className="p-4">{assignment.notes ?? "-"}</td>
 
                 <td className="flex gap-2 p-4">
-                  <button className="rounded bg-gray-800 px-3 py-2 text-white">
+                  <Link
+                    href={`/dashboard/schedule-assignments/${assignment.id}/edit`}
+                    className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
-                  </button>
+                  </Link>
 
                   <form action={deleteScheduleAssignmentAction}>
                     <input type="hidden" name="id" value={assignment.id} />
