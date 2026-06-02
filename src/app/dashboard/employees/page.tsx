@@ -3,7 +3,7 @@ import Link from "next/link";
 import { DeleteButton } from "@/components/DeleteButton";
 
 import { employeeService } from "@/server/services/employee.service";
-import { deleteEmployeeAction } from "@/app/employees/actions/employee.actions";
+import { deleteEmployeeAction } from "@/app/dashboard/employees/actions/employee.actions";
 
 export default async function EmployeesPage() {
   const employees = await employeeService.getAllEmployees();
