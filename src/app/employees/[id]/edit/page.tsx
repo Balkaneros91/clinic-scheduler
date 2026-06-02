@@ -32,6 +32,16 @@ export default async function EditEmployeePage({
     },
   });
 
+  const responsibilities = await prisma.responsibility.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+
+  const selectedResponsibilities = employee.responsibilities.map(
+    (item) => item.responsibilityId,
+  );
+
   return (
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Edit Employee</h1>
@@ -87,6 +97,28 @@ export default async function EditEmployeePage({
               </option>
             ))}
           </select>
+        </div>
+
+        <div>
+          <label className="block font-medium">Responsibilities</label>
+
+          <div className="mt-2 space-y-2 rounded border p-3">
+            {responsibilities.map((responsibility) => (
+              <label
+                key={responsibility.id}
+                className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="responsibilityIds"
+                  value={responsibility.id}
+                  defaultChecked={selectedResponsibilities.includes(
+                    responsibility.id,
+                  )}
+                />
+                <span>{responsibility.name}</span>
+              </label>
+            ))}
+          </div>
         </div>
 
         <button className="rounded bg-black px-4 py-2 text-white">

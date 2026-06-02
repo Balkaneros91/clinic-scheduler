@@ -7,6 +7,11 @@ export const employeeRepository = {
       include: {
         role: true,
         employmentType: true,
+        responsibilities: {
+          include: {
+            responsibility: true,
+          },
+        },
       },
       orderBy: {
         lastName: "asc",
@@ -20,6 +25,11 @@ export const employeeRepository = {
       include: {
         role: true,
         employmentType: true,
+        responsibilities: {
+          include: {
+            responsibility: true,
+          },
+        },
       },
     });
   },

@@ -10,6 +10,9 @@ export const employeeService = {
       fullName: `${employee.firstName} ${employee.lastName}`,
       role: employee.role.name,
       employmentType: employee.employmentType.name,
+      responsibilities: employee.responsibilities.map(
+        (item) => item.responsibility.name,
+      ),
       isActive: employee.isActive,
     }));
   },

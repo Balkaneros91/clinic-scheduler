@@ -23,6 +23,7 @@ export default async function EmployeesPage() {
               <th className="p-4">Name</th>
               <th className="p-4">Role</th>
               <th className="p-4">Employment type</th>
+              <th className="p-4">Responsibilities</th>
               <th className="p-4">Status</th>
               <th className="p-4">Actions</th>
             </tr>
@@ -34,6 +35,11 @@ export default async function EmployeesPage() {
                 <td className="p-4 font-medium">{employee.fullName}</td>
                 <td className="p-4">{employee.role}</td>
                 <td className="p-4">{employee.employmentType}</td>
+                <td className="p-4">
+                  {employee.responsibilities.length > 0
+                    ? employee.responsibilities.join(", ")
+                    : "-"}
+                </td>
                 <td className="p-4">
                   {employee.isActive ? "Active" : "Inactive"}
                 </td>

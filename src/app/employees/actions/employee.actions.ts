@@ -9,6 +9,7 @@ export async function createEmployeeAction(formData: FormData) {
   const lastName = formData.get("lastName") as string;
   const roleId = formData.get("roleId") as string;
   const employmentTypeId = formData.get("employmentTypeId") as string;
+  const responsibilityIds = formData.getAll("responsibilityIds") as string[];
 
   await employeeService.createEmployee({
     firstName,
@@ -22,6 +23,15 @@ export async function createEmployeeAction(formData: FormData) {
       connect: {
         id: employmentTypeId,
       },
+    },
+    responsibilities: {
+      create: responsibilityIds.map((responsibilityId) => ({
+        responsibility: {
+          connect: {
+            id: responsibilityId,
+          },
+        },
+      })),
     },
   });
 
@@ -43,6 +53,8 @@ export async function updateEmployeeAction(formData: FormData) {
   const roleId = formData.get("roleId") as string;
   const employmentTypeId = formData.get("employmentTypeId") as string;
 
+  const responsibilityIds = formData.getAll("responsibilityIds") as string[];
+
   await employeeService.updateEmployee(id, {
     firstName,
     lastName,
@@ -55,6 +67,16 @@ export async function updateEmployeeAction(formData: FormData) {
       connect: {
         id: employmentTypeId,
       },
+    },
+    responsibilities: {
+      deleteMany: {},
+      create: responsibilityIds.map((responsibilityId) => ({
+        responsibility: {
+          connect: {
+            id: responsibilityId,
+          },
+        },
+      })),
     },
   });
 
