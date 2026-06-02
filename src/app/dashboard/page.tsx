@@ -7,7 +7,7 @@ export default function DashboardPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Link
-          href="/employees"
+          href="/dashboard/employees"
           className="rounded-lg border p-6 shadow-sm transition hover:shadow-md">
           <h2 className="text-xl font-semibold">Employees</h2>
           <p className="mt-2 text-sm text-gray-600">
