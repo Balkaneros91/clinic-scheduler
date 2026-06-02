@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
+
 import {
   createShiftTemplateAction,
   deleteShiftTemplateAction,
@@ -62,9 +64,11 @@ export default async function ShiftTemplatesPage() {
                 <td className="p-4">{shiftTemplate.endTime}</td>
 
                 <td className="flex gap-2 p-4">
-                  <button className="rounded bg-gray-800 px-3 py-2 text-white">
+                  <Link
+                    href={`/dashboard/shift-templates/${shiftTemplate.id}/edit`}
+                    className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
-                  </button>
+                  </Link>
 
                   <form action={deleteShiftTemplateAction}>
                     <input type="hidden" name="id" value={shiftTemplate.id} />

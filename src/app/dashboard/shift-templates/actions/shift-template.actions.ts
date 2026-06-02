@@ -34,3 +34,24 @@ export async function deleteShiftTemplateAction(formData: FormData) {
   revalidatePath("/dashboard/shift-templates");
   redirect("/dashboard/shift-templates");
 }
+
+export async function updateShiftTemplateAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  const rawData = {
+    name: formData.get("name"),
+    startTime: formData.get("startTime"),
+    endTime: formData.get("endTime"),
+    isBreak: false,
+  };
+
+  const validatedData = createShiftTemplateSchema.parse(rawData);
+
+  await prisma.shiftTemplate.update({
+    where: { id },
+    data: validatedData,
+  });
+
+  revalidatePath("/dashboard/shift-templates");
+  redirect("/dashboard/shift-templates");
+}
