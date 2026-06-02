@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
+import { createScheduleAssignmentAction } from "@/app/dashboard/schedule-assignments/actions/schedule-assignment.actions";
+
 export default async function ScheduleAssignmentsPage() {
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
     include: {
@@ -12,13 +14,77 @@ export default async function ScheduleAssignmentsPage() {
     },
   });
 
+  const employees = await prisma.employee.findMany({
+    orderBy: { firstName: "asc" },
+  });
+
+  const departments = await prisma.department.findMany({
+    orderBy: { name: "asc" },
+  });
+
+  const shiftTemplates = await prisma.shiftTemplate.findMany({
+    orderBy: { name: "asc" },
+  });
+
   return (
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Schedule Assignments</h1>
 
-      <button className="mb-6 rounded bg-blue-600 px-4 py-2 text-white">
-        Add Schedule Assignment
-      </button>
+      <form
+        action={createScheduleAssignmentAction}
+        className="mb-6 flex flex-wrap gap-2">
+        <input
+          type="date"
+          name="date"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <select name="employeeId" className="rounded border px-3 py-2" required>
+          <option value="">Select employee</option>
+
+          {employees.map((employee) => (
+            <option key={employee.id} value={employee.id}>
+              {employee.firstName} {employee.lastName}
+            </option>
+          ))}
+        </select>
+
+        <select
+          name="departmentId"
+          className="rounded border px-3 py-2"
+          required>
+          <option value="">Select department</option>
+
+          {departments.map((department) => (
+            <option key={department.id} value={department.id}>
+              {department.name}
+            </option>
+          ))}
+        </select>
+
+        <select name="shiftId" className="rounded border px-3 py-2" required>
+          <option value="">Select shift</option>
+
+          {shiftTemplates.map((shiftTemplate) => (
+            <option key={shiftTemplate.id} value={shiftTemplate.id}>
+              {shiftTemplate.name} ({shiftTemplate.startTime}-
+              {shiftTemplate.endTime})
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="text"
+          name="notes"
+          placeholder="Notes"
+          className="rounded border px-3 py-2"
+        />
+
+        <button className="rounded bg-blue-600 px-4 py-2 text-white">
+          Add Assignment
+        </button>
+      </form>
 
       <div className="overflow-hidden rounded-lg border shadow-sm">
         <table className="w-full text-left text-sm">
