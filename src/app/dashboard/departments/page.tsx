@@ -1,5 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import { createDepartmentAction } from "@/app/dashboard/departments/actions/department.actions";
+import {
+  createDepartmentAction,
+  deleteDepartmentAction,
+} from "@/app/dashboard/departments/actions/department.actions";
 
 export default async function DepartmentsPage() {
   const departments = await prisma.department.findMany({
@@ -45,9 +48,13 @@ export default async function DepartmentsPage() {
                     Edit
                   </button>
 
-                  <button className="rounded bg-red-600 px-3 py-2 text-white">
-                    Delete
-                  </button>
+                  <form action={deleteDepartmentAction}>
+                    <input type="hidden" name="id" value={department.id} />
+
+                    <button className="rounded bg-red-600 px-3 py-2 text-white">
+                      Delete
+                    </button>
+                  </form>
                 </td>
               </tr>
             ))}

@@ -18,3 +18,13 @@ export async function createDepartmentAction(formData: FormData) {
 
   revalidatePath("/dashboard/departments");
 }
+
+export async function deleteDepartmentAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await prisma.department.delete({
+    where: { id },
+  });
+
+  revalidatePath("/dashboard/departments");
+}
