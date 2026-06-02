@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
+import { createAbsenceAction } from "@/app/dashboard/absences/actions/absence.actions";
+
 export default async function AbsencesPage() {
   const absences = await prisma.absence.findMany({
     include: {
@@ -11,13 +13,71 @@ export default async function AbsencesPage() {
     },
   });
 
+  const employees = await prisma.employee.findMany({
+    orderBy: {
+      firstName: "asc",
+    },
+  });
+
+  const absenceTypes = await prisma.absenceType.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+
   return (
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Absences</h1>
 
-      <button className="mb-6 rounded bg-blue-600 px-4 py-2 text-white">
-        Add Absence
-      </button>
+      <form action={createAbsenceAction} className="mb-6 flex flex-wrap gap-2">
+        <select name="employeeId" className="rounded border px-3 py-2" required>
+          <option value="">Select employee</option>
+
+          {employees.map((employee) => (
+            <option key={employee.id} value={employee.id}>
+              {employee.firstName} {employee.lastName}
+            </option>
+          ))}
+        </select>
+
+        <select
+          name="absenceTypeId"
+          className="rounded border px-3 py-2"
+          required>
+          <option value="">Select absence type</option>
+
+          {absenceTypes.map((absenceType) => (
+            <option key={absenceType.id} value={absenceType.id}>
+              {absenceType.name}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="date"
+          name="startDate"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <input
+          type="date"
+          name="endDate"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <input
+          type="text"
+          name="notes"
+          placeholder="Notes"
+          className="rounded border px-3 py-2"
+        />
+
+        <button className="rounded bg-blue-600 px-4 py-2 text-white">
+          Add Absence
+        </button>
+      </form>
 
       <div className="overflow-hidden rounded-lg border shadow-sm">
         <table className="w-full text-left text-sm">
