@@ -30,3 +30,14 @@ export async function createAbsenceAction(formData: FormData) {
   revalidatePath("/dashboard/absences");
   redirect("/dashboard/absences");
 }
+
+export async function deleteAbsenceAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await prisma.absence.delete({
+    where: { id },
+  });
+
+  revalidatePath("/dashboard/absences");
+  redirect("/dashboard/absences");
+}

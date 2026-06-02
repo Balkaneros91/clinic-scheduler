@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 
-import { createAbsenceAction } from "@/app/dashboard/absences/actions/absence.actions";
+import {
+  createAbsenceAction,
+  deleteAbsenceAction,
+} from "@/app/dashboard/absences/actions/absence.actions";
 
 export default async function AbsencesPage() {
   const absences = await prisma.absence.findMany({
@@ -110,9 +113,14 @@ export default async function AbsencesPage() {
                   <button className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
                   </button>
-                  <button className="rounded bg-red-600 px-3 py-2 text-white">
-                    Delete
-                  </button>
+
+                  <form action={deleteAbsenceAction}>
+                    <input type="hidden" name="id" value={absence.id} />
+
+                    <button className="rounded bg-red-600 px-3 py-2 text-white">
+                      Delete
+                    </button>
+                  </form>
                 </td>
               </tr>
             ))}
