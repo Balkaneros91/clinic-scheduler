@@ -20,6 +20,7 @@ export async function createScheduleAssignmentAction(formData: FormData) {
   await prisma.scheduleAssignment.create({
     data: {
       date: new Date(validatedData.date),
+      scheduleId: validatedData.scheduleId,
       employeeId: validatedData.employeeId,
       departmentId: validatedData.departmentId,
       shiftId: validatedData.shiftId,
@@ -59,6 +60,7 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
     where: { id },
     data: {
       date: new Date(validatedData.date),
+      scheduleId: validatedData.scheduleId,
       employeeId: validatedData.employeeId,
       departmentId: validatedData.departmentId,
       shiftId: validatedData.shiftId,

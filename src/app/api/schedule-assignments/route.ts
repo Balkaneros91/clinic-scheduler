@@ -35,6 +35,7 @@ export async function POST(request: Request) {
     const scheduleAssignment = await prisma.scheduleAssignment.create({
       data: {
         date: new Date(validatedData.date),
+        scheduleId: validatedData.scheduleId,
         employeeId: validatedData.employeeId,
         departmentId: validatedData.departmentId,
         shiftId: validatedData.shiftId,
