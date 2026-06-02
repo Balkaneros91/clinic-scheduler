@@ -75,7 +75,7 @@ export default async function ShiftTemplatesPage() {
                   <form action={deleteShiftTemplateAction}>
                     <input type="hidden" name="id" value={shiftTemplate.id} />
 
-                    <DeleteButton />
+                    <DeleteButton message="Are you sure you want to delete this shift template?" />
                   </form>
                 </td>
               </tr>
