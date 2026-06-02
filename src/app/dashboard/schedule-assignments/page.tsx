@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+import { DeleteButton } from "@/components/DeleteButton";
+
 import {
   createScheduleAssignmentAction,
   deleteScheduleAssignmentAction,
@@ -133,9 +135,7 @@ export default async function ScheduleAssignmentsPage() {
                   <form action={deleteScheduleAssignmentAction}>
                     <input type="hidden" name="id" value={assignment.id} />
 
-                    <button className="rounded bg-red-600 px-3 py-2 text-white">
-                      Delete
-                    </button>
+                    <DeleteButton message="Are you sure you want to delete this schedule assignment?" />
                   </form>
                 </td>
               </tr>
