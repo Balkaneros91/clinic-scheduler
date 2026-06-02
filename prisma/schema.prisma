@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
+  provider = "postgresql"
 }
 
 model Employee {
@@ -25,8 +25,8 @@ model Employee {
   employmentType   EmploymentType @relation(fields: [employmentTypeId], references: [id])
 
   responsibilities EmployeeResponsibility[]
-  schedules ScheduleAssignment[]
-  absences  Absence[]
+  schedules        ScheduleAssignment[]
+  absences         Absence[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -73,8 +73,8 @@ model Department {
 }
 
 model ShiftTemplate {
-  id        String @id @default(cuid())
-  name      String @unique
+  id        String  @id @default(cuid())
+  name      String  @unique
   startTime String
   endTime   String
   isBreak   Boolean @default(false)
@@ -82,9 +82,26 @@ model ShiftTemplate {
   schedules ScheduleAssignment[]
 }
 
+model Schedule {
+  id    String @id @default(cuid())
+  name  String
+  year  Int
+  month Int
+
+  assignments ScheduleAssignment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([year, month])
+}
+
 model ScheduleAssignment {
   id   String   @id @default(cuid())
   date DateTime
+
+  scheduleId String
+  schedule   Schedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
 
   employeeId String
   employee   Employee @relation(fields: [employeeId], references: [id])
