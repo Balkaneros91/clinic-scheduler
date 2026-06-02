@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
 import {
   createAbsenceAction,
@@ -110,9 +111,11 @@ export default async function AbsencesPage() {
                 </td>
                 <td className="p-4">{absence.notes ?? "-"}</td>
                 <td className="flex gap-2 p-4">
-                  <button className="rounded bg-gray-800 px-3 py-2 text-white">
+                  <Link
+                    href={`/dashboard/absences/${absence.id}/edit`}
+                    className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
-                  </button>
+                  </Link>
 
                   <form action={deleteAbsenceAction}>
                     <input type="hidden" name="id" value={absence.id} />

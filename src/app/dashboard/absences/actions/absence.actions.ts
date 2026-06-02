@@ -41,3 +41,31 @@ export async function deleteAbsenceAction(formData: FormData) {
   revalidatePath("/dashboard/absences");
   redirect("/dashboard/absences");
 }
+
+export async function updateAbsenceAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  const rawData = {
+    startDate: formData.get("startDate"),
+    endDate: formData.get("endDate"),
+    notes: formData.get("notes") || undefined,
+    employeeId: formData.get("employeeId"),
+    absenceTypeId: formData.get("absenceTypeId"),
+  };
+
+  const validatedData = createAbsenceSchema.parse(rawData);
+
+  await prisma.absence.update({
+    where: { id },
+    data: {
+      startDate: new Date(validatedData.startDate),
+      endDate: new Date(validatedData.endDate),
+      notes: validatedData.notes,
+      employeeId: validatedData.employeeId,
+      absenceTypeId: validatedData.absenceTypeId,
+    },
+  });
+
+  revalidatePath("/dashboard/absences");
+  redirect("/dashboard/absences");
+}
