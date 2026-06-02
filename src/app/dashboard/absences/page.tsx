@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+import { DeleteButton } from "@/components/DeleteButton";
+
 import {
   createAbsenceAction,
   deleteAbsenceAction,
@@ -120,9 +122,7 @@ export default async function AbsencesPage() {
                   <form action={deleteAbsenceAction}>
                     <input type="hidden" name="id" value={absence.id} />
 
-                    <button className="rounded bg-red-600 px-3 py-2 text-white">
-                      Delete
-                    </button>
+                    <DeleteButton message="Are you sure you want to delete this absence?" />
                   </form>
                 </td>
               </tr>
