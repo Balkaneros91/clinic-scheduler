@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { createShiftTemplateAction } from "@/app/dashboard/shift-templates/actions/shift-template.actions";
 
 export default async function ShiftTemplatesPage() {
   const shiftTemplates = await prisma.shiftTemplate.findMany({
@@ -11,9 +12,33 @@ export default async function ShiftTemplatesPage() {
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Shift Templates</h1>
 
-      <button className="mb-6 rounded bg-blue-600 px-4 py-2 text-white">
-        Add Shift Template
-      </button>
+      <form action={createShiftTemplateAction} className="mb-6 flex gap-2">
+        <input
+          type="text"
+          name="name"
+          placeholder="Shift name"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <input
+          type="time"
+          name="startTime"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <input
+          type="time"
+          name="endTime"
+          className="rounded border px-3 py-2"
+          required
+        />
+
+        <button className="rounded bg-blue-600 px-4 py-2 text-white">
+          Add Shift Template
+        </button>
+      </form>
 
       <div className="overflow-hidden rounded-lg border shadow-sm">
         <table className="w-full text-left text-sm">
