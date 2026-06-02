@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 
-import { createScheduleAssignmentAction } from "@/app/dashboard/schedule-assignments/actions/schedule-assignment.actions";
+import {
+  createScheduleAssignmentAction,
+  deleteScheduleAssignmentAction,
+} from "@/app/dashboard/schedule-assignments/actions/schedule-assignment.actions";
 
 export default async function ScheduleAssignmentsPage() {
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
@@ -124,9 +127,13 @@ export default async function ScheduleAssignmentsPage() {
                     Edit
                   </button>
 
-                  <button className="rounded bg-red-600 px-3 py-2 text-white">
-                    Delete
-                  </button>
+                  <form action={deleteScheduleAssignmentAction}>
+                    <input type="hidden" name="id" value={assignment.id} />
+
+                    <button className="rounded bg-red-600 px-3 py-2 text-white">
+                      Delete
+                    </button>
+                  </form>
                 </td>
               </tr>
             ))}

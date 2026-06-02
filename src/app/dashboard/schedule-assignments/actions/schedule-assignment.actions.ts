@@ -30,3 +30,14 @@ export async function createScheduleAssignmentAction(formData: FormData) {
   revalidatePath("/dashboard/schedule-assignments");
   redirect("/dashboard/schedule-assignments");
 }
+
+export async function deleteScheduleAssignmentAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await prisma.scheduleAssignment.delete({
+    where: { id },
+  });
+
+  revalidatePath("/dashboard/schedule-assignments");
+  redirect("/dashboard/schedule-assignments");
+}
