@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { DeleteButton } from "@/components/DeleteButton";
+
 import { employeeService } from "@/server/services/employee.service";
 import { deleteEmployeeAction } from "@/app/employees/actions/employee.actions";
 
@@ -52,9 +54,7 @@ export default async function EmployeesPage() {
 
                   <form action={deleteEmployeeAction}>
                     <input type="hidden" name="id" value={employee.id} />
-                    <button className="rounded bg-red-600 px-3 py-2 text-white">
-                      Delete
-                    </button>
+                    <DeleteButton message="Are you sure you want to delete this employee?" />
                   </form>
                 </td>
               </tr>
