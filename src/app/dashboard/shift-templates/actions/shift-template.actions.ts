@@ -23,3 +23,14 @@ export async function createShiftTemplateAction(formData: FormData) {
   revalidatePath("/dashboard/shift-templates");
   redirect("/dashboard/shift-templates");
 }
+
+export async function deleteShiftTemplateAction(formData: FormData) {
+  const id = formData.get("id") as string;
+
+  await prisma.shiftTemplate.delete({
+    where: { id },
+  });
+
+  revalidatePath("/dashboard/shift-templates");
+  redirect("/dashboard/shift-templates");
+}

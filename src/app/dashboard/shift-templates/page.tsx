@@ -1,5 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import { createShiftTemplateAction } from "@/app/dashboard/shift-templates/actions/shift-template.actions";
+import {
+  createShiftTemplateAction,
+  deleteShiftTemplateAction,
+} from "@/app/dashboard/shift-templates/actions/shift-template.actions";
 
 export default async function ShiftTemplatesPage() {
   const shiftTemplates = await prisma.shiftTemplate.findMany({
@@ -63,9 +66,13 @@ export default async function ShiftTemplatesPage() {
                     Edit
                   </button>
 
-                  <button className="rounded bg-red-600 px-3 py-2 text-white">
-                    Delete
-                  </button>
+                  <form action={deleteShiftTemplateAction}>
+                    <input type="hidden" name="id" value={shiftTemplate.id} />
+
+                    <button className="rounded bg-red-600 px-3 py-2 text-white">
+                      Delete
+                    </button>
+                  </form>
                 </td>
               </tr>
             ))}
