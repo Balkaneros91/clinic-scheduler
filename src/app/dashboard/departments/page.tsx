@@ -1,5 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+
+import { DeleteButton } from "@/components/DeleteButton";
+
 import {
   createDepartmentAction,
   deleteDepartmentAction,
@@ -55,9 +58,7 @@ export default async function DepartmentsPage() {
                   <form action={deleteDepartmentAction}>
                     <input type="hidden" name="id" value={department.id} />
 
-                    <button className="rounded bg-red-600 px-3 py-2 text-white">
-                      Delete
-                    </button>
+                    <DeleteButton message="Are you sure you want to delete this department?" />
                   </form>
                 </td>
               </tr>
