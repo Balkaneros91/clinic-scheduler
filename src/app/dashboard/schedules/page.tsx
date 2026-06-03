@@ -69,6 +69,12 @@ export default async function SchedulesPage() {
 
                 <td className="flex gap-2 p-4">
                   <Link
+                    href={`/dashboard/schedules/${schedule.id}`}
+                    className="rounded bg-blue-600 px-3 py-2 text-white">
+                    View
+                  </Link>
+
+                  <Link
                     href={`/dashboard/schedules/${schedule.id}/edit`}
                     className="rounded bg-gray-800 px-3 py-2 text-white">
                     Edit
