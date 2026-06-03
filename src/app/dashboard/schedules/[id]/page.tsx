@@ -34,6 +34,17 @@ export default async function ScheduleDetailsPage({
     notFound();
   }
 
+  const assignmentsByDate = schedule.assignments.reduce<
+    Record<string, typeof schedule.assignments>
+  >((groups, assignment) => {
+    const dateKey = assignment.date.toLocaleDateString("sv-SE");
+
+    groups[dateKey] = groups[dateKey] ?? [];
+    groups[dateKey].push(assignment);
+
+    return groups;
+  }, {});
+
   return (
     <main className="p-8">
       <div className="mb-6 flex items-center justify-between">
@@ -73,35 +84,44 @@ export default async function ScheduleDetailsPage({
             No assignments have been added to this schedule yet.
           </p>
         ) : (
-          <div className="overflow-hidden rounded-lg border shadow-sm">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="p-4">Date</th>
-                  <th className="p-4">Employee</th>
-                  <th className="p-4">Department</th>
-                  <th className="p-4">Shift</th>
-                  <th className="p-4">Notes</th>
-                </tr>
-              </thead>
+          <div className="space-y-6">
+            {Object.entries(assignmentsByDate).map(([date, assignments]) => (
+              <div
+                key={date}
+                className="overflow-hidden rounded-lg border shadow-sm">
+                <div className="bg-gray-100 p-4">
+                  <h3 className="text-lg font-semibold">{date}</h3>
+                </div>
 
-              <tbody>
-                {schedule.assignments.map((assignment) => (
-                  <tr key={assignment.id} className="border-t">
-                    <td className="p-4">
-                      {assignment.date.toLocaleDateString("sv-SE")}
-                    </td>
-                    <td className="p-4">
-                      {assignment.employee.firstName}{" "}
-                      {assignment.employee.lastName}
-                    </td>
-                    <td className="p-4">{assignment.department.name}</td>
-                    <td className="p-4">{assignment.shift.name}</td>
-                    <td className="p-4">{assignment.notes ?? "-"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr>
+                      <th className="p-4">Employee</th>
+                      <th className="p-4">Department</th>
+                      <th className="p-4">Shift</th>
+                      <th className="p-4">Notes</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {assignments.map((assignment) => (
+                      <tr key={assignment.id} className="border-t">
+                        <td className="p-4">
+                          {assignment.employee.firstName}{" "}
+                          {assignment.employee.lastName}
+                        </td>
+                        <td className="p-4">{assignment.department.name}</td>
+                        <td className="p-4">
+                          {assignment.shift.name} ({assignment.shift.startTime}-
+                          {assignment.shift.endTime})
+                        </td>
+                        <td className="p-4">{assignment.notes ?? "-"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ))}
           </div>
         )}
       </section>
