@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import { prisma } from "@/lib/prisma";
 
+import { generateScheduleAction } from "@/app/dashboard/schedules/actions/generate-schedule.actions";
+
 type ScheduleDetailsPageProps = {
   params: Promise<{
     id: string;
@@ -54,6 +56,14 @@ export default async function ScheduleDetailsPage({
             {schedule.year} / {schedule.month}
           </p>
         </div>
+
+        <form action={generateScheduleAction}>
+          <input type="hidden" name="scheduleId" value={schedule.id} />
+
+          <button className="rounded bg-green-600 px-4 py-2 text-white">
+            Generate Schedule
+          </button>
+        </form>
 
         <div className="flex gap-2">
           <Link
