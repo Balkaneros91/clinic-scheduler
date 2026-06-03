@@ -19,6 +19,7 @@ export default async function ScheduleAssignmentsPage({
 }: ScheduleAssignmentsPageProps) {
   const { scheduleId } = await searchParams;
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
+    where: scheduleId ? { scheduleId } : undefined,
     include: {
       schedule: true,
       employee: true,
