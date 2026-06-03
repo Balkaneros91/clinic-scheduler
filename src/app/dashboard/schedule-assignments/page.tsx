@@ -51,6 +51,14 @@ export default async function ScheduleAssignmentsPage({
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Schedule Assignments</h1>
 
+      {scheduleId && (
+        <Link
+          href={`/dashboard/schedules/${scheduleId}`}
+          className="mb-4 inline-block rounded bg-gray-200 px-4 py-2">
+          Back to Schedule
+        </Link>
+      )}
+
       <form
         action={createScheduleAssignmentAction}
         className="mb-6 flex flex-wrap gap-2">
