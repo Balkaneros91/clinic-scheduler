@@ -35,7 +35,7 @@ export async function createEmployeeAction(formData: FormData) {
     },
   });
 
-  redirect("/employees");
+  redirect("/dashboard/employees");
 }
 
 export async function deleteEmployeeAction(formData: FormData) {
@@ -43,7 +43,7 @@ export async function deleteEmployeeAction(formData: FormData) {
 
   await employeeService.deleteEmployee(id);
 
-  revalidatePath("/employees");
+  revalidatePath("/dashboard/employees");
 }
 
 export async function updateEmployeeAction(formData: FormData) {
@@ -80,5 +80,5 @@ export async function updateEmployeeAction(formData: FormData) {
     },
   });
 
-  redirect("/employees");
+  redirect("/dashboard/employees");
 }

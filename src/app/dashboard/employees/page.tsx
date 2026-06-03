@@ -13,7 +13,7 @@ export default async function EmployeesPage() {
       <h1 className="mb-6 text-3xl font-bold">Employees</h1>
 
       <Link
-        href="/employees/new"
+        href="/dashboard/employees/new"
         className="mb-6 inline-block rounded bg-blue-600 px-4 py-2 text-white">
         Create employee
       </Link>

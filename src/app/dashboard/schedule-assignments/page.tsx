@@ -11,6 +11,7 @@ import {
 export default async function ScheduleAssignmentsPage() {
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
     include: {
+      schedule: true,
       employee: true,
       department: true,
       shift: true,
@@ -18,6 +19,10 @@ export default async function ScheduleAssignmentsPage() {
     orderBy: {
       date: "asc",
     },
+  });
+
+  const schedules = await prisma.schedule.findMany({
+    orderBy: [{ year: "desc" }, { month: "desc" }],
   });
 
   const employees = await prisma.employee.findMany({
@@ -45,6 +50,16 @@ export default async function ScheduleAssignmentsPage() {
           className="rounded border px-3 py-2"
           required
         />
+
+        <select name="scheduleId" className="rounded border px-3 py-2" required>
+          <option value="">Select schedule</option>
+
+          {schedules.map((schedule) => (
+            <option key={schedule.id} value={schedule.id}>
+              {schedule.name} ({schedule.year}/{schedule.month})
+            </option>
+          ))}
+        </select>
 
         <select name="employeeId" className="rounded border px-3 py-2" required>
           <option value="">Select employee</option>
@@ -97,6 +112,7 @@ export default async function ScheduleAssignmentsPage() {
           <thead className="bg-gray-100">
             <tr>
               <th className="p-4">Date</th>
+              <th className="p-4">Schedule</th>
               <th className="p-4">Employee</th>
               <th className="p-4">Department</th>
               <th className="p-4">Shift</th>
@@ -111,6 +127,8 @@ export default async function ScheduleAssignmentsPage() {
                 <td className="p-4">
                   {assignment.date.toLocaleDateString("sv-SE")}
                 </td>
+
+                <td className="p-4">{assignment.schedule.name}</td>
 
                 <td className="p-4 font-medium">
                   {assignment.employee.firstName} {assignment.employee.lastName}
