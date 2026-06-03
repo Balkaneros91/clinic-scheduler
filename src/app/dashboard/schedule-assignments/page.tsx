@@ -8,7 +8,16 @@ import {
   deleteScheduleAssignmentAction,
 } from "@/app/dashboard/schedule-assignments/actions/schedule-assignment.actions";
 
-export default async function ScheduleAssignmentsPage() {
+type ScheduleAssignmentsPageProps = {
+  searchParams: Promise<{
+    scheduleId?: string;
+  }>;
+};
+
+export default async function ScheduleAssignmentsPage({
+  searchParams,
+}: ScheduleAssignmentsPageProps) {
+  const { scheduleId } = await searchParams;
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
     include: {
       schedule: true,
@@ -51,7 +60,11 @@ export default async function ScheduleAssignmentsPage() {
           required
         />
 
-        <select name="scheduleId" className="rounded border px-3 py-2" required>
+        <select
+          name="scheduleId"
+          defaultValue={scheduleId ?? ""}
+          className="rounded border px-3 py-2"
+          required>
           <option value="">Select schedule</option>
 
           {schedules.map((schedule) => (
