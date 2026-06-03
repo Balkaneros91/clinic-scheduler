@@ -48,6 +48,15 @@ export default function DashboardPage() {
             Manage schedules and assignments.
           </p>
         </Link>
+
+        <Link
+          href="/dashboard/schedules"
+          className="rounded-lg border p-6 shadow-sm transition hover:shadow-md">
+          <h2 className="text-xl font-semibold">Schedules</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Manage monthly schedules and generate assignments.
+          </p>
+        </Link>
       </div>
     </main>
   );
