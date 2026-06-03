@@ -35,6 +35,10 @@ export default async function EditScheduleAssignmentPage({
     orderBy: { name: "asc" },
   });
 
+  const schedules = await prisma.schedule.findMany({
+    orderBy: [{ year: "desc" }, { month: "desc" }],
+  });
+
   return (
     <main className="p-8">
       <h1 className="mb-6 text-3xl font-bold">Edit Schedule Assignment</h1>
@@ -51,6 +55,18 @@ export default async function EditScheduleAssignmentPage({
           className="w-full rounded border px-3 py-2"
           required
         />
+
+        <select
+          name="scheduleId"
+          defaultValue={assignment.scheduleId}
+          className="w-full rounded border px-3 py-2"
+          required>
+          {schedules.map((schedule) => (
+            <option key={schedule.id} value={schedule.id}>
+              {schedule.name} ({schedule.year}/{schedule.month})
+            </option>
+          ))}
+        </select>
 
         <select
           name="employeeId"

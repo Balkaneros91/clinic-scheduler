@@ -9,10 +9,11 @@ import { createScheduleAssignmentSchema } from "@/lib/validations/schedule-assig
 export async function createScheduleAssignmentAction(formData: FormData) {
   const rawData = {
     date: formData.get("date"),
+    scheduleId: formData.get("scheduleId"),
     employeeId: formData.get("employeeId"),
     departmentId: formData.get("departmentId"),
     shiftId: formData.get("shiftId"),
-    notes: formData.get("notes") || undefined,
+    notes: formData.get("notes")?.toString().trim() || null,
   };
 
   const validatedData = createScheduleAssignmentSchema.parse(rawData);
@@ -48,10 +49,11 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
 
   const rawData = {
     date: formData.get("date"),
+    scheduleId: formData.get("scheduleId"),
     employeeId: formData.get("employeeId"),
     departmentId: formData.get("departmentId"),
     shiftId: formData.get("shiftId"),
-    notes: formData.get("notes") || undefined,
+    notes: formData.get("notes")?.toString().trim() || null,
   };
 
   const validatedData = createScheduleAssignmentSchema.parse(rawData);
