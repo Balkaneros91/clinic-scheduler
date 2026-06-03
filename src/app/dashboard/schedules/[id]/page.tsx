@@ -46,6 +46,12 @@ export default async function ScheduleDetailsPage({
 
         <div className="flex gap-2">
           <Link
+            href="/dashboard/schedule-assignments"
+            className="rounded bg-blue-600 px-4 py-2 text-white">
+            Add Assignment
+          </Link>
+
+          <Link
             href={`/dashboard/schedules/${schedule.id}/edit`}
             className="rounded bg-gray-800 px-4 py-2 text-white">
             Edit
