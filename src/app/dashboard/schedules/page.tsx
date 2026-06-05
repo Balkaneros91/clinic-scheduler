@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import { prisma } from "@/lib/prisma";
 
-import { ScheduleMonthYearFields } from "./ScheduleMonthYearFields";
+import { ScheduleMonthYearFields } from "@/components/ScheduleMonthYearFields";
 
 import {
   createScheduleAction,
