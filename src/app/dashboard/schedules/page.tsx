@@ -60,8 +60,14 @@ export default async function SchedulesPage({
       </div>
 
       {error === "duplicate" && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-          A schedule for this month and year already exists.
+        <div className="flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <span>A schedule for this month and year already exists.</span>
+
+          <Link
+            href="/dashboard/schedules"
+            className="font-medium text-red-800 underline-offset-4 hover:underline">
+            Dismiss
+          </Link>
         </div>
       )}
 
@@ -77,7 +83,7 @@ export default async function SchedulesPage({
           </p>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-[1fr_120px_120px_auto]">
+        <div className="grid items-end gap-3 md:grid-cols-[1fr_160px_180px_auto]">
           <input
             type="text"
             name="name"
@@ -87,7 +93,7 @@ export default async function SchedulesPage({
 
           <ScheduleMonthYearFields />
 
-          <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-700">
+          <button className="h-10 rounded-lg bg-slate-900 px-4 text-sm font-medium text-white shadow-sm transition hover:bg-slate-700">
             Add Schedule
           </button>
         </div>
@@ -116,10 +122,10 @@ export default async function SchedulesPage({
           <table className="w-full text-left text-sm">
             <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
-                <th className="px-5 py-3">Name</th>
-                <th className="px-5 py-3">Year</th>
-                <th className="px-5 py-3">Month</th>
-                <th className="px-5 py-3 text-right">Actions</th>
+                <th className="px-4 py-3">Name</th>
+                <th className="px-4 py-3">Year</th>
+                <th className="px-4 py-3">Month</th>
+                <th className="px-4 py-3 text-right">Actions</th>
               </tr>
             </thead>
 
@@ -128,7 +134,7 @@ export default async function SchedulesPage({
                 <tr
                   key={schedule.id}
                   className="transition duration-150 hover:bg-slate-50">
-                  <td className="px-5 py-4">
+                  <td className="px-4 py-3">
                     <div className="font-medium text-slate-950">
                       {schedule.name}
                     </div>
@@ -143,14 +149,14 @@ export default async function SchedulesPage({
                     </div>
                   </td>
 
-                  <td className="px-5 py-4 text-slate-700">{schedule.year}</td>
+                  <td className="px-4 py-3 text-slate-700">{schedule.year}</td>
 
-                  <td className="px-5 py-4 text-slate-700">
+                  <td className="px-4 py-3 text-slate-700">
                     {monthNames[schedule.month - 1]}
                   </td>
 
-                  <td className="px-5 py-4">
-                    <div className="flex justify-end gap-2">
+                  <td className="px-4 py-3">
+                    <div className="flex items-center justify-end gap-2">
                       <Button asChild variant="outline">
                         <Link href={`/dashboard/schedules/${schedule.id}`}>
                           View
