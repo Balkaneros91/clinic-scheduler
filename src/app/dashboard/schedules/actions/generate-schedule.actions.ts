@@ -117,10 +117,8 @@ export async function generateScheduleAction(formData: FormData) {
 
         const existingAssignment = await prisma.scheduleAssignment.findFirst({
           where: {
-            scheduleId: schedule.id,
             date,
             employeeId: employee.id,
-            departmentId: department.id,
             shiftId: shift.id,
           },
         });
