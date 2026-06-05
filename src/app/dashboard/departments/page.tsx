@@ -6,7 +6,6 @@ import { DeleteButton } from "@/components/DeleteButton";
 import {
   createDepartmentAction,
   deleteDepartmentAction,
-  updateDepartmentAction,
 } from "@/app/dashboard/departments/actions/department.actions";
 
 export default async function DepartmentsPage() {

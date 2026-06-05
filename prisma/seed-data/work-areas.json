@@ -1,0 +1,1820 @@
+[
+  {
+    "id": "adm",
+    "name": "ADM",
+    "source": "historical_schedule",
+    "usageCount": 858
+  },
+  {
+    "id": "tfn-1177",
+    "name": "Tfn.+1177",
+    "source": "historical_schedule",
+    "usageCount": 848
+  },
+  {
+    "id": "corneamott",
+    "name": "Corneamott",
+    "source": "historical_schedule",
+    "usageCount": 643
+  },
+  {
+    "id": "fus-team",
+    "name": "FUS TEAM",
+    "source": "historical_schedule",
+    "usageCount": 638
+  },
+  {
+    "id": "nt",
+    "name": "NT",
+    "source": "historical_schedule",
+    "usageCount": 399
+  },
+  {
+    "id": "kir-glauk",
+    "name": "Kir.glauk",
+    "source": "historical_schedule",
+    "usageCount": 365
+  },
+  {
+    "id": "barn-skeln",
+    "name": "Barn/skeln",
+    "source": "historical_schedule",
+    "usageCount": 350
+  },
+  {
+    "id": "mg-kombi",
+    "name": "MG Kombi",
+    "source": "historical_schedule",
+    "usageCount": 275
+  },
+  {
+    "id": "pensionar",
+    "name": "Pensionär",
+    "source": "historical_schedule",
+    "usageCount": 216
+  },
+  {
+    "id": "egna-op-ab",
+    "name": "Egna Op Åb",
+    "source": "historical_schedule",
+    "usageCount": 206
+  },
+  {
+    "id": "resurs",
+    "name": "Resurs",
+    "source": "historical_schedule",
+    "usageCount": 187
+  },
+  {
+    "id": "toriska",
+    "name": "Toriska",
+    "source": "historical_schedule",
+    "usageCount": 183
+  },
+  {
+    "id": "x-link-beh",
+    "name": "X-link beh",
+    "source": "historical_schedule",
+    "usageCount": 176
+  },
+  {
+    "id": "x-link-us",
+    "name": "X-link us",
+    "source": "historical_schedule",
+    "usageCount": 164
+  },
+  {
+    "id": "ssk",
+    "name": "Ssk",
+    "source": "historical_schedule",
+    "usageCount": 137
+  },
+  {
+    "id": "tao",
+    "name": "TAO",
+    "source": "historical_schedule",
+    "usageCount": 132
+  },
+  {
+    "id": "ovriga",
+    "name": "Övriga",
+    "source": "historical_schedule",
+    "usageCount": 110
+  },
+  {
+    "id": "mg-lakmott",
+    "name": "MG Läkmott",
+    "source": "historical_schedule",
+    "usageCount": 94
+  },
+  {
+    "id": "sirius",
+    "name": "Sirius",
+    "source": "historical_schedule",
+    "usageCount": 94
+  },
+  {
+    "id": "gma",
+    "name": "GMA",
+    "source": "historical_schedule",
+    "usageCount": 91
+  },
+  {
+    "id": "kontaktlinsmottagning",
+    "name": "Kontaktlinsmottagning",
+    "source": "historical_schedule",
+    "usageCount": 81
+  },
+  {
+    "id": "nssk",
+    "name": "NSSK",
+    "source": "historical_schedule",
+    "usageCount": 80
+  },
+  {
+    "id": "x",
+    "name": "x",
+    "source": "historical_schedule",
+    "usageCount": 78
+  },
+  {
+    "id": "solumedr",
+    "name": "Solumedr",
+    "source": "historical_schedule",
+    "usageCount": 66
+  },
+  {
+    "id": "handledarutb",
+    "name": "Handledarutb",
+    "source": "historical_schedule",
+    "usageCount": 66
+  },
+  {
+    "id": "excimer",
+    "name": "Excimer",
+    "source": "historical_schedule",
+    "usageCount": 58
+  },
+  {
+    "id": "ich",
+    "name": "ICH",
+    "source": "historical_schedule",
+    "usageCount": 53
+  },
+  {
+    "id": "gmb",
+    "name": "GMB",
+    "source": "historical_schedule",
+    "usageCount": 38
+  },
+  {
+    "id": "lasermottagning",
+    "name": "Lasermottagning",
+    "source": "historical_schedule",
+    "usageCount": 27
+  },
+  {
+    "id": "nationaldagsledig",
+    "name": "Nationaldagsledig",
+    "source": "historical_schedule",
+    "usageCount": 25
+  },
+  {
+    "id": "intro",
+    "name": "Intro",
+    "source": "historical_schedule",
+    "usageCount": 24
+  },
+  {
+    "id": "forskning",
+    "name": "Forskning",
+    "source": "historical_schedule",
+    "usageCount": 21
+  },
+  {
+    "id": "pterygier",
+    "name": "Pterygier",
+    "source": "historical_schedule",
+    "usageCount": 18
+  },
+  {
+    "id": "gm-team",
+    "name": "GM Team",
+    "source": "historical_schedule",
+    "usageCount": 16
+  },
+  {
+    "id": "student",
+    "name": "Student",
+    "source": "historical_schedule",
+    "usageCount": 12
+  },
+  {
+    "id": "student-neuro",
+    "name": "student Neuro",
+    "source": "historical_schedule",
+    "usageCount": 12
+  },
+  {
+    "id": "cyclo",
+    "name": "Cyclo",
+    "source": "historical_schedule",
+    "usageCount": 10
+  },
+  {
+    "id": "mott",
+    "name": "Mott",
+    "source": "historical_schedule",
+    "usageCount": 10
+  },
+  {
+    "id": "rumsplanering",
+    "name": "Rumsplanering",
+    "source": "historical_schedule",
+    "usageCount": 9
+  },
+  {
+    "id": "internutb",
+    "name": "Internutb",
+    "source": "historical_schedule",
+    "usageCount": 9
+  },
+  {
+    "id": "akuten",
+    "name": "AKUTEN",
+    "source": "historical_schedule",
+    "usageCount": 9
+  },
+  {
+    "id": "hlr-kongress",
+    "name": "HLR kongress",
+    "source": "historical_schedule",
+    "usageCount": 8
+  },
+  {
+    "id": "intro-anna",
+    "name": "Intro Anna",
+    "source": "historical_schedule",
+    "usageCount": 6
+  },
+  {
+    "id": "sektionsmote",
+    "name": "sektionsmöte",
+    "source": "historical_schedule",
+    "usageCount": 6
+  },
+  {
+    "id": "track",
+    "name": "TRACK",
+    "source": "historical_schedule",
+    "usageCount": 5
+  },
+  {
+    "id": "hlr-13-15",
+    "name": "HLR 13-15",
+    "source": "historical_schedule",
+    "usageCount": 5
+  },
+  {
+    "id": "mote-interna",
+    "name": "Möte interna",
+    "source": "historical_schedule",
+    "usageCount": 4
+  },
+  {
+    "id": "gmc",
+    "name": "GMC",
+    "source": "historical_schedule",
+    "usageCount": 4
+  },
+  {
+    "id": "konfokal",
+    "name": "Konfokal",
+    "source": "historical_schedule",
+    "usageCount": 4
+  },
+  {
+    "id": "hlr",
+    "name": "HLR",
+    "source": "historical_schedule",
+    "usageCount": 4
+  },
+  {
+    "id": "cyclo",
+    "name": "CYCLO",
+    "source": "historical_schedule",
+    "usageCount": 4
+  },
+  {
+    "id": "samtal",
+    "name": "samtal",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "ai-dag",
+    "name": "AI dag",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "mote-externa",
+    "name": "Möte externa",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "tao-nt",
+    "name": "TAO/NT",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "rumsplanering",
+    "name": "rumsplanering",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "toriska-adm",
+    "name": "Toriska/ADM",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "cyclo",
+    "name": "cyclo",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "neuro-forumpl-10-kl-10-15",
+    "name": "neuro forumPl 10 kl. 10-15",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "hlr-lakare",
+    "name": "HLR läkare",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "18",
+    "name": "18",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "studiebesok-ds",
+    "name": "Studiebesök DS",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "ausk",
+    "name": "AUSK",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "teamsmote-ds-9-10",
+    "name": "teamsmöte DS 9-10",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "johanna",
+    "name": "Johanna",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "martina",
+    "name": "Martina",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "seminarium-korkort",
+    "name": "seminarium Körkort",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "appl",
+    "name": "appl",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "appl-tryck",
+    "name": "appl tryck",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "utb",
+    "name": "Utb,",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "utb",
+    "name": "Utb",
+    "source": "historical_schedule",
+    "usageCount": 3
+  },
+  {
+    "id": "tillbaka-fran-fl",
+    "name": "tillbaka från FL",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ordinarie-tentamen-delkurs-1",
+    "name": "Ordinarie tentamen Delkurs 1",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ea",
+    "name": "EA",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "corneamott-prk",
+    "name": "Corneamott/PRK",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "mg-kombi-student",
+    "name": "MG Kombi/Student",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "jobbtorget-sophiahemmet",
+    "name": "Jobbtorget Sophiahemmet",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "bandagelinser",
+    "name": "Bandagelinser",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "corneamott-student",
+    "name": "Corneamott + student",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "x-link-beh-student",
+    "name": "X-link beh+student",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "nt-slt",
+    "name": "NT/SLT",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "student-refraktion",
+    "name": "Student/refraktion",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "forsta-dagen",
+    "name": "första dagen",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ssk-ausk",
+    "name": "Ssk ausk",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ev-sjuk",
+    "name": "ev sjuk",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "sem",
+    "name": "sem",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "mg-kombi-10-12",
+    "name": "MG Kombi 10-12",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kir-glauk-kt",
+    "name": "Kir.glauk/ KT",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "resurs-10",
+    "name": "Resurs -10",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kir-glauk-gw",
+    "name": "Kir.glauk/GW",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "mg-kombi-8-10",
+    "name": "MG Kombi 8-10",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kir-glauk-kt",
+    "name": "Kir.glauk/KT",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "mote-8-9",
+    "name": "Möte 8-9",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "x-link-us-hg",
+    "name": "X-link us/HG",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "toriska-konrea",
+    "name": "Toriska/konrea",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "16",
+    "name": "16",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "lm-granskning",
+    "name": "LM granskning",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ntx",
+    "name": "NTx",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ppm",
+    "name": "PPM",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kir-team",
+    "name": "Kir team",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kombi-team",
+    "name": "Kombi team",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "teori-opab",
+    "name": "teori opåb",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ova-spaltlampa",
+    "name": "öva spaltlampa",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "medarbetarsamtal",
+    "name": "Medarbetarsamtal",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "track-nt",
+    "name": "TRACK/NT",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "mote-kl-10-12",
+    "name": "Möte kl 10-12",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "risk-analys",
+    "name": "Risk.analys",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "cyclo-ns",
+    "name": "Cyclo/NS",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "kirgl-solumedr",
+    "name": "kirgl/Solumedr",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ich-intro",
+    "name": "ICH intro",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "rumsplan-kornea-fran-11",
+    "name": "Rumsplan kornea från 11",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "konfokal-kl-9",
+    "name": "Konfokal kl 9",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "suzan",
+    "name": "Suzan",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "forbereda-biometri-f-lasn",
+    "name": "förbereda biometri f-läsn",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "10-11-30-kvalitetsmote",
+    "name": "10-11:30 kvalitetsmöte",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "ausk-tobias",
+    "name": "Ausk Tobias",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "pterygier-md",
+    "name": "Pterygier MD",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "excimer-prk",
+    "name": "Excimer/PRK",
+    "source": "historical_schedule",
+    "usageCount": 2
+  },
+  {
+    "id": "lm-granksn",
+    "name": "LM-granksn.",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kvalitetsgranskning",
+    "name": "kvalitetsgranskning",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "borja",
+    "name": "Börja",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "extra-s-m",
+    "name": "extra S-M",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "samtal-kl-11",
+    "name": "samtal kl. 11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "pat-kl-13",
+    "name": "pat kl 13",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote",
+    "name": "Möte",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "moten-9-12",
+    "name": "Möten 9-12",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt-ssk-pat",
+    "name": "NT ssk pat",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "stud-fr-retina",
+    "name": "STUD fr retina",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "vl-konvertering",
+    "name": "VL konvertering",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mj-nh",
+    "name": "MJ + NH",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ssk-student",
+    "name": "Ssk/student",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "student",
+    "name": "STUDENT",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt-till-9",
+    "name": "NT till 9",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ovriga-m-johanna",
+    "name": "Övriga m Johanna",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kir-glauk-pj",
+    "name": "Kir.glauk/PJ",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "bl-mott",
+    "name": "BL-mott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-ca",
+    "name": "kommer ca",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "samtal-goran-10-12",
+    "name": "samtal Göran 10-12",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ssk-pat",
+    "name": "Ssk pat",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "confoscan",
+    "name": "Confoscan",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "hfa-till-plastiken",
+    "name": "HFA till plastiken",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gar-10",
+    "name": "Går 10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "egna-op-ab-ausk-m-asa",
+    "name": "Egna Op Åb ausk m Åsa",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "elena-tar",
+    "name": "Elena tar",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedrol-kl-13-1-pat",
+    "name": "Solumedrol kl 13 1 pat",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "lakemedelsgranskning",
+    "name": "Läkemedelsgranskning",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kornea",
+    "name": "Kornea",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tao-konsult",
+    "name": "TAO /konsult",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "excimer-cornea",
+    "name": "Excimer/cornea",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedr-k-13",
+    "name": "Solumedr k. 13",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "lakarbesok",
+    "name": "läkarbesök",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-11",
+    "name": "Kommer 11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kop",
+    "name": "KOP",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tfn-fore",
+    "name": "Tfn före",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "corneamott-fran-10",
+    "name": "Corneamott från 10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gma-stud",
+    "name": "GMA + stud",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gar-lite-tidigare",
+    "name": "går lite tidigare",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "med-arb-samtal-13-resurs",
+    "name": "Med arb samtal 13/RESURS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "excimer-en",
+    "name": "Excimer EN",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "1st-x-link-us-lm-granskning",
+    "name": "1st X-link us/LM granskning",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "arbtesledarutb",
+    "name": "Arbtesledarutb.",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "lakartid",
+    "name": "läkartid",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gmb-stud",
+    "name": "GMB + stud",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "v-t-hfa-till-ak-for-bedomning-resurs",
+    "name": "V+T+HFA till AK för bedömning/RESURS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "1-kir-gl-pt-kl-8",
+    "name": "1 kir gl pt kl 8",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "egna-op-ab-bandagelins",
+    "name": "Egna Op Åb/bandagelins",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote-13-14-30",
+    "name": "Möte 13-14:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-tobias",
+    "name": "ausk Tobias",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cornea-excimer",
+    "name": "Cornea + Excimer",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt-kombi",
+    "name": "NT/Kombi",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "student-neuro-tao",
+    "name": "Student/neuro/TAO",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "student-nt",
+    "name": "Student/NT",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-anette",
+    "name": "ausk Anette",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gma-sista-2-pat-pa-ssk",
+    "name": "GMA + sista 2 pat på ssk",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tao-nt",
+    "name": "TAO / NT",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "lm-granskning",
+    "name": "LM-granskning",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ss-pat-9",
+    "name": "SS pat 9",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "corneamott-fus",
+    "name": "Corneamott/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "toriska-adm",
+    "name": "Toriska adm",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "bl-byte",
+    "name": "BL-byte",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-lite-senare",
+    "name": "Kommer lite senare",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gar",
+    "name": "Går",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "serum",
+    "name": "Serum",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kombi-team",
+    "name": "Kombi Team",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ova-ven-prov-emma",
+    "name": "Öva ven prov Emma",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ssk-mott-corneamott",
+    "name": "ssk mott/Corneamott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kvalitetansv-mote-kl-10-11-30",
+    "name": "Kvalitetansv. Möte kl 10-11:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nssk-glaukomssk",
+    "name": "NSSK/glaukomssk",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ssk-fus",
+    "name": "Ssk/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt-sskmott",
+    "name": "NT/sskmott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gmb-ovriga",
+    "name": "GMB/Övriga",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mg-kombi-tfn-nar-amanda-kommer",
+    "name": "MG Kombi / tfn när Amanda kommer",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ich-adm",
+    "name": "ICH /ADM",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kontrollmatare",
+    "name": "Kontrollmätare",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "bl-byte-fus",
+    "name": "BL-byte / FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ova-venprov",
+    "name": "Öva venprov",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "karin",
+    "name": "Karin",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-senare",
+    "name": "kommer senare",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "intro-komma-7-30",
+    "name": "Intro, komma 7;30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "intro-stina",
+    "name": "Intro Stina",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedr-intro",
+    "name": "Solumedr intro",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "excimer-en",
+    "name": "Excimer/EN",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "corneamott-jc",
+    "name": "Corneamott/JC",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedr-ovr-mott",
+    "name": "Solumedr/Övr mott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mg-kombi-kot",
+    "name": "MG Kombi KoT",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-link-beh-inskoln",
+    "name": "X-link beh inskoln",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "corneamott-ek",
+    "name": "Corneamott/EK",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kir-glauk-abt",
+    "name": "Kir.glauk/ABT",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-adm",
+    "name": "FUS / Adm",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gar-vid",
+    "name": "går vid",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "pterygier-13-14-30",
+    "name": "Pterygier 13-14:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ovriga-kf",
+    "name": "Övriga/KF",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-tele-q",
+    "name": "ausk tele-q",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "visus-refr-anna",
+    "name": "Visus refr - Anna",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "stod-till-mia",
+    "name": "stöd till Mia",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "sirius-sskmott",
+    "name": "Sirius + sskmott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "14",
+    "name": "14",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "15",
+    "name": "15",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "11",
+    "name": "11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "17",
+    "name": "17",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "edta13-30",
+    "name": "EDTA13:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote-12-13",
+    "name": "möte 12-13",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-10",
+    "name": "kommer 10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt-intro-mattias",
+    "name": "NT intro Mattias",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "lindas-sista-dag",
+    "name": "Lindas sista dag",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "11-20-00",
+    "name": "11:20:00",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "excimer-13-14",
+    "name": "Excimer 13-14",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "intervju-fus",
+    "name": "Intervju /FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "adm-biometrier",
+    "name": "ADM/Biometrier",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "11-00-mote",
+    "name": "11:00 möte",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "resurs-fus",
+    "name": "Resurs/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-link-beh-en",
+    "name": "X-link beh /EN",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "resurs-adm",
+    "name": "Resurs/ADM",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gmc-rimas-pat",
+    "name": "GMC Rimas pat",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ludmilla-ova-perimetri",
+    "name": "Ludmilla öva perimetri",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kir-glauk-alko",
+    "name": "Kir.glauk AlKo",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tfn-8-10",
+    "name": "Tfn. 8-10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote-13-1430",
+    "name": "Möte 13-1430",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-link-beh-intro",
+    "name": "X-link beh intro",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-linkbeh-solumedr-1-pt",
+    "name": "X-linkbeh/Solumedr 1 pt",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "vfu-seminarium",
+    "name": "VFU seminarium",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "egna-op-ab-ausk-anette",
+    "name": "Egna Op Åb ausk Anette",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "egna-op-ab-m-tobias",
+    "name": "Egna Op Åb m Tobias",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "excimer-13-14-30",
+    "name": "Excimer 13-14:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-fus",
+    "name": "ausk Fus",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cornea-fus",
+    "name": "Cornea/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kir-glauk-fus",
+    "name": "Kir.glauk/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "medlyssna-tfn",
+    "name": "medlyssna tfn?",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "komp",
+    "name": "komp",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-team-2-pt",
+    "name": "FUS TEAM 2 pt",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-lite-senare",
+    "name": "kommer lite senare",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "foto",
+    "name": "Foto",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tao-solumedr",
+    "name": "TAO/Solumedr",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "tryckkontroll-kl",
+    "name": "Tryckkontroll kl",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "riskanalys-mote-exc",
+    "name": "Riskanalys möte/ exc",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kommer-ca-8",
+    "name": "kommer ca 8",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ich-tao",
+    "name": "ICH/TAO",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote-10",
+    "name": "möte 10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "skapet-i-exc-rummet",
+    "name": "skåpet i exc-rummet",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-team-1",
+    "name": "FUS TEAM 1",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-nssk",
+    "name": "AUSK NSSK",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-team-inskoln",
+    "name": "FUS TEAM inskoln",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "medarbetarsamtal-9",
+    "name": "Medarbetarsamtal 9",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-team-2",
+    "name": "FUS TEAM 2",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "kvalitetsarb-lm-granskn",
+    "name": "Kvalitetsarb, LM granskn",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "medarbetarsamtal-8",
+    "name": "Medarbetarsamtal 8",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cyclo-et",
+    "name": "Cyclo/ET",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cornea",
+    "name": "Cornea",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "intro-st-jb-10-12",
+    "name": "Intro ST JB 10-12",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "komp-efter-lunch",
+    "name": "komp efter lunch",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cornea-1",
+    "name": "Cornea 1",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "cornea-2",
+    "name": "Cornea 2",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-link-beh-en",
+    "name": "X-link beh/EN",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedr-11",
+    "name": "Solumedr 11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ovriga13-13-30",
+    "name": "Övriga13-13:30",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "x-tra-t-koll-11",
+    "name": "X-tra t koll 11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mote-ds-9-10-fus",
+    "name": "möte DS 9-10/FUS",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ovriga-resurs",
+    "name": "Övriga?/Resurs",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gar",
+    "name": "går",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "fus-team-egna-fran-10",
+    "name": "FUS TEAM/ egna från 10",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "komp-fter-lunch",
+    "name": "Komp fter lunch",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "refr-anna",
+    "name": "Refr Anna",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "refr-hanna",
+    "name": "refr Hanna",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "egna-op-ab",
+    "name": "(Egna Op Åb)",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "sofie",
+    "name": "Sofie",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "mia",
+    "name": "Mia",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "onskar-ledigt",
+    "name": "önskar ledigt",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "planeringsdag-pa-barnogon",
+    "name": "planeringsdag på barnögon",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "internutb",
+    "name": "Internutb?",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "gma-kg",
+    "name": "GMA/KG",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "halmstad",
+    "name": "Halmstad",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "medarb-samt-11",
+    "name": "medarb samt 11",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "solumedr-13",
+    "name": "Solumedr 13",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "nt",
+    "name": "NT?",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ev-sjuk-fm",
+    "name": "Ev sjuk fm",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-anette",
+    "name": "Ausk Anette",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "sirius-ausk",
+    "name": "Sirius Ausk",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ssk",
+    "name": "Ssk ?",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ingen-lakare-pa-mott",
+    "name": "Ingen läkare på mott",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "o-kompled",
+    "name": "ö-kompled",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-anna",
+    "name": "Ausk Anna",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-matilda",
+    "name": "Ausk Matilda",
+    "source": "historical_schedule",
+    "usageCount": 1
+  },
+  {
+    "id": "ausk-asa",
+    "name": "Ausk Åsa",
+    "source": "historical_schedule",
+    "usageCount": 1
+  }
+]
