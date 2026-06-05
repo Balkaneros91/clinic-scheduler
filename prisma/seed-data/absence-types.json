@@ -1,0 +1,67 @@
+[
+  {
+    "id": "CARE_OF_CHILD",
+    "name": "VAB",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "COMP_TIME_OFF",
+    "name": "Kompled",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "CONFERENCE",
+    "name": "Kongress",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "HOLIDAY_OFF",
+    "name": "Ledig pga Helg",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "LEAVE_OF_ABSENCE",
+    "name": "Tjänstledig",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "NOT_IN_SERVICE",
+    "name": "Ej i tjänst",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "OTHER_LEAVE",
+    "name": "Ö-ledighet",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "PARENTAL_LEAVE",
+    "name": "FL",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "PRACTICE",
+    "name": "Praktik",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "QUARANTINE",
+    "name": "Karantän",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "SICK_LEAVE",
+    "name": "SJUK",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "TRAINING",
+    "name": "Utbildning",
+    "source": "historical_schedule"
+  },
+  {
+    "id": "VACATION",
+    "name": "Semester",
+    "source": "historical_schedule"
+  }
+]

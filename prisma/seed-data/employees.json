@@ -1,0 +1,402 @@
+[
+  {
+    "id": "anna-a",
+    "displayName": "Anna A",
+    "fullName": "Anna A",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "hong-yu",
+    "displayName": "Hong Yu",
+    "fullName": "Hong Yu X",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "sofie",
+    "displayName": "Sofie",
+    "fullName": "Sofie S",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "pernilla",
+    "displayName": "Pernilla",
+    "fullName": "Pernilla Sch",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "kristina-n",
+    "displayName": "Kristina N",
+    "fullName": "Kristina N",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "martina",
+    "displayName": "Martina",
+    "fullName": "Martina F",
+    "roleText": null,
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "stina",
+    "displayName": "Stina",
+    "fullName": "Stina M",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "tea",
+    "displayName": "Tea",
+    "fullName": "Tea B",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "tove",
+    "displayName": "Tove",
+    "fullName": "Tove",
+    "roleText": null,
+    "isActive": true,
+    "source": "competency_matrix"
+  },
+  {
+    "id": "nedo",
+    "displayName": "Nedo",
+    "fullName": "Nedicto E",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "nebahat",
+    "displayName": "Nebahat",
+    "fullName": "Nebahat K",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "annelie",
+    "displayName": "Annelie",
+    "fullName": "Annelie S",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "kalle",
+    "displayName": "Kalle",
+    "fullName": "Karl A",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "stephanie",
+    "displayName": "Stephanie",
+    "fullName": "Stephanie van de M",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "hanna",
+    "displayName": "Hanna",
+    "fullName": "Hanna M",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "tiina",
+    "displayName": "Tiina",
+    "fullName": "Tiina Yli-S R",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "anette",
+    "displayName": "Anette",
+    "fullName": "Anette M",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "mia",
+    "displayName": "Mia",
+    "fullName": "Maria M",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "johanna",
+    "displayName": "Johanna",
+    "fullName": "Johanna Ö",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "elena",
+    "displayName": "Elena",
+    "fullName": "Elena K",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "suzan",
+    "displayName": "Suzan",
+    "fullName": "Suzan B",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "mariel",
+    "displayName": "Mariel",
+    "fullName": "Mariel I",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "matilda",
+    "displayName": "Matilda",
+    "fullName": "Matilda K",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "karin",
+    "displayName": "Karin",
+    "fullName": "Karin T",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "zarah",
+    "displayName": "Zarah",
+    "fullName": "Zarah B",
+    "roleText": "ssk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "emma",
+    "displayName": "Emma",
+    "fullName": "Emma L",
+    "roleText": "ssk timanställd",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "mehdi",
+    "displayName": "Mehdi",
+    "fullName": "Mahdi D",
+    "roleText": "usk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "mitra",
+    "displayName": "Mitra",
+    "fullName": "Mitra A",
+    "roleText": "usk",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "veselinka",
+    "displayName": "Veselinka",
+    "fullName": "Veselinka J",
+    "roleText": "v-bitr",
+    "isActive": true,
+    "source": "competency_matrix_and_schedule"
+  },
+  {
+    "id": "erika",
+    "displayName": "Erika",
+    "fullName": "Erika",
+    "roleText": null,
+    "isActive": true,
+    "source": "competency_matrix"
+  },
+  {
+    "id": "gunilla",
+    "displayName": "Gunilla",
+    "fullName": "Gunilla L",
+    "roleText": "enh chef",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "irene",
+    "displayName": "Irene B",
+    "fullName": "Irene B J",
+    "roleText": "enh chef",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "amanda",
+    "displayName": "Amanda",
+    "fullName": "Amanda S",
+    "roleText": "ssk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "linda",
+    "displayName": "Linda",
+    "fullName": "Linda T",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "mikaela",
+    "displayName": "Mikaela",
+    "fullName": "Mikaela H",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "tiebe",
+    "displayName": "Tiebe",
+    "fullName": "Tiebe M",
+    "roleText": "ssk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "tobias",
+    "displayName": "Tobias",
+    "fullName": "Tobias B",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "asa",
+    "displayName": "Åsa",
+    "fullName": "Åsa S",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "mirza",
+    "displayName": "Mirza",
+    "fullName": "Mirza K",
+    "roleText": "opt timanställd",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "emma",
+    "displayName": "Emma",
+    "fullName": "Emma L",
+    "roleText": "usk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "ida",
+    "displayName": "Ida",
+    "fullName": "Ida M",
+    "roleText": "usk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "tony",
+    "displayName": "Tony",
+    "fullName": "Tony P",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "moa",
+    "displayName": "Moa",
+    "fullName": "Moa C",
+    "roleText": "ssk timanställd",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "anna",
+    "displayName": "Anna",
+    "fullName": "Anna L",
+    "roleText": "ssk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "antakl",
+    "displayName": "Antakl",
+    "fullName": "Antakl R",
+    "roleText": null,
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "hanna",
+    "displayName": "Hanna",
+    "fullName": "Hanna C",
+    "roleText": "ssk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "moa-tim-kan-jobba",
+    "displayName": "Moa tim. kan jobba",
+    "fullName": "Moa C tim. kan jobba",
+    "roleText": null,
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "hong-yu",
+    "displayName": "Hong Yu",
+    "fullName": "Hong Yu X",
+    "roleText": "össk",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "louise",
+    "displayName": "Louise",
+    "fullName": "Louise R",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "schedule_only"
+  },
+  {
+    "id": "jenny",
+    "displayName": "Jenny",
+    "fullName": "Jenny C",
+    "roleText": "opt",
+    "isActive": true,
+    "source": "schedule_only"
+  }
+]

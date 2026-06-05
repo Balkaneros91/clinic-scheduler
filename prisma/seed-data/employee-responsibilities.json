@@ -1,0 +1,4062 @@
+[
+  {
+    "employeeKey": "hong-yu",
+    "employeeNameFromMatrix": "Hong Yu",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "suzan",
+    "employeeNameFromMatrix": "Suzan",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "tfn-1177",
+    "responsibilityName": "Tfn.+1177",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "fus-team",
+    "responsibilityName": "FUS TEAM",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 4,
+    "status": "confirmed",
+    "rawValue": "x",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "biometri-i-na",
+    "responsibilityName": "Biometri i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "op-at",
+    "responsibilityName": "Op åt",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "ovriga",
+    "responsibilityName": "Övriga",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "corneamott",
+    "responsibilityName": "Corneamott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "excimer",
+    "responsibilityName": "Excimer",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "pol-klin-montan",
+    "responsibilityName": "Pol-klin Montan",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "x-link-us",
+    "responsibilityName": "X-link us",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "x-link-beh",
+    "responsibilityName": "X-link beh",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "x-link-behandling-i-na",
+    "responsibilityName": "X-link behandling i Na",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "mitra",
+    "employeeNameFromMatrix": "Mitra",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "erika",
+    "employeeNameFromMatrix": "Erika",
+    "responsibilityId": "kontaktlinsmottagning",
+    "responsibilityName": "Kontaktlinsmottagning",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "sirius",
+    "responsibilityName": "Sirius",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "egna-op-ab",
+    "responsibilityName": "Egna Op Åb",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "ssk",
+    "responsibilityName": "Ssk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "konfokal",
+    "responsibilityName": "Konfokal",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "toriska",
+    "responsibilityName": "Toriska",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "toriska",
+    "responsibilityName": "Toriska",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "suzan",
+    "employeeNameFromMatrix": "Suzan",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "zarah",
+    "employeeNameFromMatrix": "Zarah",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "emma",
+    "employeeNameFromMatrix": "Emma",
+    "responsibilityId": "slt",
+    "responsibilityName": "SLT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "suzan",
+    "employeeNameFromMatrix": "Suzan",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "zarah",
+    "employeeNameFromMatrix": "Zarah",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "emma",
+    "employeeNameFromMatrix": "Emma",
+    "responsibilityId": "mg-lakmott",
+    "responsibilityName": "MG Läkmott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "kir-glauk",
+    "responsibilityName": "Kir.glauk",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "suzan",
+    "employeeNameFromMatrix": "Suzan",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "zarah",
+    "employeeNameFromMatrix": "Zarah",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "emma",
+    "employeeNameFromMatrix": "Emma",
+    "responsibilityId": "mg-kombi",
+    "responsibilityName": "MG Kombi",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "gma",
+    "responsibilityName": "GMA",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "nssk",
+    "responsibilityName": "NSSK",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1ej Goldmann",
+    "note": "1ej Goldmann"
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stephanie",
+    "employeeNameFromMatrix": "Stephanie",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "johanna",
+    "employeeNameFromMatrix": "Johanna",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "suzan",
+    "employeeNameFromMatrix": "Suzan",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "zarah",
+    "employeeNameFromMatrix": "Zarah",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "emma",
+    "employeeNameFromMatrix": "Emma",
+    "responsibilityId": "nt",
+    "responsibilityName": "NT",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "pernilla",
+    "employeeNameFromMatrix": "Pernilla",
+    "responsibilityId": "goldmann",
+    "responsibilityName": "Goldmann",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "goldmann",
+    "responsibilityName": "Goldmann",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "goldmann",
+    "responsibilityName": "Goldmann",
+    "level": 1,
+    "status": "needs_validation",
+    "rawValue": "Lära sig",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "solumedr",
+    "responsibilityName": "Solumedr",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "anna-a",
+    "employeeNameFromMatrix": "Anna A",
+    "responsibilityId": "ich",
+    "responsibilityName": "ICH",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "hong-yu",
+    "employeeNameFromMatrix": "Hong Yu",
+    "responsibilityId": "ich",
+    "responsibilityName": "ICH",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "ich",
+    "responsibilityName": "ICH",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "ich",
+    "responsibilityName": "ICH",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "ich",
+    "responsibilityName": "ICH",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kristina-n",
+    "employeeNameFromMatrix": "Kristina N",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "martina",
+    "employeeNameFromMatrix": "Martina",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "stina",
+    "employeeNameFromMatrix": "Stina",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tea",
+    "employeeNameFromMatrix": "Tea",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "tove",
+    "employeeNameFromMatrix": "Tove",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nedo",
+    "employeeNameFromMatrix": "Nedo",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "nebahat",
+    "employeeNameFromMatrix": "Nebahat",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "annelie",
+    "employeeNameFromMatrix": "Annelie",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "kalle",
+    "employeeNameFromMatrix": "Kalle",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "hanna",
+    "employeeNameFromMatrix": "Hanna",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "tiina",
+    "employeeNameFromMatrix": "Tiina",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 2,
+    "status": "needs_validation",
+    "rawValue": "?",
+    "note": null
+  },
+  {
+    "employeeKey": "anette",
+    "employeeNameFromMatrix": "Anette",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mia",
+    "employeeNameFromMatrix": "Mia",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "elena",
+    "employeeNameFromMatrix": "Elena",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "mariel",
+    "employeeNameFromMatrix": "Mariel",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "matilda",
+    "employeeNameFromMatrix": "Matilda",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "karin",
+    "employeeNameFromMatrix": "Karin",
+    "responsibilityId": "akuten",
+    "responsibilityName": "AKUTEN",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "sofie",
+    "employeeNameFromMatrix": "Sofie",
+    "responsibilityId": "plastiken-mott",
+    "responsibilityName": "Plastiken mott",
+    "level": 5,
+    "status": "confirmed",
+    "rawValue": "1",
+    "note": null
+  },
+  {
+    "employeeKey": "erika",
+    "employeeNameFromMatrix": "Erika",
+    "responsibilityId": "linstraningar",
+    "responsibilityName": "Linsträningar",
+    "level": 4,
+    "status": "confirmed",
+    "rawValue": "X",
+    "note": null
+  }
+]
