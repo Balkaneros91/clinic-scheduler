@@ -31,6 +31,21 @@ function isEmployeeAbsentOnDate(
   });
 }
 
+function isShiftAllowedOnDate(date: Date, shiftName: string) {
+  const day = date.getDay();
+  const isFriday = day === 5;
+
+  if (shiftName === "Fredag eftermiddag") {
+    return isFriday;
+  }
+
+  if (shiftName === "Eftermiddag") {
+    return !isFriday;
+  }
+
+  return true;
+}
+
 function timeToMinutes(time: string) {
   const [hours, minutes] = time.split(":").map(Number);
 
@@ -63,6 +78,13 @@ export async function generateScheduleAction(formData: FormData) {
   if (!schedule) {
     throw new Error("Schedule not found");
   }
+
+  await prisma.scheduleAssignment.deleteMany({
+    where: {
+      scheduleId: schedule.id,
+      notes: "Generated automatically",
+    },
+  });
 
   const employees = await prisma.employee.findMany({
     where: { isActive: true },
@@ -111,6 +133,10 @@ export async function generateScheduleAction(formData: FormData) {
 
     for (const department of departments) {
       for (const shift of shifts) {
+        if (!isShiftAllowedOnDate(date, shift.name)) {
+          continue;
+        }
+
         const availableEmployees = employees.filter((employee) => {
           const hasDepartmentResponsibility = employee.responsibilities.some(
             (employeeResponsibility) =>
