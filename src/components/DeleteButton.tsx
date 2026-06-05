@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
+
 type DeleteButtonProps = {
   message?: string;
 };
@@ -13,31 +15,36 @@ export function DeleteButton({
 
   return (
     <>
-      <button
+      <Button
         type="button"
-        className="rounded bg-red-600 px-3 py-2 text-white"
+        variant="outline"
+        className="border-red-200 text-red-700 hover:bg-red-50 hover:text-red-800"
         onClick={() => setIsOpen(true)}>
         Delete
-      </button>
+      </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg">
-            <h2 className="mb-3 text-lg font-bold">Confirm delete</h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/50 px-4">
+          <div className="w-full max-w-sm rounded-2xl border bg-white p-6 shadow-xl">
+            <h2 className="text-lg font-semibold text-slate-950">
+              Confirm delete
+            </h2>
 
-            <p className="mb-6 text-sm text-gray-700">{message}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">{message}</p>
 
-            <div className="flex justify-end gap-2">
-              <button
+            <div className="mt-6 flex justify-end gap-2">
+              <Button
                 type="button"
-                className="rounded bg-gray-200 px-4 py-2"
+                variant="outline"
                 onClick={() => setIsOpen(false)}>
                 Cancel
-              </button>
+              </Button>
 
-              <button className="rounded bg-red-600 px-4 py-2 text-white">
+              <Button
+                type="submit"
+                className="bg-red-600 text-white hover:bg-red-700">
                 Delete
-              </button>
+              </Button>
             </div>
           </div>
         </div>

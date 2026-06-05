@@ -3,21 +3,54 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+import { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 import { createScheduleSchema } from "@/lib/validations/schedule";
 
 export async function createScheduleAction(formData: FormData) {
+  const year = Number(formData.get("year"));
+  const month = Number(formData.get("month"));
+  const rawName = String(formData.get("name") || "").trim();
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const name = rawName || `${monthNames[month - 1]} ${year}`;
+
   const rawData = {
-    name: formData.get("name"),
-    year: formData.get("year"),
-    month: formData.get("month"),
+    name,
+    year,
+    month,
   };
 
   const validatedData = createScheduleSchema.parse(rawData);
 
-  await prisma.schedule.create({
-    data: validatedData,
-  });
+  try {
+    await prisma.schedule.create({
+      data: validatedData,
+    });
+  } catch (error) {
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === "P2002"
+    ) {
+      redirect("/dashboard/schedules?error=duplicate");
+    }
+
+    throw error;
+  }
 
   revalidatePath("/dashboard/schedules");
 }
