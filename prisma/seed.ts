@@ -17,6 +17,16 @@ function splitName(fullName: string, displayName: string) {
   };
 }
 
+function isValidDepartmentName(name: string) {
+  const trimmedName = name.trim();
+
+  const isOnlyNumbers = /^\d+$/.test(trimmedName);
+  const containsTime = /\d{1,2}:\d{2}/.test(trimmedName);
+  const isMeetingNote = trimmedName.toLowerCase().includes("möte");
+
+  return !isOnlyNumbers && !containsTime && !isMeetingNote;
+}
+
 async function main() {
   console.log("Seeding real clinic data...");
 
@@ -93,6 +103,10 @@ async function main() {
   }
 
   for (const area of workAreas) {
+    if (!isValidDepartmentName(area.name)) {
+      continue;
+    }
+
     await prisma.department.upsert({
       where: { name: area.name },
       update: {},

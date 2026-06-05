@@ -50,6 +50,11 @@ export async function generateScheduleAction(formData: FormData) {
     where: { isActive: true },
     include: {
       absences: true,
+      responsibilities: {
+        include: {
+          responsibility: true,
+        },
+      },
     },
     orderBy: {
       firstName: "asc",
@@ -88,11 +93,18 @@ export async function generateScheduleAction(formData: FormData) {
 
     for (const department of departments) {
       for (const shift of shifts) {
-        const availableEmployees = employees.filter(
-          (employee) =>
+        const availableEmployees = employees.filter((employee) => {
+          const hasDepartmentResponsibility = employee.responsibilities.some(
+            (employeeResponsibility) =>
+              employeeResponsibility.responsibility.name === department.name,
+          );
+
+          return (
+            hasDepartmentResponsibility &&
             !assignedEmployeeIdsForDate.has(employee.id) &&
-            !isEmployeeAbsentOnDate(date, employee.absences),
-        );
+            !isEmployeeAbsentOnDate(date, employee.absences)
+          );
+        });
 
         if (availableEmployees.length === 0) {
           continue;
