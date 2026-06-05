@@ -31,6 +31,24 @@ function isEmployeeAbsentOnDate(
   });
 }
 
+function timeToMinutes(time: string) {
+  const [hours, minutes] = time.split(":").map(Number);
+
+  return hours * 60 + minutes;
+}
+
+function doShiftsOverlap(
+  shiftA: { startTime: string; endTime: string },
+  shiftB: { startTime: string; endTime: string },
+) {
+  const shiftAStart = timeToMinutes(shiftA.startTime);
+  const shiftAEnd = timeToMinutes(shiftA.endTime);
+  const shiftBStart = timeToMinutes(shiftB.startTime);
+  const shiftBEnd = timeToMinutes(shiftB.endTime);
+
+  return shiftAStart < shiftBEnd && shiftBStart < shiftAEnd;
+}
+
 export async function generateScheduleAction(formData: FormData) {
   const scheduleId = formData.get("scheduleId") as string;
 
@@ -115,15 +133,22 @@ export async function generateScheduleAction(formData: FormData) {
 
         employeeIndex += 1;
 
-        const existingAssignment = await prisma.scheduleAssignment.findFirst({
-          where: {
-            date,
-            employeeId: employee.id,
-            shiftId: shift.id,
-          },
-        });
+        const existingAssignmentsForEmployee =
+          await prisma.scheduleAssignment.findMany({
+            where: {
+              date,
+              employeeId: employee.id,
+            },
+            include: {
+              shift: true,
+            },
+          });
 
-        if (!existingAssignment) {
+        const hasOverlappingAssignment = existingAssignmentsForEmployee.some(
+          (assignment) => doShiftsOverlap(assignment.shift, shift),
+        );
+
+        if (!hasOverlappingAssignment) {
           await prisma.scheduleAssignment.create({
             data: {
               scheduleId: schedule.id,
