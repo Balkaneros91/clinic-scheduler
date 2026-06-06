@@ -172,7 +172,7 @@ export default async function ScheduleAssignmentsPage({
             </p>
           </div>
         ) : (
-          <table className="w-full text-left text-sm">
+          <table className="min-w-225 w-full text-left text-sm">
             <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
                 <th className="px-4 py-3">Date</th>
