@@ -12,11 +12,19 @@ datasource db {
   provider = "postgresql"
 }
 
+enum AppRole {
+  ADMIN
+  EMPLOYEE
+}
+
 model Employee {
   id        String  @id @default(cuid())
   firstName String
   lastName  String
   isActive  Boolean @default(true)
+
+  authUserId String?  @unique
+  appRole    AppRole  @default(EMPLOYEE)
 
   roleId String
   role   Role   @relation(fields: [roleId], references: [id])
