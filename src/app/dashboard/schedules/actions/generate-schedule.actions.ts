@@ -22,12 +22,21 @@ function getDaysInMonth(year: number, month: number) {
   return days;
 }
 
+function startOfDay(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
 function isEmployeeAbsentOnDate(
   date: Date,
   absences: { startDate: Date; endDate: Date }[],
 ) {
+  const targetDate = startOfDay(date);
+
   return absences.some((absence) => {
-    return date >= absence.startDate && date <= absence.endDate;
+    const absenceStart = startOfDay(absence.startDate);
+    const absenceEnd = startOfDay(absence.endDate);
+
+    return targetDate >= absenceStart && targetDate <= absenceEnd;
   });
 }
 

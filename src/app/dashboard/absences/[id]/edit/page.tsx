@@ -99,7 +99,7 @@ export default async function EditAbsencePage({
 
           <div>
             <label className="text-sm font-medium text-slate-700">
-              Start date
+              Absent from
             </label>
             <div className="mt-2">
               <DateSelectField
@@ -114,7 +114,7 @@ export default async function EditAbsencePage({
 
           <div>
             <label className="text-sm font-medium text-slate-700">
-              End date
+              Last absence day
             </label>
             <div className="mt-2">
               <DateSelectField

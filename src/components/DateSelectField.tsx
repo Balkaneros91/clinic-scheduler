@@ -94,7 +94,7 @@ export function DateSelectField({
   }
 
   return (
-    <div className="grid gap-2 sm:grid-cols-3">
+    <div className="grid gap-2 md:grid-cols-3">
       <input type="hidden" name={name} value={dateValue} required={required} />
 
       <Select value={year} onValueChange={handleYearChange}>

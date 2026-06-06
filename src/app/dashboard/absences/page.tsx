@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { DeleteButton } from "@/components/DeleteButton";
 import { Button } from "@/components/ui/button";
-import { DateSelectField } from "@/components/DateSelectField";
 
 import { prisma } from "@/lib/prisma";
 
@@ -10,6 +9,7 @@ import {
   createAbsenceAction,
   deleteAbsenceAction,
 } from "@/app/dashboard/absences/actions/absence.actions";
+import { AbsenceCreateDialog } from "@/components/AbsenceCreateDialog";
 
 export default async function AbsencesPage() {
   const absences = await prisma.absence.findMany({
@@ -55,68 +55,13 @@ export default async function AbsencesPage() {
         </div>
       </div>
 
-      <form
-        action={createAbsenceAction}
-        className="rounded-2xl border bg-white p-5 shadow-sm">
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold text-slate-950">Add absence</h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Add a new unavailable period for an employee.
-          </p>
-        </div>
-
-        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-          <select
-            name="employeeId"
-            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition text-slate-700 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select employee</option>
-
-            {employees.map((employee) => (
-              <option key={employee.id} value={employee.id}>
-                {employee.firstName} {employee.lastName}
-              </option>
-            ))}
-          </select>
-
-          <select
-            name="absenceTypeId"
-            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition text-slate-700 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select absence type</option>
-
-            {absenceTypes.map((absenceType) => (
-              <option key={absenceType.id} value={absenceType.id}>
-                {absenceType.name}
-              </option>
-            ))}
-          </select>
-
-          <DateSelectField
-            name="startDate"
-            required
-            yearsBack={1}
-            yearsAhead={5}
-          />
-          <DateSelectField
-            name="endDate"
-            required
-            yearsBack={1}
-            yearsAhead={5}
-          />
-
-          <input
-            type="text"
-            name="notes"
-            placeholder="Notes"
-            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-          />
-
-          <div className="flex items-end">
-            <Button type="submit">Add Absence</Button>
-          </div>
-        </div>
-      </form>
+      <div className="flex justify-end">
+        <AbsenceCreateDialog
+          employees={employees}
+          absenceTypes={absenceTypes}
+          action={createAbsenceAction}
+        />
+      </div>
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
@@ -143,8 +88,8 @@ export default async function AbsencesPage() {
               <tr>
                 <th className="px-4 py-3">Employee</th>
                 <th className="px-4 py-3">Type</th>
-                <th className="px-4 py-3">Start date</th>
-                <th className="px-4 py-3">End date</th>
+                <th className="px-4 py-3">Absent from</th>
+                <th className="px-4 py-3">Last absence day</th>
                 <th className="px-4 py-3">Notes</th>
                 <th className="px-4 py-3 text-right">Actions</th>
               </tr>
