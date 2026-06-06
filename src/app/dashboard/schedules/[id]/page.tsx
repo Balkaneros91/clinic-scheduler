@@ -172,7 +172,7 @@ export default async function ScheduleDetailsPage({
             {Object.entries(assignmentsByDate).map(([date, assignments]) => (
               <div
                 key={date}
-                className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+                className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
                 <div className="flex items-center justify-between border-b bg-slate-50 px-5 py-4">
                   <div>
                     <h3 className="text-base font-semibold text-slate-950">
@@ -193,6 +193,7 @@ export default async function ScheduleDetailsPage({
                       <th className="px-4 py-3">Shift</th>
                       <th className="px-4 py-3">Time</th>
                       <th className="px-4 py-3">Notes</th>
+                      <th className="px-4 py-3 text-right">Actions</th>
                     </tr>
                   </thead>
 
@@ -223,6 +224,17 @@ export default async function ScheduleDetailsPage({
 
                         <td className="px-4 py-3 text-slate-500">
                           {assignment.notes ?? "—"}
+                        </td>
+
+                        <td className="px-4 py-3">
+                          <div className="flex justify-end">
+                            <Button asChild variant="outline">
+                              <Link
+                                href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
+                                Edit
+                              </Link>
+                            </Button>
+                          </div>
                         </td>
                       </tr>
                     ))}
