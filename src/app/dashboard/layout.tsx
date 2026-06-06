@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
@@ -9,8 +10,10 @@ import {
   Home,
   Hospital,
   Layers,
+  Menu,
   Users,
   UserX,
+  X,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -39,11 +42,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="flex min-h-screen">
-        <aside className="hidden w-72 border-r bg-white px-5 py-6 md:block">
+        <aside className="sticky top-0 hidden h-screen w-72 border-r bg-white px-5 py-6 md:block">
           <div className="mb-8">
             <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
               Clinic Scheduler
@@ -82,11 +86,20 @@ export default function DashboardLayout({
         <div className="flex min-w-0 flex-1 flex-col">
           <header className="border-b bg-white px-6 py-4 md:px-8">
             <div className="mx-auto flex max-w-7xl items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-500">Clinic Scheduler</p>
-                <p className="text-lg font-semibold text-slate-900">
-                  Staff planning and schedule management
-                </p>
+              <div className="flex min-w-0 items-center">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileMenuOpen(true)}
+                  className="mr-4 rounded-lg border p-2 text-slate-700 md:hidden">
+                  <Menu className="h-5 w-5" />
+                </button>
+
+                <div className="min-w-0">
+                  <p className="text-sm text-slate-500">Clinic Scheduler</p>
+                  <p className="text-lg font-semibold text-slate-900">
+                    Staff planning and schedule management
+                  </p>
+                </div>
               </div>
 
               <div className="hidden rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 sm:block">
