@@ -28,16 +28,20 @@ const monthNames = [
 type ScheduleMonthYearFieldsProps = {
   yearsBack?: number;
   yearsAhead?: number;
+  defaultYear?: string;
+  defaultMonth?: string;
 };
 
 export function ScheduleMonthYearFields({
   yearsBack = 0,
   yearsAhead = 5,
+  defaultYear,
+  defaultMonth,
 }: ScheduleMonthYearFieldsProps) {
   const currentYear = new Date().getFullYear();
 
-  const [year, setYear] = useState(String(currentYear));
-  const [month, setMonth] = useState("");
+  const [year, setYear] = useState(defaultYear ?? String(currentYear));
+  const [month, setMonth] = useState(defaultMonth ?? "");
 
   const years = Array.from({ length: yearsBack + yearsAhead + 1 }, (_, index) =>
     String(currentYear - yearsBack + index),
