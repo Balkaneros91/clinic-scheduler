@@ -20,6 +20,13 @@ export default async function SchedulesPage({
   const { error } = await searchParams;
 
   const schedules = await prisma.schedule.findMany({
+    include: {
+      _count: {
+        select: {
+          assignments: true,
+        },
+      },
+    },
     orderBy: [{ year: "desc" }, { month: "desc" }],
   });
 
@@ -119,7 +126,7 @@ export default async function SchedulesPage({
             </p>
           </div>
         ) : (
-          <table className="w-full text-left text-sm">
+          <table className="min-w-200 w-full text-left text-sm">
             <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
                 <th className="px-4 py-3">Name</th>
@@ -130,53 +137,65 @@ export default async function SchedulesPage({
             </thead>
 
             <tbody className="divide-y">
-              {schedules.map((schedule) => (
-                <tr
-                  key={schedule.id}
-                  className="transition duration-150 hover:bg-slate-50">
-                  <td className="px-4 py-3">
-                    <div className="font-medium text-slate-950">
-                      {schedule.name}
-                    </div>
-                    <div className="mt-2 flex items-center gap-2">
-                      <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700">
-                        Generated
-                      </span>
+              {schedules.map((schedule) => {
+                const isGenerated = schedule._count.assignments > 0;
 
-                      <span className="text-xs text-slate-500">
-                        Monthly clinic schedule
-                      </span>
-                    </div>
-                  </td>
+                return (
+                  <tr
+                    key={schedule.id}
+                    className="transition duration-150 hover:bg-slate-50">
+                    <td className="px-4 py-3">
+                      <div className="font-medium text-slate-950">
+                        {schedule.name}
+                      </div>
+                      <div className="mt-2 flex items-center gap-2">
+                        <span
+                          className={`rounded-full px-2 py-1 text-xs font-medium ${
+                            isGenerated
+                              ? "bg-emerald-100 text-emerald-700"
+                              : "bg-amber-100 text-amber-700"
+                          }`}>
+                          {isGenerated ? "Generated" : "Draft"}
+                        </span>
 
-                  <td className="px-4 py-3 text-slate-700">{schedule.year}</td>
+                        <span className="text-xs text-slate-500">
+                          Monthly clinic schedule
+                        </span>
+                      </div>
+                    </td>
 
-                  <td className="px-4 py-3 text-slate-700">
-                    {monthNames[schedule.month - 1]}
-                  </td>
+                    <td className="px-4 py-3 text-slate-700">
+                      {schedule.year}
+                    </td>
 
-                  <td className="px-4 py-3">
-                    <div className="flex items-center justify-end gap-2">
-                      <Button asChild variant="outline">
-                        <Link href={`/dashboard/schedules/${schedule.id}`}>
-                          View
-                        </Link>
-                      </Button>
+                    <td className="px-4 py-3 text-slate-700">
+                      {monthNames[schedule.month - 1]}
+                    </td>
 
-                      <Button asChild variant="outline">
-                        <Link href={`/dashboard/schedules/${schedule.id}/edit`}>
-                          Edit
-                        </Link>
-                      </Button>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center justify-end gap-2">
+                        <Button asChild variant="outline">
+                          <Link href={`/dashboard/schedules/${schedule.id}`}>
+                            View
+                          </Link>
+                        </Button>
 
-                      <form action={deleteScheduleAction}>
-                        <input type="hidden" name="id" value={schedule.id} />
-                        <DeleteButton message="Are you sure you want to delete this schedule?" />
-                      </form>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                        <Button asChild variant="outline">
+                          <Link
+                            href={`/dashboard/schedules/${schedule.id}/edit`}>
+                            Edit
+                          </Link>
+                        </Button>
+
+                        <form action={deleteScheduleAction}>
+                          <input type="hidden" name="id" value={schedule.id} />
+                          <DeleteButton message="Are you sure you want to delete this schedule?" />
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         )}
