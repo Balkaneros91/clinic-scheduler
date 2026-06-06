@@ -3,7 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import { MobileSidebar } from "@/components/layout/MobileSidebar";
+
 import { usePathname } from "next/navigation";
+
 import {
   CalendarDays,
   ClipboardList,
@@ -13,7 +16,6 @@ import {
   Menu,
   Users,
   UserX,
-  X,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -47,6 +49,13 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="flex min-h-screen">
+        <MobileSidebar
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          pathname={pathname}
+          navItems={navItems}
+        />
+
         <aside className="sticky top-0 hidden h-screen w-72 border-r bg-white px-5 py-6 md:block">
           <div className="mb-8">
             <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
