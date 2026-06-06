@@ -15,6 +15,7 @@ type DateSelectFieldProps = {
   required?: boolean;
   yearsBack?: number;
   yearsAhead?: number;
+  defaultValue?: string;
 };
 
 const months = [
@@ -37,12 +38,19 @@ export function DateSelectField({
   required = false,
   yearsBack = 1,
   yearsAhead = 5,
+  defaultValue,
 }: DateSelectFieldProps) {
   const currentYear = new Date().getFullYear();
 
-  const [year, setYear] = useState(String(currentYear));
-  const [month, setMonth] = useState("");
-  const [day, setDay] = useState("");
+  const [
+    defaultYear = String(currentYear),
+    defaultMonth = "",
+    defaultDay = "",
+  ] = defaultValue?.split("-") ?? [];
+
+  const [year, setYear] = useState(defaultYear);
+  const [month, setMonth] = useState(defaultMonth);
+  const [day, setDay] = useState(defaultDay);
 
   const years = Array.from({ length: yearsBack + yearsAhead + 1 }, (_, index) =>
     String(currentYear - yearsBack + index),
