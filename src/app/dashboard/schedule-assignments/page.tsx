@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { DeleteButton } from "@/components/DeleteButton";
 import { Button } from "@/components/ui/button";
-import { DateSelectField } from "@/components/DateSelectField";
+import { ScheduleAssignmentCreateDialog } from "@/components/ScheduleAssignmentCreateDialog";
 
 import {
   createScheduleAssignmentAction,
@@ -79,87 +79,16 @@ export default async function ScheduleAssignmentsPage({
         </Button>
       )}
 
-      <form
-        action={createScheduleAssignmentAction}
-        className="rounded-2xl border bg-white p-5 shadow-sm">
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold text-slate-950">
-            Add assignment
-          </h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Manually assign an employee to a department and shift.
-          </p>
-        </div>
-
-        <div className="grid gap-3 lg:grid-cols-2 xl:grid-cols-3">
-          <DateSelectField name="date" required yearsBack={1} yearsAhead={5} />
-
-          <select
-            name="scheduleId"
-            defaultValue={scheduleId ?? ""}
-            className="h-10 rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select schedule</option>
-
-            {schedules.map((schedule) => (
-              <option key={schedule.id} value={schedule.id}>
-                {schedule.name} ({schedule.year}/{schedule.month})
-              </option>
-            ))}
-          </select>
-
-          <select
-            name="employeeId"
-            className="h-10 rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select employee</option>
-
-            {employees.map((employee) => (
-              <option key={employee.id} value={employee.id}>
-                {employee.firstName} {employee.lastName}
-              </option>
-            ))}
-          </select>
-
-          <select
-            name="departmentId"
-            className="h-10 rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select department</option>
-
-            {departments.map((department) => (
-              <option key={department.id} value={department.id}>
-                {department.name}
-              </option>
-            ))}
-          </select>
-
-          <select
-            name="shiftId"
-            className="h-10 rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required>
-            <option value="">Select shift</option>
-
-            {shiftTemplates.map((shiftTemplate) => (
-              <option key={shiftTemplate.id} value={shiftTemplate.id}>
-                {shiftTemplate.name} ({shiftTemplate.startTime}-
-                {shiftTemplate.endTime})
-              </option>
-            ))}
-          </select>
-
-          <input
-            type="text"
-            name="notes"
-            placeholder="Notes"
-            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-          />
-
-          <div className="flex items-end">
-            <Button type="submit">Add Assignment</Button>
-          </div>
-        </div>
-      </form>
+      <div className="flex justify-end">
+        <ScheduleAssignmentCreateDialog
+          schedules={schedules}
+          employees={employees}
+          departments={departments}
+          shiftTemplates={shiftTemplates}
+          defaultScheduleId={scheduleId}
+          action={createScheduleAssignmentAction}
+        />
+      </div>
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         {scheduleAssignments.length === 0 ? (
