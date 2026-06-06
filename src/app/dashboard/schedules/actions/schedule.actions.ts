@@ -7,7 +7,11 @@ import { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 import { createScheduleSchema } from "@/lib/validations/schedule";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createScheduleAction(formData: FormData) {
+  await requireAdmin();
+
   const year = Number(formData.get("year"));
   const month = Number(formData.get("month"));
   const rawName = String(formData.get("name") || "").trim();
@@ -56,6 +60,8 @@ export async function createScheduleAction(formData: FormData) {
 }
 
 export async function deleteScheduleAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await prisma.schedule.delete({
@@ -66,6 +72,8 @@ export async function deleteScheduleAction(formData: FormData) {
 }
 
 export async function updateScheduleAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   const rawData = {

@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/lib/prisma";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 function getDaysInMonth(year: number, month: number) {
   const days: Date[] = [];
   const date = new Date(year, month - 1, 1);
@@ -74,6 +76,7 @@ function doShiftsOverlap(
 }
 
 export async function generateScheduleAction(formData: FormData) {
+  await requireAdmin();
   const scheduleId = formData.get("scheduleId") as string;
 
   if (!scheduleId) {
