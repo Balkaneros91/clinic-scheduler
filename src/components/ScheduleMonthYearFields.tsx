@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import {
   Select,
   SelectContent,
@@ -8,57 +10,69 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function ScheduleMonthYearFields() {
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+type ScheduleMonthYearFieldsProps = {
+  yearsBack?: number;
+  yearsAhead?: number;
+};
+
+export function ScheduleMonthYearFields({
+  yearsBack = 0,
+  yearsAhead = 5,
+}: ScheduleMonthYearFieldsProps) {
+  const currentYear = new Date().getFullYear();
+
+  const [year, setYear] = useState(String(currentYear));
+  const [month, setMonth] = useState("");
+
+  const years = Array.from({ length: yearsBack + yearsAhead + 1 }, (_, index) =>
+    String(currentYear - yearsBack + index),
+  );
+
   return (
     <>
-      <input type="hidden" name="year" id="year-input" defaultValue="2026" />
-      <input type="hidden" name="month" id="month-input" />
+      <input type="hidden" name="year" value={year} />
+      <input type="hidden" name="month" value={month} />
 
-      <Select
-        defaultValue="2026"
-        onValueChange={(value) => {
-          const input = document.getElementById(
-            "year-input",
-          ) as HTMLInputElement;
-
-          if (input) input.value = value;
-        }}>
+      <Select value={year} onValueChange={setYear}>
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Select year" />
         </SelectTrigger>
 
         <SelectContent>
-          <SelectItem value="2026">2026</SelectItem>
-          <SelectItem value="2027">2027</SelectItem>
-          <SelectItem value="2028">2028</SelectItem>
+          {years.map((yearOption) => (
+            <SelectItem key={yearOption} value={yearOption}>
+              {yearOption}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
 
-      <Select
-        onValueChange={(value) => {
-          const input = document.getElementById(
-            "month-input",
-          ) as HTMLInputElement;
-
-          if (input) input.value = value;
-        }}>
+      <Select value={month} onValueChange={setMonth}>
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Select month" />
         </SelectTrigger>
 
         <SelectContent>
-          <SelectItem value="1">January</SelectItem>
-          <SelectItem value="2">February</SelectItem>
-          <SelectItem value="3">March</SelectItem>
-          <SelectItem value="4">April</SelectItem>
-          <SelectItem value="5">May</SelectItem>
-          <SelectItem value="6">June</SelectItem>
-          <SelectItem value="7">July</SelectItem>
-          <SelectItem value="8">August</SelectItem>
-          <SelectItem value="9">September</SelectItem>
-          <SelectItem value="10">October</SelectItem>
-          <SelectItem value="11">November</SelectItem>
-          <SelectItem value="12">December</SelectItem>
+          {monthNames.map((monthName, index) => (
+            <SelectItem key={monthName} value={String(index + 1)}>
+              {monthName}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
     </>

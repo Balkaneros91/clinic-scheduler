@@ -83,7 +83,7 @@ export default async function SchedulesPage({
           </p>
         </div>
 
-        <div className="grid items-end gap-3 md:grid-cols-[1fr_160px_180px_auto]">
+        <div className="grid gap-3 lg:grid-cols-[1fr_160px_180px_auto]">
           <input
             type="text"
             name="name"
@@ -99,7 +99,7 @@ export default async function SchedulesPage({
         </div>
       </form>
 
-      <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+      <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
           <h2 className="text-lg font-semibold text-slate-950">
             Existing schedules

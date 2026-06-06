@@ -1,7 +1,10 @@
-import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
 import { DeleteButton } from "@/components/DeleteButton";
+import { Button } from "@/components/ui/button";
+import { DateSelectField } from "@/components/DateSelectField";
+
+import { prisma } from "@/lib/prisma";
 
 import {
   createAbsenceAction,
@@ -32,104 +35,174 @@ export default async function AbsencesPage() {
   });
 
   return (
-    <main className="p-8">
-      <h1 className="mb-6 text-3xl font-bold">Absences</h1>
+    <section className="space-y-8">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
+            Availability
+          </p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950">
+            Absences
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+            Register employee absences so schedules can be reviewed and adjusted
+            when staff are unavailable.
+          </p>
+        </div>
 
-      <form action={createAbsenceAction} className="mb-6 flex flex-wrap gap-2">
-        <select name="employeeId" className="rounded border px-3 py-2" required>
-          <option value="">Select employee</option>
+        <div className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
+          {absences.length} {absences.length === 1 ? "absence" : "absences"}
+        </div>
+      </div>
 
-          {employees.map((employee) => (
-            <option key={employee.id} value={employee.id}>
-              {employee.firstName} {employee.lastName}
-            </option>
-          ))}
-        </select>
+      <form
+        action={createAbsenceAction}
+        className="rounded-2xl border bg-white p-5 shadow-sm">
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold text-slate-950">Add absence</h2>
+          <p className="mt-1 text-sm text-slate-600">
+            Add a new unavailable period for an employee.
+          </p>
+        </div>
 
-        <select
-          name="absenceTypeId"
-          className="rounded border px-3 py-2"
-          required>
-          <option value="">Select absence type</option>
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <select
+            name="employeeId"
+            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition text-slate-700 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+            required>
+            <option value="">Select employee</option>
 
-          {absenceTypes.map((absenceType) => (
-            <option key={absenceType.id} value={absenceType.id}>
-              {absenceType.name}
-            </option>
-          ))}
-        </select>
+            {employees.map((employee) => (
+              <option key={employee.id} value={employee.id}>
+                {employee.firstName} {employee.lastName}
+              </option>
+            ))}
+          </select>
 
-        <input
-          type="date"
-          name="startDate"
-          className="rounded border px-3 py-2"
-          required
-        />
+          <select
+            name="absenceTypeId"
+            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition text-slate-700 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+            required>
+            <option value="">Select absence type</option>
 
-        <input
-          type="date"
-          name="endDate"
-          className="rounded border px-3 py-2"
-          required
-        />
+            {absenceTypes.map((absenceType) => (
+              <option key={absenceType.id} value={absenceType.id}>
+                {absenceType.name}
+              </option>
+            ))}
+          </select>
 
-        <input
-          type="text"
-          name="notes"
-          placeholder="Notes"
-          className="rounded border px-3 py-2"
-        />
+          <DateSelectField
+            name="startDate"
+            required
+            yearsBack={1}
+            yearsAhead={5}
+          />
+          <DateSelectField
+            name="endDate"
+            required
+            yearsBack={1}
+            yearsAhead={5}
+          />
 
-        <button className="rounded bg-blue-600 px-4 py-2 text-white">
-          Add Absence
-        </button>
+          <input
+            type="text"
+            name="notes"
+            placeholder="Notes"
+            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+          />
+
+          <div className="flex items-end">
+            <Button type="submit">Add Absence</Button>
+          </div>
+        </div>
       </form>
 
-      <div className="overflow-hidden rounded-lg border shadow-sm">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="p-4">Employee</th>
-              <th className="p-4">Type</th>
-              <th className="p-4">Start date</th>
-              <th className="p-4">End date</th>
-              <th className="p-4">Notes</th>
-              <th className="p-4">Actions</th>
-            </tr>
-          </thead>
+      <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
+        <div className="border-b px-5 py-4">
+          <h2 className="text-lg font-semibold text-slate-950">
+            Registered absences
+          </h2>
+          <p className="mt-1 text-sm text-slate-600">
+            These records show when employees are unavailable for scheduling.
+          </p>
+        </div>
 
-          <tbody>
-            {absences.map((absence) => (
-              <tr key={absence.id} className="border-t">
-                <td className="p-4 font-medium">
-                  {absence.employee.firstName} {absence.employee.lastName}
-                </td>
-                <td className="p-4">{absence.absenceType.name}</td>
-                <td className="p-4">
-                  {absence.startDate.toLocaleDateString("sv-SE")}
-                </td>
-                <td className="p-4">
-                  {absence.endDate.toLocaleDateString("sv-SE")}
-                </td>
-                <td className="p-4">{absence.notes ?? "-"}</td>
-                <td className="flex gap-2 p-4">
-                  <Link
-                    href={`/dashboard/absences/${absence.id}/edit`}
-                    className="rounded bg-gray-800 px-3 py-2 text-white">
-                    Edit
-                  </Link>
-
-                  <form action={deleteAbsenceAction}>
-                    <input type="hidden" name="id" value={absence.id} />
-
-                    <DeleteButton message="Are you sure you want to delete this absence?" />
-                  </form>
-                </td>
+        {absences.length === 0 ? (
+          <div className="px-5 py-12 text-center">
+            <h3 className="text-base font-semibold text-slate-950">
+              No absences yet
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Add your first absence when an employee is unavailable.
+            </p>
+          </div>
+        ) : (
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
+              <tr>
+                <th className="px-4 py-3">Employee</th>
+                <th className="px-4 py-3">Type</th>
+                <th className="px-4 py-3">Start date</th>
+                <th className="px-4 py-3">End date</th>
+                <th className="px-4 py-3">Notes</th>
+                <th className="px-4 py-3 text-right">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody className="divide-y">
+              {absences.map((absence) => (
+                <tr
+                  key={absence.id}
+                  className="transition duration-150 hover:bg-slate-50">
+                  <td className="px-4 py-3">
+                    <div className="font-medium text-slate-950">
+                      {absence.employee.firstName} {absence.employee.lastName}
+                    </div>
+                    <div className="mt-1 text-xs text-slate-500">
+                      Employee absence
+                    </div>
+                  </td>
+
+                  <td className="px-4 py-3">
+                    <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700">
+                      {absence.absenceType.name}
+                    </span>
+                  </td>
+
+                  <td className="px-4 py-3 text-slate-700">
+                    {absence.startDate.toLocaleDateString("sv-SE")}
+                  </td>
+
+                  <td className="px-4 py-3 text-slate-700">
+                    {absence.endDate.toLocaleDateString("sv-SE")}
+                  </td>
+
+                  <td className="px-4 py-3 text-slate-700">
+                    {absence.notes ?? "-"}
+                  </td>
+
+                  <td className="px-4 py-3">
+                    <div className="flex items-center justify-end gap-2">
+                      <Button asChild variant="outline">
+                        <Link href={`/dashboard/absences/${absence.id}/edit`}>
+                          Edit
+                        </Link>
+                      </Button>
+
+                      <form action={deleteAbsenceAction}>
+                        <input type="hidden" name="id" value={absence.id} />
+
+                        <DeleteButton message="Are you sure you want to delete this absence?" />
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
-    </main>
+    </section>
   );
 }
