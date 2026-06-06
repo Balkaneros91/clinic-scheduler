@@ -64,7 +64,7 @@ export default async function DepartmentsPage() {
         </div>
       </form>
 
-      <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+      <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
           <h2 className="text-lg font-semibold text-slate-950">
             Existing departments
