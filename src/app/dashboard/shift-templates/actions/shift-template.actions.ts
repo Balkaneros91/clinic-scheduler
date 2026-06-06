@@ -1,9 +1,11 @@
 "use server";
 
+import { Prisma } from "@/generated/prisma/client";
+import { prisma } from "@/lib/prisma";
+
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { prisma } from "@/lib/prisma";
 import { createShiftTemplateSchema } from "@/lib/validations/shift-template";
 
 export async function createShiftTemplateAction(formData: FormData) {
@@ -16,9 +18,20 @@ export async function createShiftTemplateAction(formData: FormData) {
 
   const validatedData = createShiftTemplateSchema.parse(rawData);
 
-  await prisma.shiftTemplate.create({
-    data: validatedData,
-  });
+  try {
+    await prisma.shiftTemplate.create({
+      data: validatedData,
+    });
+  } catch (error) {
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === "P2002"
+    ) {
+      redirect("/dashboard/shift-templates?error=duplicate");
+    }
+
+    throw error;
+  }
 
   revalidatePath("/dashboard/shift-templates");
   redirect("/dashboard/shift-templates");

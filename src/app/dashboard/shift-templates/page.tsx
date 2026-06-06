@@ -11,7 +11,13 @@ import {
   deleteShiftTemplateAction,
 } from "@/app/dashboard/shift-templates/actions/shift-template.actions";
 
-export default async function ShiftTemplatesPage() {
+export default async function ShiftTemplatesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
+  const { error } = await searchParams;
+
   const shiftTemplates = await prisma.shiftTemplate.findMany({
     orderBy: {
       name: "asc",
@@ -39,6 +45,18 @@ export default async function ShiftTemplatesPage() {
           {shiftTemplates.length === 1 ? "template" : "templates"}
         </div>
       </div>
+
+      {error === "duplicate" && (
+        <div className="flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <span>A shift template with this name already exists.</span>
+
+          <Link
+            href="/dashboard/shift-templates"
+            className="font-medium text-red-800 underline-offset-4 hover:underline">
+            Dismiss
+          </Link>
+        </div>
+      )}
 
       <form
         action={createShiftTemplateAction}
