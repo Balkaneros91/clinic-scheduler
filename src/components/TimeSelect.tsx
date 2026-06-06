@@ -15,10 +15,15 @@ const timeOptions = ["07:30", "08:00", "12:00", "12:30", "14:00", "17:00"];
 type TimeSelectProps = {
   name: string;
   placeholder: string;
+  defaultValue?: string;
 };
 
-export function TimeSelect({ name, placeholder }: TimeSelectProps) {
-  const [value, setValue] = useState("");
+export function TimeSelect({
+  name,
+  placeholder,
+  defaultValue = "",
+}: TimeSelectProps) {
+  const [value, setValue] = useState(defaultValue);
 
   return (
     <div>
