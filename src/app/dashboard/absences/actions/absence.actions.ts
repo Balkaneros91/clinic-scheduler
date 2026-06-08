@@ -6,12 +6,26 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { createAbsenceSchema } from "@/lib/validations/absence";
 
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createAbsenceAction(formData: FormData) {
+  const currentUser = await getCurrentUser();
+
+  if (!currentUser) {
+    throw new Error("Authentication required");
+  }
+
+  const requestedEmployeeId = formData.get("employeeId") as string;
+
+  const employeeId =
+    currentUser.appRole === "ADMIN" ? requestedEmployeeId : currentUser.id;
+
   const rawData = {
     startDate: formData.get("startDate"),
     endDate: formData.get("endDate"),
     notes: formData.get("notes") || undefined,
-    employeeId: formData.get("employeeId"),
+    employeeId,
     absenceTypeId: formData.get("absenceTypeId"),
   };
 
@@ -32,6 +46,8 @@ export async function createAbsenceAction(formData: FormData) {
 }
 
 export async function deleteAbsenceAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await prisma.absence.delete({
@@ -43,6 +59,8 @@ export async function deleteAbsenceAction(formData: FormData) {
 }
 
 export async function updateAbsenceAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   const rawData = {
