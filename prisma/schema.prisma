@@ -17,6 +17,12 @@ enum AppRole {
   EMPLOYEE
 }
 
+enum AbsenceStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 model Employee {
   id        String  @id @default(cuid())
   firstName String
@@ -131,6 +137,8 @@ model Absence {
   startDate DateTime
   endDate   DateTime?
   notes     String?
+
+  status    AbsenceStatus @default(PENDING)
 
   employeeId String
   employee   Employee @relation(fields: [employeeId], references: [id])
