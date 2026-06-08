@@ -168,9 +168,22 @@ export default async function DashboardPage() {
                     <div
                       key={absence.id}
                       className="rounded-xl border bg-slate-50 p-4">
-                      <p className="font-medium text-slate-950">
-                        {absence.absenceType.name}
-                      </p>
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="font-medium text-slate-950">
+                          {absence.absenceType.name}
+                        </p>
+
+                        <span
+                          className={`rounded-full px-2 py-1 text-xs font-medium ${
+                            absence.status === "APPROVED"
+                              ? "bg-emerald-100 text-emerald-700"
+                              : absence.status === "REJECTED"
+                                ? "bg-red-100 text-red-700"
+                                : "bg-amber-100 text-amber-700"
+                          }`}>
+                          {absence.status}
+                        </span>
+                      </div>
                       <p className="mt-1 text-sm text-slate-600">
                         {absence.startDate.toLocaleDateString("sv-SE")} –{" "}
                         {absence.endDate
@@ -279,9 +292,22 @@ export default async function DashboardPage() {
                   <div
                     key={absence.id}
                     className="rounded-xl border bg-slate-50 p-4">
-                    <p className="font-medium text-slate-950">
-                      {absence.absenceType.name}
-                    </p>
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="font-medium text-slate-950">
+                        {absence.absenceType.name}
+                      </p>
+
+                      <span
+                        className={`rounded-full px-2 py-1 text-xs font-medium ${
+                          absence.status === "APPROVED"
+                            ? "bg-emerald-100 text-emerald-700"
+                            : absence.status === "REJECTED"
+                              ? "bg-red-100 text-red-700"
+                              : "bg-amber-100 text-amber-700"
+                        }`}>
+                        {absence.status}
+                      </span>
+                    </div>
                     <p className="mt-1 text-sm text-slate-600">
                       {absence.startDate.toLocaleDateString("sv-SE")} –{" "}
                       {absence.endDate

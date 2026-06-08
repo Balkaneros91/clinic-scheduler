@@ -21,21 +21,57 @@ import {
 
 import { cn } from "@/lib/utils";
 
-const navItems = [
-  { label: "Dashboard", href: "/dashboard", icon: Home },
-  { label: "Employees", href: "/dashboard/employees", icon: Users },
-  { label: "Departments", href: "/dashboard/departments", icon: Hospital },
+type AppRole = "ADMIN" | "EMPLOYEE";
+
+type NavItem = {
+  label: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  roles: AppRole[];
+};
+
+const navItems: NavItem[] = [
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    icon: Home,
+    roles: ["ADMIN", "EMPLOYEE"],
+  },
+  {
+    label: "Employees",
+    href: "/dashboard/employees",
+    icon: Users,
+    roles: ["ADMIN"],
+  },
+  {
+    label: "Departments",
+    href: "/dashboard/departments",
+    icon: Hospital,
+    roles: ["ADMIN"],
+  },
   {
     label: "Shift Templates",
     href: "/dashboard/shift-templates",
     icon: Layers,
+    roles: ["ADMIN"],
   },
-  { label: "Absences", href: "/dashboard/absences", icon: UserX },
-  { label: "Schedules", href: "/dashboard/schedules", icon: CalendarDays },
+  {
+    label: "Absences",
+    href: "/dashboard/absences",
+    icon: UserX,
+    roles: ["ADMIN", "EMPLOYEE"],
+  },
+  {
+    label: "Schedules",
+    href: "/dashboard/schedules",
+    icon: CalendarDays,
+    roles: ["ADMIN", "EMPLOYEE"],
+  },
   {
     label: "Assignments",
     href: "/dashboard/schedule-assignments",
     icon: ClipboardList,
+    roles: ["ADMIN", "EMPLOYEE"],
   },
 ];
 
@@ -53,6 +89,10 @@ export function DashboardShell({
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const visibleNavItems = navItems.filter((item) =>
+    item.roles.includes(userRole),
+  );
+
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="flex min-h-screen">
@@ -60,7 +100,7 @@ export function DashboardShell({
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
           pathname={pathname}
-          navItems={navItems}
+          navItems={visibleNavItems}
           userRole={userRole}
         />
 
@@ -75,7 +115,7 @@ export function DashboardShell({
           </div>
 
           <nav className="space-y-1.5">
-            {navItems.map((item) => {
+            {visibleNavItems.map((item) => {
               const Icon = item.icon;
               const isActive =
                 item.href === "/dashboard"
