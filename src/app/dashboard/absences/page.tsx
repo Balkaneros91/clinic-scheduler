@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 import {
+  approveAbsenceAction,
   createAbsenceAction,
   deleteAbsenceAction,
+  rejectAbsenceAction,
 } from "@/app/dashboard/absences/actions/absence.actions";
 import { AbsenceCreateDialog } from "@/components/AbsenceCreateDialog";
 
@@ -103,6 +105,7 @@ export default async function AbsencesPage() {
                 <th className="px-4 py-3">Type</th>
                 <th className="px-4 py-3">Absent from</th>
                 <th className="px-4 py-3">Last absence day</th>
+                <th className="px-4 py-3">Status</th>
                 <th className="px-4 py-3">Notes</th>
                 {isAdmin && <th className="px-4 py-3 text-right">Actions</th>}
               </tr>
@@ -138,9 +141,44 @@ export default async function AbsencesPage() {
                       : "Open-ended"}
                   </td>
 
+                  <td className="px-4 py-3">
+                    <span
+                      className={`rounded-full px-2 py-1 text-xs font-medium ${
+                        absence.status === "APPROVED"
+                          ? "bg-emerald-100 text-emerald-700"
+                          : absence.status === "REJECTED"
+                            ? "bg-red-100 text-red-700"
+                            : "bg-amber-100 text-amber-700"
+                      }`}>
+                      {absence.status}
+                    </span>
+                  </td>
+
                   <td className="px-4 py-3 text-slate-700">
                     {absence.notes ?? "-"}
                   </td>
+
+                  {absence.status === "PENDING" && (
+                    <>
+                      <form action={approveAbsenceAction}>
+                        <input type="hidden" name="id" value={absence.id} />
+                        <Button
+                          type="submit"
+                          className="bg-emerald-600 text-white hover:bg-emerald-700">
+                          Approve
+                        </Button>
+                      </form>
+
+                      <form action={rejectAbsenceAction}>
+                        <input type="hidden" name="id" value={absence.id} />
+                        <Button
+                          type="submit"
+                          className="bg-red-600 text-white hover:bg-red-700">
+                          Reject
+                        </Button>
+                      </form>
+                    </>
+                  )}
 
                   {isAdmin && (
                     <td className="px-4 py-3">

@@ -27,6 +27,7 @@ export async function createAbsenceAction(formData: FormData) {
     notes: formData.get("notes") || undefined,
     employeeId,
     absenceTypeId: formData.get("absenceTypeId"),
+    status: currentUser.appRole === "ADMIN" ? "APPROVED" : "PENDING",
   };
 
   const validatedData = createAbsenceSchema.parse(rawData);
@@ -86,4 +87,34 @@ export async function updateAbsenceAction(formData: FormData) {
 
   revalidatePath("/dashboard/absences");
   redirect("/dashboard/absences");
+}
+
+export async function approveAbsenceAction(formData: FormData) {
+  await requireAdmin();
+
+  const id = formData.get("id") as string;
+
+  await prisma.absence.update({
+    where: { id },
+    data: {
+      status: "APPROVED",
+    },
+  });
+
+  revalidatePath("/dashboard/absences");
+}
+
+export async function rejectAbsenceAction(formData: FormData) {
+  await requireAdmin();
+
+  const id = formData.get("id") as string;
+
+  await prisma.absence.update({
+    where: { id },
+    data: {
+      status: "REJECTED",
+    },
+  });
+
+  revalidatePath("/dashboard/absences");
 }
