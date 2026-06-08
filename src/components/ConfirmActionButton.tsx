@@ -12,10 +12,10 @@ type ConfirmActionButtonProps = {
 };
 
 export function ConfirmActionButton({
-  message = "Are you sure you want to continue?",
-  title = "Confirm action",
-  buttonText = "Confirm",
-  confirmText = "Confirm",
+  message = "Are you sure you want to delete this item??",
+  title = "Confirm delete",
+  buttonText = "Delete",
+  confirmText = "Delete",
 }: ConfirmActionButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 

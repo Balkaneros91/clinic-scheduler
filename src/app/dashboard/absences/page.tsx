@@ -158,31 +158,38 @@ export default async function AbsencesPage() {
                     {absence.notes ?? "-"}
                   </td>
 
-                  {absence.status === "PENDING" && (
-                    <>
-                      <form action={approveAbsenceAction}>
-                        <input type="hidden" name="id" value={absence.id} />
-                        <Button
-                          type="submit"
-                          className="bg-emerald-600 text-white hover:bg-emerald-700">
-                          Approve
-                        </Button>
-                      </form>
-
-                      <form action={rejectAbsenceAction}>
-                        <input type="hidden" name="id" value={absence.id} />
-                        <Button
-                          type="submit"
-                          className="bg-red-600 text-white hover:bg-red-700">
-                          Reject
-                        </Button>
-                      </form>
-                    </>
-                  )}
-
                   {isAdmin && (
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-2">
+                        {absence.status === "PENDING" && (
+                          <>
+                            <form action={approveAbsenceAction}>
+                              <input
+                                type="hidden"
+                                name="id"
+                                value={absence.id}
+                              />
+                              <Button
+                                type="submit"
+                                className="bg-emerald-600 text-white hover:bg-emerald-700">
+                                Approve
+                              </Button>
+                            </form>
+
+                            <form action={rejectAbsenceAction}>
+                              <input
+                                type="hidden"
+                                name="id"
+                                value={absence.id}
+                              />
+                              <Button
+                                type="submit"
+                                className="bg-red-600 text-white hover:bg-red-700">
+                                Reject
+                              </Button>
+                            </form>
+                          </>
+                        )}
                         <Button asChild variant="outline">
                           <Link href={`/dashboard/absences/${absence.id}/edit`}>
                             Edit
@@ -192,7 +199,12 @@ export default async function AbsencesPage() {
                         <form action={deleteAbsenceAction}>
                           <input type="hidden" name="id" value={absence.id} />
 
-                          <ConfirmActionButton message="Are you sure you want to delete this absence?" />
+                          <ConfirmActionButton
+                            title="Confirm delete"
+                            message="Are you sure you want to delete this absence?"
+                            buttonText="Delete"
+                            confirmText="Delete"
+                          />
                         </form>
                       </div>
                     </td>

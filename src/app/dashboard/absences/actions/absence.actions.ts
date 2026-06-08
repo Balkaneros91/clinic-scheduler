@@ -9,6 +9,8 @@ import { createAbsenceSchema } from "@/lib/validations/absence";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 import { requireAdmin } from "@/lib/auth/requireAdmin";
 
+import { sendAbsenceRequestNotification } from "@/lib/email/sendAbsenceRequestNotification";
+
 export async function createAbsenceAction(formData: FormData) {
   const currentUser = await getCurrentUser();
 
@@ -27,20 +29,48 @@ export async function createAbsenceAction(formData: FormData) {
     notes: formData.get("notes") || undefined,
     employeeId,
     absenceTypeId: formData.get("absenceTypeId"),
-    status: currentUser.appRole === "ADMIN" ? "APPROVED" : "PENDING",
   };
 
   const validatedData = createAbsenceSchema.parse(rawData);
 
-  await prisma.absence.create({
+  const absence = await prisma.absence.create({
     data: {
       startDate: new Date(validatedData.startDate),
       endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
       notes: validatedData.notes,
       employeeId: validatedData.employeeId,
       absenceTypeId: validatedData.absenceTypeId,
+      status: currentUser.appRole === "ADMIN" ? "APPROVED" : "PENDING",
     },
   });
+
+  if (currentUser.appRole !== "ADMIN") {
+    try {
+      const employee = await prisma.employee.findUnique({
+        where: {
+          id: validatedData.employeeId,
+        },
+      });
+
+      const absenceType = await prisma.absenceType.findUnique({
+        where: {
+          id: validatedData.absenceTypeId,
+        },
+      });
+
+      if (employee && absenceType) {
+        await sendAbsenceRequestNotification({
+          employeeName: `${employee.firstName} ${employee.lastName}`,
+          absenceType: absenceType.name,
+          startDate: absence.startDate,
+          endDate: absence.endDate,
+          notes: absence.notes,
+        });
+      }
+    } catch (error) {
+      console.error("Failed to send absence notification email:", error);
+    }
+  }
 
   revalidatePath("/dashboard/absences");
   redirect("/dashboard/absences");
