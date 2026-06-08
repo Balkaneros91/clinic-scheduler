@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 import { ScheduleAssignmentCreateDialog } from "@/components/ScheduleAssignmentCreateDialog";
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 import {
   createScheduleAssignmentAction,
@@ -20,6 +21,10 @@ export default async function ScheduleAssignmentsPage({
   searchParams,
 }: ScheduleAssignmentsPageProps) {
   const { scheduleId } = await searchParams;
+
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
+
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
     where: scheduleId ? { scheduleId } : undefined,
     include: {
@@ -79,16 +84,18 @@ export default async function ScheduleAssignmentsPage({
         </Button>
       )}
 
-      <div className="flex justify-end">
-        <ScheduleAssignmentCreateDialog
-          schedules={schedules}
-          employees={employees}
-          departments={departments}
-          shiftTemplates={shiftTemplates}
-          defaultScheduleId={scheduleId}
-          action={createScheduleAssignmentAction}
-        />
-      </div>
+      {isAdmin && (
+        <div className="flex justify-end">
+          <ScheduleAssignmentCreateDialog
+            schedules={schedules}
+            employees={employees}
+            departments={departments}
+            shiftTemplates={shiftTemplates}
+            defaultScheduleId={scheduleId}
+            action={createScheduleAssignmentAction}
+          />
+        </div>
+      )}
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         {scheduleAssignments.length === 0 ? (
@@ -110,7 +117,7 @@ export default async function ScheduleAssignmentsPage({
                 <th className="px-4 py-3">Department</th>
                 <th className="px-4 py-3">Shift</th>
                 <th className="px-4 py-3">Notes</th>
-                <th className="px-4 py-3">Actions</th>
+                {isAdmin && <th className="px-4 py-3">Actions</th>}
               </tr>
             </thead>
 
@@ -143,22 +150,28 @@ export default async function ScheduleAssignmentsPage({
                     {assignment.notes ?? "-"}
                   </td>
 
-                  <td className="px-4 py-3">
-                    <div className="flex items-center gap-2">
-                      <Button asChild variant="outline">
-                        <Link
-                          href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
-                          Edit
-                        </Link>
-                      </Button>
+                  {isAdmin && (
+                    <td className="px-4 py-3">
+                      <div className="flex items-center gap-2">
+                        <Button asChild variant="outline">
+                          <Link
+                            href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
+                            Edit
+                          </Link>
+                        </Button>
 
-                      <form action={deleteScheduleAssignmentAction}>
-                        <input type="hidden" name="id" value={assignment.id} />
+                        <form action={deleteScheduleAssignmentAction}>
+                          <input
+                            type="hidden"
+                            name="id"
+                            value={assignment.id}
+                          />
 
-                        <ConfirmActionButton message="Are you sure you want to delete this schedule assignment?" />
-                      </form>
-                    </div>
-                  </td>
+                          <ConfirmActionButton message="Are you sure you want to delete this schedule assignment?" />
+                        </form>
+                      </div>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
