@@ -34,7 +34,7 @@ export async function createAbsenceAction(formData: FormData) {
   await prisma.absence.create({
     data: {
       startDate: new Date(validatedData.startDate),
-      endDate: new Date(validatedData.endDate),
+      endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
       notes: validatedData.notes,
       employeeId: validatedData.employeeId,
       absenceTypeId: validatedData.absenceTypeId,
@@ -77,7 +77,7 @@ export async function updateAbsenceAction(formData: FormData) {
     where: { id },
     data: {
       startDate: new Date(validatedData.startDate),
-      endDate: new Date(validatedData.endDate),
+      endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
       notes: validatedData.notes,
       employeeId: validatedData.employeeId,
       absenceTypeId: validatedData.absenceTypeId,

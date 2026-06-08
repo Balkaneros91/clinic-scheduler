@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { prisma } from "@/lib/prisma";
 
 import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 
-import { prisma } from "@/lib/prisma";
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 import {
   createAbsenceAction,
@@ -12,7 +13,15 @@ import {
 import { AbsenceCreateDialog } from "@/components/AbsenceCreateDialog";
 
 export default async function AbsencesPage() {
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
+
   const absences = await prisma.absence.findMany({
+    where: isAdmin
+      ? undefined
+      : {
+          employeeId: currentUser?.id,
+        },
     include: {
       employee: true,
       absenceType: true,
@@ -22,11 +31,15 @@ export default async function AbsencesPage() {
     },
   });
 
-  const employees = await prisma.employee.findMany({
-    orderBy: {
-      firstName: "asc",
-    },
-  });
+  const employees = isAdmin
+    ? await prisma.employee.findMany({
+        orderBy: {
+          firstName: "asc",
+        },
+      })
+    : currentUser
+      ? [currentUser]
+      : [];
 
   const absenceTypes = await prisma.absenceType.findMany({
     orderBy: {
@@ -91,7 +104,7 @@ export default async function AbsencesPage() {
                 <th className="px-4 py-3">Absent from</th>
                 <th className="px-4 py-3">Last absence day</th>
                 <th className="px-4 py-3">Notes</th>
-                <th className="px-4 py-3 text-right">Actions</th>
+                {isAdmin && <th className="px-4 py-3 text-right">Actions</th>}
               </tr>
             </thead>
 
@@ -120,28 +133,32 @@ export default async function AbsencesPage() {
                   </td>
 
                   <td className="px-4 py-3 text-slate-700">
-                    {absence.endDate.toLocaleDateString("sv-SE")}
+                    {absence.endDate
+                      ? absence.endDate.toLocaleDateString("sv-SE")
+                      : "Open-ended"}
                   </td>
 
                   <td className="px-4 py-3 text-slate-700">
                     {absence.notes ?? "-"}
                   </td>
 
-                  <td className="px-4 py-3">
-                    <div className="flex items-center justify-end gap-2">
-                      <Button asChild variant="outline">
-                        <Link href={`/dashboard/absences/${absence.id}/edit`}>
-                          Edit
-                        </Link>
-                      </Button>
+                  {isAdmin && (
+                    <td className="px-4 py-3">
+                      <div className="flex items-center justify-end gap-2">
+                        <Button asChild variant="outline">
+                          <Link href={`/dashboard/absences/${absence.id}/edit`}>
+                            Edit
+                          </Link>
+                        </Button>
 
-                      <form action={deleteAbsenceAction}>
-                        <input type="hidden" name="id" value={absence.id} />
+                        <form action={deleteAbsenceAction}>
+                          <input type="hidden" name="id" value={absence.id} />
 
-                        <ConfirmActionButton message="Are you sure you want to delete this absence?" />
-                      </form>
-                    </div>
-                  </td>
+                          <ConfirmActionButton message="Are you sure you want to delete this absence?" />
+                        </form>
+                      </div>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

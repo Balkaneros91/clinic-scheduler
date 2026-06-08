@@ -30,15 +30,17 @@ function startOfDay(date: Date) {
 
 function isEmployeeAbsentOnDate(
   date: Date,
-  absences: { startDate: Date; endDate: Date }[],
+  absences: { startDate: Date; endDate: Date | null }[],
 ) {
   const targetDate = startOfDay(date);
 
   return absences.some((absence) => {
     const absenceStart = startOfDay(absence.startDate);
-    const absenceEnd = startOfDay(absence.endDate);
+    const absenceEnd = absence.endDate ? startOfDay(absence.endDate) : null;
 
-    return targetDate >= absenceStart && targetDate <= absenceEnd;
+    return (
+      targetDate >= absenceStart && (!absenceEnd || targetDate <= absenceEnd)
+    );
   });
 }
 

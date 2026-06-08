@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     const absence = await prisma.absence.create({
       data: {
         startDate: new Date(validatedData.startDate),
-        endDate: new Date(validatedData.endDate),
+        endDate: validatedData.endDate ? new Date(validatedData.endDate) : null,
         notes: validatedData.notes,
         employeeId: validatedData.employeeId,
         absenceTypeId: validatedData.absenceTypeId,

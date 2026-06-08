@@ -114,7 +114,7 @@ export default async function EditAbsencePage({
 
           <div>
             <label className="text-sm font-medium text-slate-700">
-              Last absence day
+              Last absence day, if known
             </label>
             <div className="mt-2">
               <DateSelectField
@@ -122,7 +122,11 @@ export default async function EditAbsencePage({
                 required
                 yearsBack={1}
                 yearsAhead={5}
-                defaultValue={absence.endDate.toISOString().split("T")[0]}
+                defaultValue={
+                  absence.endDate
+                    ? absence.endDate.toISOString().split("T")[0]
+                    : ""
+                }
               />
             </div>
           </div>
