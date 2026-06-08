@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 
 import { prisma } from "@/lib/prisma";
@@ -201,7 +201,7 @@ export default async function SchedulesPage({
                                 name="id"
                                 value={schedule.id}
                               />
-                              <DeleteButton message="Are you sure you want to delete this schedule?" />
+                              <ConfirmActionButton message="Are you sure you want to delete this schedule?" />
                             </form>
                           </>
                         )}

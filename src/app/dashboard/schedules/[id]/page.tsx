@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 
 import { generateScheduleAction } from "@/app/dashboard/schedules/actions/generate-schedule.actions";
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 type ScheduleDetailsPageProps = {
   params: Promise<{
@@ -31,6 +32,9 @@ export default async function ScheduleDetailsPage({
   params,
 }: ScheduleDetailsPageProps) {
   const { id } = await params;
+
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
 
   const schedule = await prisma.schedule.findUnique({
     where: { id },
@@ -88,30 +92,32 @@ export default async function ScheduleDetailsPage({
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <form action={generateScheduleAction}>
-              <input type="hidden" name="scheduleId" value={schedule.id} />
+          {isAdmin && (
+            <div className="flex flex-wrap gap-2">
+              <form action={generateScheduleAction}>
+                <input type="hidden" name="scheduleId" value={schedule.id} />
 
-              <Button
-                type="submit"
-                className="bg-emerald-600 text-white hover:bg-emerald-700">
-                Generate Schedule
+                <Button
+                  type="submit"
+                  className="bg-emerald-600 text-white hover:bg-emerald-700">
+                  Generate Schedule
+                </Button>
+              </form>
+
+              <Button asChild variant="outline">
+                <Link
+                  href={`/dashboard/schedule-assignments?scheduleId=${schedule.id}`}>
+                  Add Assignment
+                </Link>
               </Button>
-            </form>
 
-            <Button asChild variant="outline">
-              <Link
-                href={`/dashboard/schedule-assignments?scheduleId=${schedule.id}`}>
-                Add Assignment
-              </Link>
-            </Button>
-
-            <Button asChild variant="outline">
-              <Link href={`/dashboard/schedules/${schedule.id}/edit`}>
-                Edit
-              </Link>
-            </Button>
-          </div>
+              <Button asChild variant="outline">
+                <Link href={`/dashboard/schedules/${schedule.id}/edit`}>
+                  Edit
+                </Link>
+              </Button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -193,7 +199,9 @@ export default async function ScheduleDetailsPage({
                       <th className="px-4 py-3">Shift</th>
                       <th className="px-4 py-3">Time</th>
                       <th className="px-4 py-3">Notes</th>
-                      <th className="px-4 py-3 text-right">Actions</th>
+                      {isAdmin && (
+                        <th className="px-4 py-3 text-right">Actions</th>
+                      )}
                     </tr>
                   </thead>
 
@@ -226,16 +234,18 @@ export default async function ScheduleDetailsPage({
                           {assignment.notes ?? "—"}
                         </td>
 
-                        <td className="px-4 py-3">
-                          <div className="flex justify-end">
-                            <Button asChild variant="outline">
-                              <Link
-                                href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
-                                Edit
-                              </Link>
-                            </Button>
-                          </div>
-                        </td>
+                        {isAdmin && (
+                          <td className="px-4 py-3">
+                            <div className="flex justify-end">
+                              <Button asChild variant="outline">
+                                <Link
+                                  href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
+                                  Edit
+                                </Link>
+                              </Button>
+                            </div>
+                          </td>
+                        )}
                       </tr>
                     ))}
                   </tbody>
