@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
+import { prisma } from "@/lib/prisma";
+
 const dashboardItems = [
   {
     title: "Employees",
@@ -39,7 +42,154 @@ const dashboardItems = [
   },
 ];
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
+
+  const myUpcomingAssignments =
+    !isAdmin && currentUser
+      ? await prisma.scheduleAssignment.findMany({
+          where: {
+            employeeId: currentUser.id,
+            date: {
+              gte: new Date(),
+            },
+          },
+          include: {
+            schedule: true,
+            department: true,
+            shift: true,
+          },
+          orderBy: {
+            date: "asc",
+          },
+          take: 5,
+        })
+      : [];
+
+  const myAbsences =
+    !isAdmin && currentUser
+      ? await prisma.absence.findMany({
+          where: {
+            employeeId: currentUser.id,
+          },
+          include: {
+            absenceType: true,
+          },
+          orderBy: {
+            startDate: "desc",
+          },
+          take: 5,
+        })
+      : [];
+
+  if (!isAdmin) {
+    return (
+      <main className="min-h-screen bg-slate-50 px-6 py-8">
+        <section className="mx-auto max-w-7xl space-y-8">
+          <div className="rounded-2xl bg-slate-900 px-8 py-10 text-white shadow-sm">
+            <p className="mb-3 text-sm font-medium uppercase tracking-wide text-slate-300">
+              Employee Dashboard
+            </p>
+
+            <h1 className="text-4xl font-bold tracking-tight">
+              Welcome, {currentUser?.firstName}
+            </h1>
+
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              View your upcoming assignments and register absences when you are
+              unavailable.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <Link
+              href="/dashboard/schedule-assignments"
+              className="rounded-xl border bg-white p-6 shadow-sm transition hover:border-slate-300 hover:shadow-md">
+              <h2 className="text-lg font-semibold text-slate-900">
+                My assignments
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                View your scheduled clinic work.
+              </p>
+            </Link>
+
+            <Link
+              href="/dashboard/absences"
+              className="rounded-xl border bg-white p-6 shadow-sm transition hover:border-slate-300 hover:shadow-md">
+              <h2 className="text-lg font-semibold text-slate-900">
+                My absences
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Register sick leave, vacation or other absence.
+              </p>
+            </Link>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border bg-white p-5 shadow-sm">
+              <h2 className="text-lg font-semibold text-slate-950">
+                Upcoming assignments
+              </h2>
+
+              {myUpcomingAssignments.length === 0 ? (
+                <p className="mt-4 text-sm text-slate-600">
+                  No upcoming assignments found.
+                </p>
+              ) : (
+                <div className="mt-4 space-y-3">
+                  {myUpcomingAssignments.map((assignment) => (
+                    <div
+                      key={assignment.id}
+                      className="rounded-xl border bg-slate-50 p-4">
+                      <p className="font-medium text-slate-950">
+                        {assignment.date.toLocaleDateString("sv-SE")}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-600">
+                        {assignment.department.name} · {assignment.shift.name} ·{" "}
+                        {assignment.shift.startTime}–{assignment.shift.endTime}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="rounded-2xl border bg-white p-5 shadow-sm">
+              <h2 className="text-lg font-semibold text-slate-950">
+                Recent absences
+              </h2>
+
+              {myAbsences.length === 0 ? (
+                <p className="mt-4 text-sm text-slate-600">
+                  No absences registered.
+                </p>
+              ) : (
+                <div className="mt-4 space-y-3">
+                  {myAbsences.map((absence) => (
+                    <div
+                      key={absence.id}
+                      className="rounded-xl border bg-slate-50 p-4">
+                      <p className="font-medium text-slate-950">
+                        {absence.absenceType.name}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-600">
+                        {absence.startDate.toLocaleDateString("sv-SE")} –{" "}
+                        {absence.endDate
+                          ? absence.endDate.toLocaleDateString("sv-SE")
+                          : "Open-ended"}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-slate-50 px-6 py-8">
       <section className="mx-auto max-w-7xl">
