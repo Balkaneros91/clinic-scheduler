@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 
 import { ScheduleMonthYearFields } from "@/components/ScheduleMonthYearFields";
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 import {
   createScheduleAction,
@@ -18,6 +19,9 @@ export default async function SchedulesPage({
   searchParams: Promise<{ error?: string }>;
 }) {
   const { error } = await searchParams;
+
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
 
   const schedules = await prisma.schedule.findMany({
     include: {
@@ -78,33 +82,35 @@ export default async function SchedulesPage({
         </div>
       )}
 
-      <form
-        action={createScheduleAction}
-        className="rounded-2xl border bg-white p-5 shadow-sm">
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold text-slate-950">
-            Create new schedule
-          </h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Add a month and year before generating schedule assignments.
-          </p>
-        </div>
+      {isAdmin && (
+        <form
+          action={createScheduleAction}
+          className="rounded-2xl border bg-white p-5 shadow-sm">
+          <div className="mb-4">
+            <h2 className="text-lg font-semibold text-slate-950">
+              Create new schedule
+            </h2>
+            <p className="mt-1 text-sm text-slate-600">
+              Add a month and year before generating schedule assignments.
+            </p>
+          </div>
 
-        <div className="grid gap-3 lg:grid-cols-[1fr_160px_180px_auto]">
-          <input
-            type="text"
-            name="name"
-            placeholder="Optional custom schedule name"
-            className="rounded-lg border bg-white px-3 py-2 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-          />
+          <div className="grid gap-3 lg:grid-cols-[1fr_160px_180px_auto]">
+            <input
+              type="text"
+              name="name"
+              placeholder="Optional custom schedule name"
+              className="rounded-lg border bg-white px-3 py-2 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+            />
 
-          <ScheduleMonthYearFields />
+            <ScheduleMonthYearFields />
 
-          <button className="h-10 rounded-lg bg-slate-900 px-4 text-sm font-medium text-white shadow-sm transition hover:bg-slate-700">
-            Add Schedule
-          </button>
-        </div>
-      </form>
+            <button className="h-10 rounded-lg bg-slate-900 px-4 text-sm font-medium text-white shadow-sm transition hover:bg-slate-700">
+              Add Schedule
+            </button>
+          </div>
+        </form>
+      )}
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
@@ -180,17 +186,25 @@ export default async function SchedulesPage({
                           </Link>
                         </Button>
 
-                        <Button asChild variant="outline">
-                          <Link
-                            href={`/dashboard/schedules/${schedule.id}/edit`}>
-                            Edit
-                          </Link>
-                        </Button>
+                        {isAdmin && (
+                          <>
+                            <Button asChild variant="outline">
+                              <Link
+                                href={`/dashboard/schedules/${schedule.id}/edit`}>
+                                Edit
+                              </Link>
+                            </Button>
 
-                        <form action={deleteScheduleAction}>
-                          <input type="hidden" name="id" value={schedule.id} />
-                          <DeleteButton message="Are you sure you want to delete this schedule?" />
-                        </form>
+                            <form action={deleteScheduleAction}>
+                              <input
+                                type="hidden"
+                                name="id"
+                                value={schedule.id}
+                              />
+                              <DeleteButton message="Are you sure you want to delete this schedule?" />
+                            </form>
+                          </>
+                        )}
                       </div>
                     </td>
                   </tr>
