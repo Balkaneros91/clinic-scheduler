@@ -4,13 +4,19 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-type DeleteButtonProps = {
+type ConfirmActionButtonProps = {
   message?: string;
+  title?: string;
+  buttonText?: string;
+  confirmText?: string;
 };
 
-export function DeleteButton({
-  message = "Are you sure you want to delete this item?",
-}: DeleteButtonProps) {
+export function ConfirmActionButton({
+  message = "Are you sure you want to continue?",
+  title = "Confirm action",
+  buttonText = "Confirm",
+  confirmText = "Confirm",
+}: ConfirmActionButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -20,15 +26,13 @@ export function DeleteButton({
         variant="outline"
         className="border-red-200 text-red-700 hover:bg-red-50 hover:text-red-800"
         onClick={() => setIsOpen(true)}>
-        Delete
+        {buttonText}
       </Button>
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/50 px-4">
           <div className="w-full max-w-sm rounded-2xl border bg-white p-6 shadow-xl">
-            <h2 className="text-lg font-semibold text-slate-950">
-              Confirm delete
-            </h2>
+            <h2 className="text-lg font-semibold text-slate-950">{title}</h2>
 
             <p className="mt-2 text-sm leading-6 text-slate-600">{message}</p>
 
@@ -43,7 +47,7 @@ export function DeleteButton({
               <Button
                 type="submit"
                 className="bg-red-600 text-white hover:bg-red-700">
-                Delete
+                {confirmText}
               </Button>
             </div>
           </div>

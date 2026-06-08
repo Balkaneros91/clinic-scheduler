@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 
 import { prisma } from "@/lib/prisma";
@@ -138,7 +138,7 @@ export default async function AbsencesPage() {
                       <form action={deleteAbsenceAction}>
                         <input type="hidden" name="id" value={absence.id} />
 
-                        <DeleteButton message="Are you sure you want to delete this absence?" />
+                        <ConfirmActionButton message="Are you sure you want to delete this absence?" />
                       </form>
                     </div>
                   </td>

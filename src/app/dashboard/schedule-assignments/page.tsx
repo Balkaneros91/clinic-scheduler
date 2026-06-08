@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 import { ScheduleAssignmentCreateDialog } from "@/components/ScheduleAssignmentCreateDialog";
 
@@ -155,7 +155,7 @@ export default async function ScheduleAssignmentsPage({
                       <form action={deleteScheduleAssignmentAction}>
                         <input type="hidden" name="id" value={assignment.id} />
 
-                        <DeleteButton message="Are you sure you want to delete this schedule assignment?" />
+                        <ConfirmActionButton message="Are you sure you want to delete this schedule assignment?" />
                       </form>
                     </div>
                   </td>

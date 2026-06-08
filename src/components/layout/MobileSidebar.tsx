@@ -15,6 +15,7 @@ type MobileSidebarProps = {
     href: string;
     icon: React.ComponentType<{ className?: string }>;
   }[];
+  userRole: "ADMIN" | "EMPLOYEE";
 };
 
 export function MobileSidebar({
@@ -22,6 +23,7 @@ export function MobileSidebar({
   onClose,
   pathname,
   navItems,
+  userRole,
 }: MobileSidebarProps) {
   if (!isOpen) {
     return null;
@@ -44,7 +46,7 @@ export function MobileSidebar({
             </p>
 
             <h1 className="mt-2 text-xl font-bold text-slate-900">
-              Admin Dashboard
+              {userRole === "ADMIN" ? "Admin Dashboard" : "Employee Dashboard"}
             </h1>
           </div>
 

@@ -45,7 +45,7 @@ export default function DashboardPage() {
       <section className="mx-auto max-w-7xl">
         <div className="mb-8 rounded-2xl bg-slate-900 px-8 py-10 text-white shadow-sm">
           <p className="mb-3 text-sm font-medium uppercase tracking-wide text-slate-300">
-            Clinic Scheduler MVP
+            Clinic Scheduler
           </p>
 
           <div className="max-w-3xl">

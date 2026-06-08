@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 import { TimeSelect } from "@/components/TimeSelect";
 
@@ -162,7 +162,7 @@ export default async function ShiftTemplatesPage({
                           value={shiftTemplate.id}
                         />
 
-                        <DeleteButton message="Are you sure you want to delete this shift template?" />
+                        <ConfirmActionButton message="Are you sure you want to delete this shift template?" />
                       </form>
                     </div>
                   </td>

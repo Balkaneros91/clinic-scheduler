@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 
 import { employeeService } from "@/server/services/employee.service";
@@ -102,7 +102,7 @@ export default async function EmployeesPage() {
 
                       <form action={deleteEmployeeAction}>
                         <input type="hidden" name="id" value={employee.id} />
-                        <DeleteButton message="Are you sure you want to delete this employee?" />
+                        <ConfirmActionButton message="Are you sure you want to delete this employee?" />
                       </form>
                     </div>
                   </td>

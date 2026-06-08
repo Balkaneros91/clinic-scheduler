@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { DeleteButton } from "@/components/DeleteButton";
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
 
@@ -118,7 +118,7 @@ export default async function DepartmentsPage() {
                       <form action={deleteDepartmentAction}>
                         <input type="hidden" name="id" value={department.id} />
 
-                        <DeleteButton message="Are you sure you want to delete this department?" />
+                        <ConfirmActionButton message="Are you sure you want to delete this department?" />
                       </form>
                     </div>
                   </td>

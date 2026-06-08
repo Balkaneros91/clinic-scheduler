@@ -1,8 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+
+import { ConfirmActionButton } from "@/components/ConfirmActionButton";
+
 import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
 
 export function LogoutButton() {
   const router = useRouter();
@@ -15,8 +17,13 @@ export function LogoutButton() {
   }
 
   return (
-    <Button type="button" variant="outline" onClick={handleLogout}>
-      Logout
-    </Button>
+    <form action={handleLogout}>
+      <ConfirmActionButton
+        title="Confirm logout"
+        message="Are you sure you want to log out?"
+        buttonText="Logout"
+        confirmText="Logout"
+      />
+    </form>
   );
 }
