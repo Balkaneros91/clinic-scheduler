@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { updateScheduleAssignmentAction } from "@/app/dashboard/schedule-assignments/actions/schedule-assignment.actions";
 import { Button } from "@/components/ui/button";
 import { DateSelectField } from "@/components/DateSelectField";
+import { requireRole } from "@/lib/auth/requireRole";
 
 type EditScheduleAssignmentPageProps = {
   params: Promise<{
@@ -16,6 +17,8 @@ export default async function EditScheduleAssignmentPage({
   params,
 }: EditScheduleAssignmentPageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const assignment = await prisma.scheduleAssignment.findUnique({
     where: { id },

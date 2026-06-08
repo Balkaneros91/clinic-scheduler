@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { updateShiftTemplateAction } from "@/app/dashboard/shift-templates/actions/shift-template.actions";
 import { Button } from "@/components/ui/button";
 import { TimeSelect } from "@/components/TimeSelect";
+import { requireRole } from "@/lib/auth/requireRole";
 
 type EditShiftTemplatePageProps = {
   params: Promise<{
@@ -16,6 +17,8 @@ export default async function EditShiftTemplatePage({
   params,
 }: EditShiftTemplatePageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const shiftTemplate = await prisma.shiftTemplate.findUnique({
     where: { id },

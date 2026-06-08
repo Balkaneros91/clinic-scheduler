@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ScheduleMonthYearFields } from "@/components/ScheduleMonthYearFields";
 import { updateScheduleAction } from "@/app/dashboard/schedules/actions/schedule.actions";
+import { requireRole } from "@/lib/auth/requireRole";
+
 import { prisma } from "@/lib/prisma";
 
 type EditSchedulePageProps = {
@@ -16,6 +18,8 @@ export default async function EditSchedulePage({
   params,
 }: EditSchedulePageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const schedule = await prisma.schedule.findUnique({
     where: { id },

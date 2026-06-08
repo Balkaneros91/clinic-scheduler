@@ -3,10 +3,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 import { createEmployeeAction } from "@/app/dashboard/employees/actions/employee.actions";
+import { requireRole } from "@/lib/auth/requireRole";
 
 import { prisma } from "@/lib/prisma";
 
 export default async function NewEmployeePage() {
+  await requireRole("ADMIN");
+
   const roles = await prisma.role.findMany({
     orderBy: {
       name: "asc",

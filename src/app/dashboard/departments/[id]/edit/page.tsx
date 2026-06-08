@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { updateDepartmentAction } from "@/app/dashboard/departments/actions/department.actions";
 import { Button } from "@/components/ui/button";
+import { requireRole } from "@/lib/auth/requireRole";
 
 type EditDepartmentPageProps = {
   params: Promise<{
@@ -15,6 +16,8 @@ export default async function EditDepartmentPage({
   params,
 }: EditDepartmentPageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const department = await prisma.department.findUnique({
     where: { id },

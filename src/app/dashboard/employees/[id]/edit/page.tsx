@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { employeeService } from "@/server/services/employee.service";
 import { updateEmployeeAction } from "@/app/dashboard/employees/actions/employee.actions";
 
+import { requireRole } from "@/lib/auth/requireRole";
+
 type EditEmployeePageProps = {
   params: Promise<{
     id: string;
@@ -18,6 +20,8 @@ export default async function EditEmployeePage({
   params,
 }: EditEmployeePageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const employee = await employeeService.getEmployeeById(id);
 
