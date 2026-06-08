@@ -6,7 +6,11 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { createDepartmentSchema } from "@/lib/validations/department";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createDepartmentAction(formData: FormData) {
+  await requireAdmin();
+
   const rawData = {
     name: formData.get("name"),
   };
@@ -21,6 +25,8 @@ export async function createDepartmentAction(formData: FormData) {
 }
 
 export async function deleteDepartmentAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await prisma.department.delete({
@@ -31,6 +37,8 @@ export async function deleteDepartmentAction(formData: FormData) {
 }
 
 export async function updateDepartmentAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   const rawData = {

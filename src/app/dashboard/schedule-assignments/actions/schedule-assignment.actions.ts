@@ -6,7 +6,11 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { createScheduleAssignmentSchema } from "@/lib/validations/schedule-assignment";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createScheduleAssignmentAction(formData: FormData) {
+  await requireAdmin();
+
   const rawData = {
     date: formData.get("date"),
     scheduleId: formData.get("scheduleId"),
@@ -34,6 +38,8 @@ export async function createScheduleAssignmentAction(formData: FormData) {
 }
 
 export async function deleteScheduleAssignmentAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await prisma.scheduleAssignment.delete({
@@ -45,6 +51,8 @@ export async function deleteScheduleAssignmentAction(formData: FormData) {
 }
 
 export async function updateScheduleAssignmentAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   const rawData = {

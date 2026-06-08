@@ -8,7 +8,11 @@ import { redirect } from "next/navigation";
 
 import { createShiftTemplateSchema } from "@/lib/validations/shift-template";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createShiftTemplateAction(formData: FormData) {
+  await requireAdmin();
+
   const rawData = {
     name: formData.get("name"),
     startTime: formData.get("startTime"),
@@ -38,6 +42,8 @@ export async function createShiftTemplateAction(formData: FormData) {
 }
 
 export async function deleteShiftTemplateAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await prisma.shiftTemplate.delete({
@@ -49,6 +55,8 @@ export async function deleteShiftTemplateAction(formData: FormData) {
 }
 
 export async function updateShiftTemplateAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   const rawData = {

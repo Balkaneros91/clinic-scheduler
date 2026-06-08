@@ -4,7 +4,11 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { employeeService } from "@/server/services/employee.service";
 
+import { requireAdmin } from "@/lib/auth/requireAdmin";
+
 export async function createEmployeeAction(formData: FormData) {
+  await requireAdmin();
+
   const firstName = formData.get("firstName") as string;
   const lastName = formData.get("lastName") as string;
   const roleId = formData.get("roleId") as string;
@@ -39,6 +43,8 @@ export async function createEmployeeAction(formData: FormData) {
 }
 
 export async function deleteEmployeeAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
 
   await employeeService.deleteEmployee(id);
@@ -47,6 +53,8 @@ export async function deleteEmployeeAction(formData: FormData) {
 }
 
 export async function updateEmployeeAction(formData: FormData) {
+  await requireAdmin();
+
   const id = formData.get("id") as string;
   const firstName = formData.get("firstName") as string;
   const lastName = formData.get("lastName") as string;
