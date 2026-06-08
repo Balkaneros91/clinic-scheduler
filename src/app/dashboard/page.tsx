@@ -46,42 +46,40 @@ export default async function DashboardPage() {
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
-  const myUpcomingAssignments =
-    !isAdmin && currentUser
-      ? await prisma.scheduleAssignment.findMany({
-          where: {
-            employeeId: currentUser.id,
-            date: {
-              gte: new Date(),
-            },
+  const myUpcomingAssignments = currentUser
+    ? await prisma.scheduleAssignment.findMany({
+        where: {
+          employeeId: currentUser.id,
+          date: {
+            gte: new Date(),
           },
-          include: {
-            schedule: true,
-            department: true,
-            shift: true,
-          },
-          orderBy: {
-            date: "asc",
-          },
-          take: 5,
-        })
-      : [];
+        },
+        include: {
+          schedule: true,
+          department: true,
+          shift: true,
+        },
+        orderBy: {
+          date: "asc",
+        },
+        take: 5,
+      })
+    : [];
 
-  const myAbsences =
-    !isAdmin && currentUser
-      ? await prisma.absence.findMany({
-          where: {
-            employeeId: currentUser.id,
-          },
-          include: {
-            absenceType: true,
-          },
-          orderBy: {
-            startDate: "desc",
-          },
-          take: 5,
-        })
-      : [];
+  const myAbsences = currentUser
+    ? await prisma.absence.findMany({
+        where: {
+          employeeId: currentUser.id,
+        },
+        include: {
+          absenceType: true,
+        },
+        orderBy: {
+          startDate: "desc",
+        },
+        take: 5,
+      })
+    : [];
 
   if (!isAdmin) {
     return (
@@ -234,6 +232,66 @@ export default async function DashboardPage() {
             <p className="mt-1 text-sm text-slate-600">
               Review, edit and delete assignments when needed.
             </p>
+          </div>
+        </div>
+
+        <div className="mb-8 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-950">
+              My upcoming assignments
+            </h2>
+
+            {myUpcomingAssignments.length === 0 ? (
+              <p className="mt-4 text-sm text-slate-600">
+                No upcoming assignments found.
+              </p>
+            ) : (
+              <div className="mt-4 space-y-3">
+                {myUpcomingAssignments.map((assignment) => (
+                  <div
+                    key={assignment.id}
+                    className="rounded-xl border bg-slate-50 p-4">
+                    <p className="font-medium text-slate-950">
+                      {assignment.date.toLocaleDateString("sv-SE")}
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {assignment.department.name} · {assignment.shift.name} ·{" "}
+                      {assignment.shift.startTime}–{assignment.shift.endTime}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-950">
+              My recent absences
+            </h2>
+
+            {myAbsences.length === 0 ? (
+              <p className="mt-4 text-sm text-slate-600">
+                No absences registered.
+              </p>
+            ) : (
+              <div className="mt-4 space-y-3">
+                {myAbsences.map((absence) => (
+                  <div
+                    key={absence.id}
+                    className="rounded-xl border bg-slate-50 p-4">
+                    <p className="font-medium text-slate-950">
+                      {absence.absenceType.name}
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {absence.startDate.toLocaleDateString("sv-SE")} –{" "}
+                      {absence.endDate
+                        ? absence.endDate.toLocaleDateString("sv-SE")
+                        : "Open-ended"}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
