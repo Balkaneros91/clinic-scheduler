@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
 import { TimeSelect } from "@/components/TimeSelect";
+import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
 import { prisma } from "@/lib/prisma";
 
@@ -17,6 +18,9 @@ export default async function ShiftTemplatesPage({
   searchParams: Promise<{ error?: string }>;
 }) {
   const { error } = await searchParams;
+
+  const currentUser = await getCurrentUser();
+  const isAdmin = currentUser?.appRole === "ADMIN";
 
   const shiftTemplates = await prisma.shiftTemplate.findMany({
     orderBy: {
@@ -58,34 +62,36 @@ export default async function ShiftTemplatesPage({
         </div>
       )}
 
-      <form
-        action={createShiftTemplateAction}
-        className="rounded-2xl border bg-white p-5 shadow-sm">
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold text-slate-950">
-            Add shift template
-          </h2>
-          <p className="mt-1 text-sm text-slate-600">
-            Create reusable work periods such as morning, afternoon or lunch
-            break.
-          </p>
-        </div>
+      {isAdmin && (
+        <form
+          action={createShiftTemplateAction}
+          className="rounded-2xl border bg-white p-5 shadow-sm">
+          <div className="mb-4">
+            <h2 className="text-lg font-semibold text-slate-950">
+              Add shift template
+            </h2>
+            <p className="mt-1 text-sm text-slate-600">
+              Create reusable work periods such as morning, afternoon or lunch
+              break.
+            </p>
+          </div>
 
-        <div className="grid items-end gap-3 md:grid-cols-[1fr_140px_140px_auto]">
-          <input
-            type="text"
-            name="name"
-            placeholder="Example: Morning"
-            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-            required
-          />
+          <div className="grid items-end gap-3 md:grid-cols-[1fr_140px_140px_auto]">
+            <input
+              type="text"
+              name="name"
+              placeholder="Example: Morning"
+              className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+              required
+            />
 
-          <TimeSelect name="startTime" placeholder="Start time" />
-          <TimeSelect name="endTime" placeholder="End time" />
+            <TimeSelect name="startTime" placeholder="Start time" />
+            <TimeSelect name="endTime" placeholder="End time" />
 
-          <Button type="submit">Add Template</Button>
-        </div>
-      </form>
+            <Button type="submit">Add Template</Button>
+          </div>
+        </form>
+      )}
 
       <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
@@ -114,7 +120,7 @@ export default async function ShiftTemplatesPage({
                 <th className="px-4 py-3">Start</th>
                 <th className="px-4 py-3">End</th>
                 <th className="px-4 py-3">Type</th>
-                <th className="px-4 py-3 text-right">Actions</th>
+                {isAdmin && <th className="px-4 py-3 text-right">Actions</th>}
               </tr>
             </thead>
 
@@ -146,26 +152,28 @@ export default async function ShiftTemplatesPage({
                     </span>
                   </td>
 
-                  <td className="px-4 py-3">
-                    <div className="flex items-center justify-end gap-2">
-                      <Button asChild variant="outline">
-                        <Link
-                          href={`/dashboard/shift-templates/${shiftTemplate.id}/edit`}>
-                          Edit
-                        </Link>
-                      </Button>
+                  {isAdmin && (
+                    <td className="px-4 py-3">
+                      <div className="flex items-center justify-end gap-2">
+                        <Button asChild variant="outline">
+                          <Link
+                            href={`/dashboard/shift-templates/${shiftTemplate.id}/edit`}>
+                            Edit
+                          </Link>
+                        </Button>
 
-                      <form action={deleteShiftTemplateAction}>
-                        <input
-                          type="hidden"
-                          name="id"
-                          value={shiftTemplate.id}
-                        />
+                        <form action={deleteShiftTemplateAction}>
+                          <input
+                            type="hidden"
+                            name="id"
+                            value={shiftTemplate.id}
+                          />
 
-                        <ConfirmActionButton message="Are you sure you want to delete this shift template?" />
-                      </form>
-                    </div>
-                  </td>
+                          <ConfirmActionButton message="Are you sure you want to delete this shift template?" />
+                        </form>
+                      </div>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
