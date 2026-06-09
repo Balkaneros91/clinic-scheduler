@@ -14,19 +14,77 @@ import {
 type ScheduleAssignmentsPageProps = {
   searchParams: Promise<{
     scheduleId?: string;
+    query?: string;
   }>;
 };
 
 export default async function ScheduleAssignmentsPage({
   searchParams,
 }: ScheduleAssignmentsPageProps) {
-  const { scheduleId } = await searchParams;
+  const { scheduleId, query } = await searchParams;
+  const trimmedQuery = query?.trim();
+  const searchTerms = trimmedQuery
+    ? trimmedQuery
+        .split(/[,\s]+/)
+        .map((term) => term.trim())
+        .filter(Boolean)
+    : [];
 
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
-    where: scheduleId ? { scheduleId } : undefined,
+    where: {
+      ...(scheduleId ? { scheduleId } : {}),
+      ...(searchTerms.length > 0
+        ? {
+            AND: searchTerms.map((term) => ({
+              OR: [
+                {
+                  employee: {
+                    firstName: {
+                      contains: term,
+                      mode: "insensitive" as const,
+                    },
+                  },
+                },
+                {
+                  employee: {
+                    lastName: {
+                      contains: term,
+                      mode: "insensitive" as const,
+                    },
+                  },
+                },
+                {
+                  department: {
+                    name: {
+                      contains: term,
+                      mode: "insensitive" as const,
+                    },
+                  },
+                },
+                {
+                  shift: {
+                    name: {
+                      contains: term,
+                      mode: "insensitive" as const,
+                    },
+                  },
+                },
+                {
+                  schedule: {
+                    name: {
+                      contains: term,
+                      mode: "insensitive" as const,
+                    },
+                  },
+                },
+              ],
+            })),
+          }
+        : {}),
+    },
     include: {
       schedule: true,
       employee: true,
@@ -96,6 +154,36 @@ export default async function ScheduleAssignmentsPage({
           />
         </div>
       )}
+
+      <form className="rounded-2xl border bg-white p-5 shadow-sm">
+        <div className="grid gap-3 md:grid-cols-[1fr_220px_auto_auto]">
+          <input
+            type="text"
+            name="query"
+            defaultValue={query ?? ""}
+            placeholder="Search employee, department, shift or schedule"
+            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+          />
+
+          <select
+            name="scheduleId"
+            defaultValue={scheduleId ?? ""}
+            className="h-10 rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200">
+            <option value="">All schedules</option>
+            {schedules.map((schedule) => (
+              <option key={schedule.id} value={schedule.id}>
+                {schedule.name}
+              </option>
+            ))}
+          </select>
+
+          <Button type="submit">Filter</Button>
+
+          <Button asChild variant="outline">
+            <Link href="/dashboard/schedule-assignments">Clear</Link>
+          </Button>
+        </div>
+      </form>
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         {scheduleAssignments.length === 0 ? (
