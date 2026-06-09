@@ -1,6 +1,8 @@
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 import { DashboardShell } from "./DashboardShell";
 
+import { redirect } from "next/navigation";
+
 export default async function DashboardLayout({
   children,
 }: {
@@ -8,14 +10,14 @@ export default async function DashboardLayout({
 }) {
   const currentUser = await getCurrentUser();
 
+  if (!currentUser) {
+    redirect("/auth/login");
+  }
+
   return (
     <DashboardShell
-      userName={
-        currentUser
-          ? `${currentUser.firstName} ${currentUser.lastName}`
-          : "Unknown user"
-      }
-      userRole={currentUser?.appRole ?? "EMPLOYEE"}>
+      userName={`${currentUser.firstName} ${currentUser.lastName}`}
+      userRole={currentUser.appRole}>
       {children}
     </DashboardShell>
   );
