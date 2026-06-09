@@ -36,6 +36,8 @@ export function ForgotPasswordForm() {
       return;
     }
 
+    setEmail("");
+
     setMessage(
       "If an account exists for this email, a reset link has been sent.",
     );
