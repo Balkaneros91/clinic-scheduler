@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { TimeSelect } from "@/components/TimeSelect";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 import { prisma } from "@/lib/prisma";
 
 import {
@@ -15,9 +17,9 @@ import {
 export default async function ShiftTemplatesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ success?: string; error?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { success, error } = await searchParams;
 
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
@@ -28,8 +30,31 @@ export default async function ShiftTemplatesPage({
     },
   });
 
+  const successMessages: Record<string, string> = {
+    created: "Shift template created.",
+    updated: "Shift template updated.",
+    deleted: "Shift template deleted.",
+  };
+
+  const errorMessages: Record<string, string> = {
+    duplicate: "A shift template with this name already exists.",
+    "in-use":
+      "This shift template is used in schedule assignments and cannot be deleted.",
+  };
+
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          type={success === "deleted" ? "error" : "success"}
+          message={successMessages[success]}
+        />
+      )}
+
+      {error && errorMessages[error] && (
+        <ToastMessage type="error" message={errorMessages[error]} />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
@@ -50,9 +75,9 @@ export default async function ShiftTemplatesPage({
         </div>
       </div>
 
-      {error === "duplicate" && (
+      {error && errorMessages[error] && (
         <div className="flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-          <span>A shift template with this name already exists.</span>
+          <span>{errorMessages[error]}</span>
 
           <Link
             href="/dashboard/shift-templates"

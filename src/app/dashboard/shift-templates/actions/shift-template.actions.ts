@@ -38,7 +38,7 @@ export async function createShiftTemplateAction(formData: FormData) {
   }
 
   revalidatePath("/dashboard/shift-templates");
-  redirect("/dashboard/shift-templates");
+  redirect("/dashboard/shift-templates?success=created");
 }
 
 export async function deleteShiftTemplateAction(formData: FormData) {
@@ -46,12 +46,22 @@ export async function deleteShiftTemplateAction(formData: FormData) {
 
   const id = formData.get("id") as string;
 
+  const assignmentCount = await prisma.scheduleAssignment.count({
+    where: {
+      shiftId: id,
+    },
+  });
+
+  if (assignmentCount > 0) {
+    redirect("/dashboard/shift-templates?error=in-use");
+  }
+
   await prisma.shiftTemplate.delete({
     where: { id },
   });
 
   revalidatePath("/dashboard/shift-templates");
-  redirect("/dashboard/shift-templates");
+  redirect("/dashboard/shift-templates?success=deleted");
 }
 
 export async function updateShiftTemplateAction(formData: FormData) {
@@ -74,5 +84,5 @@ export async function updateShiftTemplateAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/shift-templates");
-  redirect("/dashboard/shift-templates");
+  redirect("/dashboard/shift-templates?success=updated");
 }
