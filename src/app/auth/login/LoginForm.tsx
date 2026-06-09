@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -69,6 +71,14 @@ export function LoginForm() {
               onChange={(event) => setPassword(event.target.value)}
               required
             />
+          </div>
+
+          <div className="flex justify-start">
+            <Link
+              href="/auth/forgot-password"
+              className="text-sm font-medium text-slate-600 underline-offset-4 hover:text-slate-950 hover:underline">
+              Forgot password?
+            </Link>
           </div>
 
           {errorMessage && (
