@@ -5,12 +5,24 @@ import { Button } from "@/components/ui/button";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 import { prisma } from "@/lib/prisma";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 import {
   createDepartmentAction,
   deleteDepartmentAction,
 } from "@/app/dashboard/departments/actions/department.actions";
 
-export default async function DepartmentsPage() {
+type DepartmentsPageProps = {
+  searchParams: Promise<{
+    success?: string;
+  }>;
+};
+
+export default async function DepartmentsPage({
+  searchParams,
+}: DepartmentsPageProps) {
+  const { success } = await searchParams;
+
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
@@ -20,8 +32,21 @@ export default async function DepartmentsPage() {
     },
   });
 
+  const successMessages: Record<string, string> = {
+    created: "Department created.",
+    updated: "Department updated.",
+    deleted: "Department deleted.",
+  };
+
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          type={success === "deleted" ? "error" : "success"}
+          message={successMessages[success]}
+        />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
