@@ -135,6 +135,17 @@ export default async function EditEmployeePage({
             </select>
           </div>
 
+          <div>
+            <label className="text-sm font-medium text-slate-700">Status</label>
+            <select
+              name="isActive"
+              defaultValue={employee.isActive ? "true" : "false"}
+              className="mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200">
+              <option value="true">Active</option>
+              <option value="false">Inactive</option>
+            </select>
+          </div>
+
           <div className="md:col-span-2">
             <label className="text-sm font-medium text-slate-700">
               Responsibilities

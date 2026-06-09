@@ -60,12 +60,13 @@ export async function updateEmployeeAction(formData: FormData) {
   const lastName = formData.get("lastName") as string;
   const roleId = formData.get("roleId") as string;
   const employmentTypeId = formData.get("employmentTypeId") as string;
-
+  const isActive = formData.get("isActive") === "true";
   const responsibilityIds = formData.getAll("responsibilityIds") as string[];
 
   await employeeService.updateEmployee(id, {
     firstName,
     lastName,
+    isActive,
     role: {
       connect: {
         id: roleId,
