@@ -57,6 +57,7 @@ export async function createScheduleAction(formData: FormData) {
   }
 
   revalidatePath("/dashboard/schedules");
+  redirect("/dashboard/schedules?success=created");
 }
 
 export async function deleteScheduleAction(formData: FormData) {
@@ -64,11 +65,22 @@ export async function deleteScheduleAction(formData: FormData) {
 
   const id = formData.get("id") as string;
 
+  const assignmentCount = await prisma.scheduleAssignment.count({
+    where: {
+      scheduleId: id,
+    },
+  });
+
+  if (assignmentCount > 0) {
+    redirect("/dashboard/schedules?error=in-use");
+  }
+
   await prisma.schedule.delete({
     where: { id },
   });
 
   revalidatePath("/dashboard/schedules");
+  redirect("/dashboard/schedules?success=deleted");
 }
 
 export async function updateScheduleAction(formData: FormData) {
@@ -90,5 +102,5 @@ export async function updateScheduleAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/schedules");
-  redirect("/dashboard/schedules");
+  redirect("/dashboard/schedules?success=updated");
 }

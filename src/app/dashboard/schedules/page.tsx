@@ -8,6 +8,8 @@ import { prisma } from "@/lib/prisma";
 import { ScheduleMonthYearFields } from "@/components/ScheduleMonthYearFields";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 import {
   createScheduleAction,
   deleteScheduleAction,
@@ -16,9 +18,9 @@ import {
 export default async function SchedulesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ success?: string; error?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { success, error } = await searchParams;
 
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
@@ -33,6 +35,17 @@ export default async function SchedulesPage({
     },
     orderBy: [{ year: "desc" }, { month: "desc" }],
   });
+
+  const successMessages: Record<string, string> = {
+    created: "Schedule created.",
+    updated: "Schedule updated.",
+    deleted: "Schedule deleted.",
+  };
+
+  const errorMessages: Record<string, string> = {
+    duplicate: "A schedule for this month and year already exists.",
+    "in-use": "This schedule has assignments and cannot be deleted.",
+  };
 
   const monthNames = [
     "January",
@@ -51,6 +64,13 @@ export default async function SchedulesPage({
 
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          type={success === "deleted" ? "error" : "success"}
+          message={successMessages[success]}
+        />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
@@ -70,9 +90,9 @@ export default async function SchedulesPage({
         </div>
       </div>
 
-      {error === "duplicate" && (
+      {error && errorMessages[error] && (
         <div className="flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-          <span>A schedule for this month and year already exists.</span>
+          <span>{errorMessages[error]}</span>
 
           <Link
             href="/dashboard/schedules"
