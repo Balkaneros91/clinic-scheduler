@@ -18,7 +18,7 @@ export default async function AbsencesPage() {
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
-  const absences = await prisma.absence.findMany({
+  const absencesData = await prisma.absence.findMany({
     where: isAdmin
       ? undefined
       : {
@@ -31,6 +31,13 @@ export default async function AbsencesPage() {
     orderBy: {
       startDate: "desc",
     },
+  });
+
+  const absences = absencesData.sort((a, b) => {
+    if (a.status === "PENDING" && b.status !== "PENDING") return -1;
+    if (a.status !== "PENDING" && b.status === "PENDING") return 1;
+
+    return b.startDate.getTime() - a.startDate.getTime();
   });
 
   const employees = isAdmin
