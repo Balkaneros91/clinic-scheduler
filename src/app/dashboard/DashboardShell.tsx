@@ -141,7 +141,7 @@ export function DashboardShell({
         </aside>
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="border-b bg-white px-6 py-4 md:px-8">
+          <header className="sticky top-0 z-40 border-b bg-white px-6 py-4 md:px-8">
             <div className="mx-auto flex max-w-7xl items-center justify-between">
               <div className="flex min-w-0 items-center">
                 <button
