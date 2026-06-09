@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 import {
   approveAbsenceAction,
   createAbsenceAction,
@@ -14,7 +16,17 @@ import {
 } from "@/app/dashboard/absences/actions/absence.actions";
 import { AbsenceCreateDialog } from "@/components/AbsenceCreateDialog";
 
-export default async function AbsencesPage() {
+type AbsencesPageProps = {
+  searchParams: Promise<{
+    success?: string;
+    error?: string;
+  }>;
+};
+
+export default async function AbsencesPage({
+  searchParams,
+}: AbsencesPageProps) {
+  const { success, error } = await searchParams;
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
@@ -56,8 +68,36 @@ export default async function AbsencesPage() {
     },
   });
 
+  const successMessages: Record<string, string> = {
+    created: "Absence request submitted.",
+    approved: "Absence request approved.",
+    rejected: "Absence request rejected.",
+    deleted: "Absence deleted.",
+    updated: "Absence updated.",
+  };
+
+  const errorMessages: Record<string, string> = {
+    email: "Absence was saved, but the email notification could not be sent.",
+  };
+
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          key={success}
+          type={
+            success === "deleted" || success === "rejected"
+              ? "error"
+              : "success"
+          }
+          message={successMessages[success]}
+        />
+      )}
+
+      {error && errorMessages[error] && (
+        <ToastMessage key={error} type="error" message={errorMessages[error]} />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">

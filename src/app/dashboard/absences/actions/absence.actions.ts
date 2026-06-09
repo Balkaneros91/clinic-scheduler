@@ -44,6 +44,8 @@ export async function createAbsenceAction(formData: FormData) {
     },
   });
 
+  let emailFailed = false;
+
   if (currentUser.appRole !== "ADMIN") {
     try {
       const employee = await prisma.employee.findUnique({
@@ -68,12 +70,18 @@ export async function createAbsenceAction(formData: FormData) {
         });
       }
     } catch (error) {
+      emailFailed = true;
+
       console.error("Failed to send absence notification email:", error);
     }
   }
 
   revalidatePath("/dashboard/absences");
-  redirect("/dashboard/absences");
+  redirect(
+    emailFailed
+      ? "/dashboard/absences?error=email"
+      : "/dashboard/absences?success=created",
+  );
 }
 
 export async function deleteAbsenceAction(formData: FormData) {
@@ -86,7 +94,7 @@ export async function deleteAbsenceAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/absences");
-  redirect("/dashboard/absences");
+  redirect("/dashboard/absences?success=deleted");
 }
 
 export async function updateAbsenceAction(formData: FormData) {
@@ -116,7 +124,7 @@ export async function updateAbsenceAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/absences");
-  redirect("/dashboard/absences");
+  redirect("/dashboard/absences?success=updated");
 }
 
 export async function approveAbsenceAction(formData: FormData) {
@@ -132,6 +140,7 @@ export async function approveAbsenceAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/absences");
+  redirect("/dashboard/absences?success=approved");
 }
 
 export async function rejectAbsenceAction(formData: FormData) {
@@ -147,4 +156,5 @@ export async function rejectAbsenceAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/absences");
+  redirect("/dashboard/absences?success=rejected");
 }
