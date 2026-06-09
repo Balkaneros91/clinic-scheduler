@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ScheduleAssignmentCreateDialog } from "@/components/ScheduleAssignmentCreateDialog";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 import {
   createScheduleAssignmentAction,
   deleteScheduleAssignmentAction,
@@ -16,13 +18,14 @@ type ScheduleAssignmentsPageProps = {
     scheduleId?: string;
     query?: string;
     page?: string;
+    success?: string;
   }>;
 };
 
 export default async function ScheduleAssignmentsPage({
   searchParams,
 }: ScheduleAssignmentsPageProps) {
-  const { scheduleId, query, page: pageParam } = await searchParams;
+  const { scheduleId, query, page: pageParam, success } = await searchParams;
   const trimmedQuery = query?.trim();
   const searchTerms = trimmedQuery
     ? trimmedQuery
@@ -96,6 +99,12 @@ export default async function ScheduleAssignmentsPage({
 
   const totalPages = Math.max(Math.ceil(totalAssignments / pageSize), 1);
 
+  const successMessages: Record<string, string> = {
+    created: "Schedule assignment created.",
+    updated: "Schedule assignment updated.",
+    deleted: "Schedule assignment deleted.",
+  };
+
   const schedules = await prisma.schedule.findMany({
     orderBy: [{ year: "desc" }, { month: "desc" }],
   });
@@ -114,6 +123,13 @@ export default async function ScheduleAssignmentsPage({
 
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          type={success === "deleted" ? "error" : "success"}
+          message={successMessages[success]}
+        />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">

@@ -96,6 +96,7 @@ export function AbsenceCreateDialog({
                   required
                   yearsBack={1}
                   yearsAhead={5}
+                  defaultValue={new Date().toISOString().split("T")[0]}
                 />
               </div>
             </div>
@@ -110,6 +111,7 @@ export function AbsenceCreateDialog({
                   required
                   yearsBack={1}
                   yearsAhead={5}
+                  defaultValue={new Date().toISOString().split("T")[0]}
                 />
               </div>
             </div>

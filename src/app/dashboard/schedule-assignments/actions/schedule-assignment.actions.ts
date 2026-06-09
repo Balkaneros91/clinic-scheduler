@@ -34,7 +34,7 @@ export async function createScheduleAssignmentAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/schedule-assignments");
-  redirect("/dashboard/schedule-assignments");
+  redirect("/dashboard/schedule-assignments?success=created");
 }
 
 export async function deleteScheduleAssignmentAction(formData: FormData) {
@@ -47,7 +47,7 @@ export async function deleteScheduleAssignmentAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/schedule-assignments");
-  redirect("/dashboard/schedule-assignments");
+  redirect("/dashboard/schedule-assignments?success=deleted");
 }
 
 export async function updateScheduleAssignmentAction(formData: FormData) {
@@ -79,5 +79,5 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/schedule-assignments");
-  redirect("/dashboard/schedule-assignments");
+  redirect("/dashboard/schedule-assignments?success=updated");
 }
