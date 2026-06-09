@@ -7,14 +7,39 @@ import { employeeService } from "@/server/services/employee.service";
 import { deleteEmployeeAction } from "@/app/dashboard/employees/actions/employee.actions";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
-export default async function EmployeesPage() {
+import { ToastMessage } from "@/components/ToastMessage";
+
+type EmployeesPageProps = {
+  searchParams: Promise<{
+    success?: string;
+  }>;
+};
+
+export default async function EmployeesPage({
+  searchParams,
+}: EmployeesPageProps) {
+  const { success } = await searchParams;
+
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
   const employees = await employeeService.getAllEmployees();
 
+  const successMessages: Record<string, string> = {
+    created: "Employee created.",
+    updated: "Employee updated.",
+    deleted: "Employee deleted.",
+  };
+
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage
+          type={success === "deleted" ? "error" : "success"}
+          message={successMessages[success]}
+        />
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-slate-500">
