@@ -230,8 +230,16 @@ export default async function ScheduleDetailsPage({
                           {assignment.shift.endTime}
                         </td>
 
-                        <td className="px-4 py-3 text-slate-500">
-                          {assignment.notes ?? "—"}
+                        <td className="px-4 py-3">
+                          {assignment.notes === "Generated automatically" ? (
+                            <span className="inline-flex whitespace-nowrap rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                              Auto-generated
+                            </span>
+                          ) : (
+                            <span className="text-slate-700">
+                              {assignment.notes ?? "-"}
+                            </span>
+                          )}
                         </td>
 
                         {isAdmin && (
