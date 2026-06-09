@@ -15,13 +15,14 @@ type ScheduleAssignmentsPageProps = {
   searchParams: Promise<{
     scheduleId?: string;
     query?: string;
+    page?: string;
   }>;
 };
 
 export default async function ScheduleAssignmentsPage({
   searchParams,
 }: ScheduleAssignmentsPageProps) {
-  const { scheduleId, query } = await searchParams;
+  const { scheduleId, query, page: pageParam } = await searchParams;
   const trimmedQuery = query?.trim();
   const searchTerms = trimmedQuery
     ? trimmedQuery
@@ -30,61 +31,52 @@ export default async function ScheduleAssignmentsPage({
         .filter(Boolean)
     : [];
 
+  const page = Math.max(Number(pageParam) || 1, 1);
+  const pageSize = 25;
+  const skip = (page - 1) * pageSize;
+
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
 
+  const assignmentWhere = {
+    ...(scheduleId ? { scheduleId } : {}),
+    ...(searchTerms.length > 0
+      ? {
+          AND: searchTerms.map((term) => ({
+            OR: [
+              {
+                employee: {
+                  firstName: { contains: term, mode: "insensitive" as const },
+                },
+              },
+              {
+                employee: {
+                  lastName: { contains: term, mode: "insensitive" as const },
+                },
+              },
+              {
+                department: {
+                  name: { contains: term, mode: "insensitive" as const },
+                },
+              },
+              {
+                shift: {
+                  name: { contains: term, mode: "insensitive" as const },
+                },
+              },
+              {
+                schedule: {
+                  name: { contains: term, mode: "insensitive" as const },
+                },
+              },
+            ],
+          })),
+        }
+      : {}),
+  };
+
   const scheduleAssignments = await prisma.scheduleAssignment.findMany({
-    where: {
-      ...(scheduleId ? { scheduleId } : {}),
-      ...(searchTerms.length > 0
-        ? {
-            AND: searchTerms.map((term) => ({
-              OR: [
-                {
-                  employee: {
-                    firstName: {
-                      contains: term,
-                      mode: "insensitive" as const,
-                    },
-                  },
-                },
-                {
-                  employee: {
-                    lastName: {
-                      contains: term,
-                      mode: "insensitive" as const,
-                    },
-                  },
-                },
-                {
-                  department: {
-                    name: {
-                      contains: term,
-                      mode: "insensitive" as const,
-                    },
-                  },
-                },
-                {
-                  shift: {
-                    name: {
-                      contains: term,
-                      mode: "insensitive" as const,
-                    },
-                  },
-                },
-                {
-                  schedule: {
-                    name: {
-                      contains: term,
-                      mode: "insensitive" as const,
-                    },
-                  },
-                },
-              ],
-            })),
-          }
-        : {}),
-    },
+    where: assignmentWhere,
     include: {
       schedule: true,
       employee: true,
@@ -94,7 +86,15 @@ export default async function ScheduleAssignmentsPage({
     orderBy: {
       date: "asc",
     },
+    take: pageSize,
+    skip,
   });
+
+  const totalAssignments = await prisma.scheduleAssignment.count({
+    where: assignmentWhere,
+  });
+
+  const totalPages = Math.max(Math.ceil(totalAssignments / pageSize), 1);
 
   const schedules = await prisma.schedule.findMany({
     orderBy: [{ year: "desc" }, { month: "desc" }],
@@ -129,8 +129,8 @@ export default async function ScheduleAssignmentsPage({
         </div>
 
         <div className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
-          {scheduleAssignments.length}{" "}
-          {scheduleAssignments.length === 1 ? "assignment" : "assignments"}
+          {totalAssignments}{" "}
+          {totalAssignments === 1 ? "assignment" : "assignments"}
         </div>
       </div>
 
@@ -265,6 +265,50 @@ export default async function ScheduleAssignmentsPage({
             </tbody>
           </table>
         )}
+      </div>
+
+      <div className="flex flex-col gap-3 rounded-2xl border bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-slate-600">
+          Page {page} of {totalPages}
+        </p>
+
+        <div className="flex gap-2">
+          <Button asChild variant="outline">
+            <Link
+              href={{
+                pathname: "/dashboard/schedule-assignments",
+                query: {
+                  ...(query ? { query } : {}),
+                  ...(scheduleId ? { scheduleId } : {}),
+                  page: Math.max(page - 1, 1),
+                },
+              }}
+              className={
+                page <= 1 ? "pointer-events-none opacity-50" : undefined
+              }>
+              Previous
+            </Link>
+          </Button>
+
+          <Button asChild variant="outline">
+            <Link
+              href={{
+                pathname: "/dashboard/schedule-assignments",
+                query: {
+                  ...(query ? { query } : {}),
+                  ...(scheduleId ? { scheduleId } : {}),
+                  page: Math.min(page + 1, totalPages),
+                },
+              }}
+              className={
+                page >= totalPages
+                  ? "pointer-events-none opacity-50"
+                  : undefined
+              }>
+              Next
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
