@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 import { prisma } from "@/lib/prisma";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 const dashboardItems = [
   {
     title: "Employees",
@@ -42,9 +44,22 @@ const dashboardItems = [
   },
 ];
 
-export default async function DashboardPage() {
+type DashboardPageProps = {
+  searchParams: Promise<{
+    success?: string;
+  }>;
+};
+
+export default async function DashboardPage({
+  searchParams,
+}: DashboardPageProps) {
+  const { success } = await searchParams;
   const currentUser = await getCurrentUser();
   const isAdmin = currentUser?.appRole === "ADMIN";
+
+  const successMessages: Record<string, string> = {
+    login: "Welcome back.",
+  };
 
   const myUpcomingAssignments = currentUser
     ? await prisma.scheduleAssignment.findMany({
@@ -85,6 +100,10 @@ export default async function DashboardPage() {
     return (
       <main className="min-h-screen bg-slate-50 px-6 py-8">
         <section className="mx-auto max-w-7xl space-y-8">
+          {success && successMessages[success] && (
+            <ToastMessage type="success" message={successMessages[success]} />
+          )}
+
           <div className="rounded-2xl bg-slate-900 px-8 py-10 text-white shadow-sm">
             <p className="mb-3 text-sm font-medium uppercase tracking-wide text-slate-300">
               Employee Dashboard
@@ -204,6 +223,10 @@ export default async function DashboardPage() {
   return (
     <main className="min-h-screen bg-slate-50 px-6 py-8">
       <section className="mx-auto max-w-7xl">
+        {success && successMessages[success] && (
+          <ToastMessage type="success" message={successMessages[success]} />
+        )}
+
         <div className="mb-8 rounded-2xl bg-slate-900 px-8 py-10 text-white shadow-sm">
           <p className="mb-3 text-sm font-medium uppercase tracking-wide text-slate-300">
             Clinic Scheduler
