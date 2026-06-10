@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { updateShiftTemplateSchema } from "@/lib/validations/shift-template";
 import { ZodError } from "zod";
 
+import { requireAdminApi } from "@/lib/auth/apiAuth";
+
 type RouteContext = {
   params: Promise<{
     id: string;
@@ -35,6 +37,12 @@ export async function GET(_request: Request, context: RouteContext) {
 }
 
 export async function PATCH(request: Request, context: RouteContext) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await context.params;
     const body = await request.json();
@@ -68,6 +76,12 @@ export async function PATCH(request: Request, context: RouteContext) {
 }
 
 export async function DELETE(_request: Request, context: RouteContext) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await context.params;
 
