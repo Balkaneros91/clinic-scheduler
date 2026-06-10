@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { createScheduleAssignmentSchema } from "@/lib/validations/schedule-assignment";
 import { ZodError } from "zod";
 
+import { requireAdminApi } from "@/lib/auth/apiAuth";
+
 export async function GET() {
   try {
     const scheduleAssignments = await prisma.scheduleAssignment.findMany({
@@ -27,6 +29,12 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const body = await request.json();
 
