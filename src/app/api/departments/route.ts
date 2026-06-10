@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { createDepartmentSchema } from "@/lib/validations/department";
 import { ZodError } from "zod";
 
+import { requireAdminApi } from "@/lib/auth/apiAuth";
+
 export async function GET() {
   try {
     const departments = await prisma.department.findMany({
@@ -22,6 +24,12 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const body = await request.json();
 
