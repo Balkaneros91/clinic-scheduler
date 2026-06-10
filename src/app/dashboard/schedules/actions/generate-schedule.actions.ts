@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 import { prisma } from "@/lib/prisma";
 
@@ -96,6 +97,15 @@ export async function generateScheduleAction(formData: FormData) {
   if (!schedule) {
     throw new Error("Schedule not found");
   }
+
+  const existingGeneratedAssignments = await prisma.scheduleAssignment.count({
+    where: {
+      scheduleId: schedule.id,
+      notes: "Generated automatically",
+    },
+  });
+
+  const isRegeneration = existingGeneratedAssignments > 0;
 
   await prisma.scheduleAssignment.deleteMany({
     where: {
@@ -211,4 +221,10 @@ export async function generateScheduleAction(formData: FormData) {
   }
 
   revalidatePath(`/dashboard/schedules/${scheduleId}`);
+
+  redirect(
+    `/dashboard/schedules/${scheduleId}?success=${
+      isRegeneration ? "regenerated" : "generated"
+    }`,
+  );
 }

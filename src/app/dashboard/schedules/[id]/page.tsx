@@ -7,9 +7,14 @@ import { prisma } from "@/lib/prisma";
 import { generateScheduleAction } from "@/app/dashboard/schedules/actions/generate-schedule.actions";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 
+import { ToastMessage } from "@/components/ToastMessage";
+
 type ScheduleDetailsPageProps = {
   params: Promise<{
     id: string;
+  }>;
+  searchParams: Promise<{
+    success?: string;
   }>;
 };
 
@@ -30,7 +35,9 @@ const monthNames = [
 
 export default async function ScheduleDetailsPage({
   params,
+  searchParams,
 }: ScheduleDetailsPageProps) {
+  const { success } = await searchParams;
   const { id } = await params;
 
   const currentUser = await getCurrentUser();
@@ -68,8 +75,18 @@ export default async function ScheduleDetailsPage({
   const assignmentCount = schedule.assignments.length;
   const scheduledDaysCount = Object.keys(assignmentsByDate).length;
 
+  const successMessages: Record<string, string> = {
+    generated: "Schedule assignments generated successfully.",
+    regenerated:
+      "Schedule assignments regenerated. Manual assignments were preserved.",
+  };
+
   return (
     <section className="space-y-8">
+      {success && successMessages[success] && (
+        <ToastMessage type="success" message={successMessages[success]} />
+      )}
+
       <div className="rounded-2xl border bg-white p-6 shadow-sm">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
           <div>
