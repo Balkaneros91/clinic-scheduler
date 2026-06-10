@@ -11,6 +11,12 @@ type RouteParams = {
 };
 
 export async function GET(_request: Request, { params }: RouteParams) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await params;
 

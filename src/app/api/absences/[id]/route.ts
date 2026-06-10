@@ -11,6 +11,12 @@ type RouteContext = {
 };
 
 export async function GET(_request: Request, context: RouteContext) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await context.params;
 

@@ -5,6 +5,12 @@ import { ZodError } from "zod";
 import { requireAdminApi } from "@/lib/auth/apiAuth";
 
 export async function GET() {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const scheduleAssignments = await prisma.scheduleAssignment.findMany({
       include: {
