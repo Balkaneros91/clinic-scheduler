@@ -10,7 +10,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-const timeOptions = ["07:30", "08:00", "12:00", "12:30", "14:00", "17:00"];
+const timeOptions = [
+  "07:30",
+  "08:00",
+  "12:00",
+  "12:30",
+  "14:00",
+  "17:00",
+  "18:00",
+  "19:00",
+  "20:00",
+];
 
 type TimeSelectProps = {
   name: string;
