@@ -32,7 +32,11 @@ export function AbsenceCreateDialog({
   absenceTypes,
   action,
 }: AbsenceCreateDialogProps) {
+  const today = new Date().toISOString().split("T")[0];
   const [open, setOpen] = useState(false);
+  const [startDate, setStartDate] = useState(today);
+
+  const singleEmployee = employees.length === 1 ? employees[0] : null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -54,18 +58,33 @@ export function AbsenceCreateDialog({
               <label className="text-sm font-medium text-slate-700">
                 Employee
               </label>
-              <select
-                name="employeeId"
-                className="mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-                required>
-                <option value="">Select employee</option>
 
-                {employees.map((employee) => (
-                  <option key={employee.id} value={employee.id}>
-                    {employee.firstName} {employee.lastName}
-                  </option>
-                ))}
-              </select>
+              {singleEmployee ? (
+                <>
+                  <input
+                    type="hidden"
+                    name="employeeId"
+                    value={singleEmployee.id}
+                  />
+
+                  <div className="mt-2 rounded-lg border bg-slate-50 px-3 py-2 text-sm text-slate-700">
+                    {singleEmployee.firstName} {singleEmployee.lastName}
+                  </div>
+                </>
+              ) : (
+                <select
+                  name="employeeId"
+                  className="mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+                  required>
+                  <option value="">Select employee</option>
+
+                  {employees.map((employee) => (
+                    <option key={employee.id} value={employee.id}>
+                      {employee.firstName} {employee.lastName}
+                    </option>
+                  ))}
+                </select>
+              )}
             </div>
 
             <div>
@@ -94,9 +113,15 @@ export function AbsenceCreateDialog({
                 <DateSelectField
                   name="startDate"
                   required
-                  yearsBack={1}
+                  yearsBack={0}
                   yearsAhead={5}
-                  defaultValue={new Date().toISOString().split("T")[0]}
+                  defaultValue={today}
+                  minDate={today}
+                  onDateChange={(date) => {
+                    if (date) {
+                      setStartDate(date);
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -109,9 +134,10 @@ export function AbsenceCreateDialog({
                 <DateSelectField
                   name="endDate"
                   required
-                  yearsBack={1}
+                  yearsBack={0}
                   yearsAhead={5}
-                  defaultValue={new Date().toISOString().split("T")[0]}
+                  defaultValue={startDate}
+                  minDate={startDate}
                 />
               </div>
             </div>

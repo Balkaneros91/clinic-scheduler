@@ -16,6 +16,8 @@ type DateSelectFieldProps = {
   yearsBack?: number;
   yearsAhead?: number;
   defaultValue?: string;
+  minDate?: string;
+  onDateChange?: (date: string) => void;
 };
 
 const months = [
@@ -39,6 +41,8 @@ export function DateSelectField({
   yearsBack = 1,
   yearsAhead = 5,
   defaultValue,
+  minDate,
+  onDateChange,
 }: DateSelectFieldProps) {
   const currentYear = new Date().getFullYear();
 
@@ -52,6 +56,8 @@ export function DateSelectField({
   const [month, setMonth] = useState(defaultMonth);
   const [day, setDay] = useState(defaultDay);
 
+  const [warningMessage, setWarningMessage] = useState("");
+
   const years = Array.from({ length: yearsBack + yearsAhead + 1 }, (_, index) =>
     String(currentYear - yearsBack + index),
   );
@@ -63,18 +69,30 @@ export function DateSelectField({
     String(index + 1).padStart(2, "0"),
   );
 
-  const dateValue = year && month && day ? `${year}-${month}-${day}` : "";
+  const today = new Date();
 
-  function handleMonthChange(value: string) {
-    setMonth(value);
+  const currentMonth = String(today.getMonth() + 1).padStart(2, "0");
+  const currentDay = String(today.getDate()).padStart(2, "0");
 
-    const nextDaysInMonth = year
-      ? new Date(Number(year), Number(value), 0).getDate()
-      : 31;
+  const availableMonths =
+    minDate && year === minDate.split("-")[0]
+      ? months.filter(
+          (monthOption) => monthOption.value >= minDate.split("-")[1],
+        )
+      : months;
 
-    if (day && Number(day) > nextDaysInMonth) {
-      setDay("");
-    }
+  const availableDays =
+    minDate && year === minDate.split("-")[0] && month === minDate.split("-")[1]
+      ? days.filter((dayOption) => dayOption >= minDate.split("-")[2])
+      : days;
+
+  const rawDateValue = year && month && day ? `${year}-${month}-${day}` : "";
+
+  const dateValue =
+    rawDateValue && minDate && rawDateValue < minDate ? "" : rawDateValue;
+
+  function isDateAllowed(nextDateValue: string) {
+    return !minDate || !nextDateValue || nextDateValue >= minDate;
   }
 
   function handleYearChange(value: string) {
@@ -89,8 +107,61 @@ export function DateSelectField({
 
       if (Number(day) > nextDaysInMonth) {
         setDay("");
+        onDateChange?.("");
+        return;
       }
+
+      const nextDateValue = `${value}-${month}-${day}`;
+
+      if (!isDateAllowed(nextDateValue)) {
+        setDay("");
+        onDateChange?.("");
+        return;
+      }
+
+      onDateChange?.(nextDateValue);
     }
+  }
+
+  function handleMonthChange(value: string) {
+    setMonth(value);
+
+    const nextDaysInMonth = year
+      ? new Date(Number(year), Number(value), 0).getDate()
+      : 31;
+
+    if (day && Number(day) > nextDaysInMonth) {
+      setDay("");
+      onDateChange?.("");
+      return;
+    }
+
+    if (year && day) {
+      const nextDateValue = `${year}-${value}-${day}`;
+
+      if (!isDateAllowed(nextDateValue)) {
+        setDay("");
+        onDateChange?.("");
+        return;
+      }
+
+      onDateChange?.(nextDateValue);
+    }
+  }
+
+  function handleDayChange(value: string) {
+    const nextDateValue = year && month ? `${year}-${month}-${value}` : "";
+
+    if (!isDateAllowed(nextDateValue)) {
+      setDay("");
+      onDateChange?.("");
+      setWarningMessage("Only today or future dates can be selected.");
+      return;
+    }
+
+    setWarningMessage("");
+    setDay(value);
+    onDateChange?.(nextDateValue);
   }
 
   return (
@@ -115,7 +186,7 @@ export function DateSelectField({
           <SelectValue placeholder="Month" />
         </SelectTrigger>
         <SelectContent>
-          {months.map((monthOption) => (
+          {availableMonths.map((monthOption) => (
             <SelectItem key={monthOption.value} value={monthOption.value}>
               {monthOption.label}
             </SelectItem>
@@ -123,12 +194,12 @@ export function DateSelectField({
         </SelectContent>
       </Select>
 
-      <Select value={day} onValueChange={setDay}>
+      <Select value={day} onValueChange={handleDayChange}>
         <SelectTrigger>
           <SelectValue placeholder="Day" />
         </SelectTrigger>
         <SelectContent>
-          {days.map((dayOption) => (
+          {availableDays.map((dayOption) => (
             <SelectItem key={dayOption} value={dayOption}>
               {dayOption}
             </SelectItem>
