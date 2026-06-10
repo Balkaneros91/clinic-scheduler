@@ -78,7 +78,7 @@ export default async function ScheduleDetailsPage({
   const successMessages: Record<string, string> = {
     generated: "Schedule assignments generated successfully.",
     regenerated:
-      "Schedule assignments regenerated. Manual assignments were preserved.",
+      "Schedule regenerated. Existing generated assignments were replaced, while manual assignments were preserved.",
   };
 
   return (
@@ -117,7 +117,7 @@ export default async function ScheduleDetailsPage({
                 <Button
                   type="submit"
                   className="bg-emerald-600 text-white hover:bg-emerald-700">
-                  Generate Schedule
+                  Generate / Regenerate Schedule
                 </Button>
               </form>
 
