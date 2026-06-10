@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { createAbsenceSchema } from "@/lib/validations/absence";
 import { ZodError } from "zod";
 
+import { requireAdminApi } from "@/lib/auth/apiAuth";
+
 export async function GET() {
   try {
     const absences = await prisma.absence.findMany({
@@ -26,6 +28,12 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const body = await request.json();
 
