@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { createEmployeeSchema } from "@/lib/validations/employee";
 import { ZodError } from "zod";
 
+import { requireAdminApi } from "@/lib/auth/apiAuth";
+
 type RouteParams = {
   params: Promise<{
     id: string;
@@ -37,6 +39,12 @@ export async function GET(_request: Request, { params }: RouteParams) {
 }
 
 export async function PUT(request: Request, { params }: RouteParams) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await params;
     const body = await request.json();
@@ -75,6 +83,12 @@ export async function PUT(request: Request, { params }: RouteParams) {
 }
 
 export async function DELETE(_request: Request, { params }: RouteParams) {
+  const authResult = await requireAdminApi();
+
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     const { id } = await params;
 
