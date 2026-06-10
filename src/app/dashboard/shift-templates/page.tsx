@@ -101,7 +101,7 @@ export default async function ShiftTemplatesPage({
             </p>
           </div>
 
-          <div className="grid items-end gap-3 md:grid-cols-[1fr_140px_140px_auto]">
+          <div className="grid items-end gap-3 md:grid-cols-[1fr_140px_140px_160px_auto]">
             <input
               type="text"
               name="name"
@@ -112,6 +112,14 @@ export default async function ShiftTemplatesPage({
 
             <TimeSelect name="startTime" placeholder="Start time" />
             <TimeSelect name="endTime" placeholder="End time" />
+
+            <select
+              name="isBreak"
+              defaultValue="false"
+              className="mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200">
+              <option value="false">Work shift</option>
+              <option value="true">Break</option>
+            </select>
 
             <Button type="submit">Add Template</Button>
           </div>

@@ -14,13 +14,26 @@ export async function createShiftTemplateAction(formData: FormData) {
   await requireAdmin();
 
   const rawData = {
-    name: formData.get("name"),
+    name: formData.get("name")?.toString().trim(),
     startTime: formData.get("startTime"),
     endTime: formData.get("endTime"),
-    isBreak: false,
+    isBreak: formData.get("isBreak") === "true",
   };
 
   const validatedData = createShiftTemplateSchema.parse(rawData);
+
+  const existingShiftTemplate = await prisma.shiftTemplate.findFirst({
+    where: {
+      name: {
+        equals: validatedData.name,
+        mode: "insensitive",
+      },
+    },
+  });
+
+  if (existingShiftTemplate) {
+    redirect("/dashboard/shift-templates?error=duplicate");
+  }
 
   try {
     await prisma.shiftTemplate.create({
@@ -70,13 +83,29 @@ export async function updateShiftTemplateAction(formData: FormData) {
   const id = formData.get("id") as string;
 
   const rawData = {
-    name: formData.get("name"),
+    name: formData.get("name")?.toString().trim(),
     startTime: formData.get("startTime"),
     endTime: formData.get("endTime"),
-    isBreak: false,
+    isBreak: formData.get("isBreak") === "true",
   };
 
   const validatedData = createShiftTemplateSchema.parse(rawData);
+
+  const existingShiftTemplate = await prisma.shiftTemplate.findFirst({
+    where: {
+      id: {
+        not: id,
+      },
+      name: {
+        equals: validatedData.name,
+        mode: "insensitive",
+      },
+    },
+  });
+
+  if (existingShiftTemplate) {
+    redirect("/dashboard/shift-templates?error=duplicate");
+  }
 
   await prisma.shiftTemplate.update({
     where: { id },

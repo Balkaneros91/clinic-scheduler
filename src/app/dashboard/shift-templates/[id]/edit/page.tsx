@@ -107,6 +107,23 @@ export default async function EditShiftTemplatePage({
           </div>
         </div>
 
+        <div className="md:col-span-2">
+          <label
+            htmlFor="isBreak"
+            className="text-sm font-medium text-slate-700">
+            Type
+          </label>
+
+          <select
+            id="isBreak"
+            name="isBreak"
+            defaultValue={shiftTemplate.isBreak ? "true" : "false"}
+            className="mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-200">
+            <option value="false">Work shift</option>
+            <option value="true">Break</option>
+          </select>
+        </div>
+
         <div className="mt-6 flex items-center gap-3">
           <Button type="submit">Save changes</Button>
 
