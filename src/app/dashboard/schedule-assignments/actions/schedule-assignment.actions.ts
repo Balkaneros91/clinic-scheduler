@@ -22,9 +22,25 @@ export async function createScheduleAssignmentAction(formData: FormData) {
 
   const validatedData = createScheduleAssignmentSchema.parse(rawData);
 
+  const assignmentDate = new Date(validatedData.date);
+
+  const existingAssignment = await prisma.scheduleAssignment.findFirst({
+    where: {
+      scheduleId: validatedData.scheduleId,
+      date: assignmentDate,
+      employeeId: validatedData.employeeId,
+      departmentId: validatedData.departmentId,
+      shiftId: validatedData.shiftId,
+    },
+  });
+
+  if (existingAssignment) {
+    redirect("/dashboard/schedule-assignments?error=duplicate");
+  }
+
   await prisma.scheduleAssignment.create({
     data: {
-      date: new Date(validatedData.date),
+      date: assignmentDate,
       scheduleId: validatedData.scheduleId,
       employeeId: validatedData.employeeId,
       departmentId: validatedData.departmentId,
@@ -67,10 +83,29 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
 
   const validatedData = createScheduleAssignmentSchema.parse(rawData);
 
+  const assignmentDate = new Date(validatedData.date);
+
+  const existingAssignment = await prisma.scheduleAssignment.findFirst({
+    where: {
+      id: {
+        not: id,
+      },
+      scheduleId: validatedData.scheduleId,
+      date: assignmentDate,
+      employeeId: validatedData.employeeId,
+      departmentId: validatedData.departmentId,
+      shiftId: validatedData.shiftId,
+    },
+  });
+
+  if (existingAssignment) {
+    redirect("/dashboard/schedule-assignments?error=duplicate");
+  }
+
   await prisma.scheduleAssignment.update({
     where: { id },
     data: {
-      date: new Date(validatedData.date),
+      date: assignmentDate,
       scheduleId: validatedData.scheduleId,
       employeeId: validatedData.employeeId,
       departmentId: validatedData.departmentId,

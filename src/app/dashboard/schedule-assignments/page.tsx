@@ -19,13 +19,20 @@ type ScheduleAssignmentsPageProps = {
     query?: string;
     page?: string;
     success?: string;
+    error?: string;
   }>;
 };
 
 export default async function ScheduleAssignmentsPage({
   searchParams,
 }: ScheduleAssignmentsPageProps) {
-  const { scheduleId, query, page: pageParam, success } = await searchParams;
+  const {
+    scheduleId,
+    query,
+    page: pageParam,
+    success,
+    error,
+  } = await searchParams;
   const trimmedQuery = query?.trim();
   const searchTerms = trimmedQuery
     ? trimmedQuery
@@ -105,6 +112,10 @@ export default async function ScheduleAssignmentsPage({
     deleted: "Schedule assignment deleted.",
   };
 
+  const errorMessages: Record<string, string> = {
+    duplicate: "This assignment already exists.",
+  };
+
   const schedules = await prisma.schedule.findMany({
     orderBy: [{ year: "desc" }, { month: "desc" }],
   });
@@ -128,6 +139,10 @@ export default async function ScheduleAssignmentsPage({
           type={success === "deleted" ? "error" : "success"}
           message={successMessages[success]}
         />
+      )}
+
+      {error && errorMessages[error] && (
+        <ToastMessage type="error" message={errorMessages[error]} />
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

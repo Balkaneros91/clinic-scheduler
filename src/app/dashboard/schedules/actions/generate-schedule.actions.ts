@@ -165,6 +165,28 @@ export async function generateScheduleAction(formData: FormData) {
           continue;
         }
 
+        const dayStart = startOfDay(date);
+        const dayEnd = new Date(dayStart);
+        dayEnd.setDate(dayEnd.getDate() + 1);
+
+        const existingAssignmentForSlot =
+          await prisma.scheduleAssignment.findFirst({
+            where: {
+              scheduleId: schedule.id,
+              departmentId: department.id,
+              shiftId: shift.id,
+              date: {
+                gte: dayStart,
+                lt: dayEnd,
+              },
+            },
+          });
+
+        if (existingAssignmentForSlot) {
+          assignedEmployeeIdsForDate.add(existingAssignmentForSlot.employeeId);
+          continue;
+        }
+
         const availableEmployees = employees.filter((employee) => {
           const hasDepartmentResponsibility = employee.responsibilities.some(
             (employeeResponsibility) =>
