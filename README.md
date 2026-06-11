@@ -540,6 +540,9 @@ Potential future improvements for the application include:
 - Role-based employee dashboard
 - Audit logging for schedule changes
 - Export schedules to PDF or Excel
+- Add pagination, date filtering and lazy loading to schedule detail views when handling larger clinics or longer planning periods.
+- Extend filtering across employees, departments, shifts, absences and schedules as the dataset grows.
+- Add performance-focused data loading strategies for high-volume assignment data.
 
 ---
 

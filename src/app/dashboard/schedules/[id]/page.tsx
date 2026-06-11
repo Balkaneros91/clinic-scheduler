@@ -138,7 +138,7 @@ export default async function ScheduleDetailsPage({
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-3">
         <div className="rounded-xl border bg-white p-5 shadow-sm">
           <p className="text-sm font-medium text-slate-500">Assignments</p>
           <p className="mt-2 text-2xl font-bold text-slate-950">
