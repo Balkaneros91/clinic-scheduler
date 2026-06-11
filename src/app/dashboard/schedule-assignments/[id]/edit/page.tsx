@@ -71,6 +71,11 @@ export default async function EditScheduleAssignmentPage({
         action={updateScheduleAssignmentAction}
         className="max-w-3xl rounded-2xl border bg-white p-5 shadow-sm">
         <input type="hidden" name="id" value={assignment.id} />
+        <input
+          type="hidden"
+          name="redirectTo"
+          value={`/dashboard/schedules/${assignment.scheduleId}`}
+        />
 
         <div className="grid gap-4 md:grid-cols-2">
           <div className="md:col-span-2">
@@ -81,7 +86,7 @@ export default async function EditScheduleAssignmentPage({
                 required
                 yearsBack={1}
                 yearsAhead={5}
-                defaultValue={assignment.date.toISOString().split("T")[0]}
+                defaultValue={assignment.date.toLocaleDateString("sv-SE")}
               />
             </div>
           </div>
@@ -169,7 +174,9 @@ export default async function EditScheduleAssignmentPage({
           <Button type="submit">Save changes</Button>
 
           <Button asChild variant="outline">
-            <Link href="/dashboard/schedule-assignments">Cancel</Link>
+            <Link href={`/dashboard/schedules/${assignment.scheduleId}`}>
+              Cancel
+            </Link>
           </Button>
         </div>
       </form>

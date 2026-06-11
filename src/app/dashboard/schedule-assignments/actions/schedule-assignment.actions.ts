@@ -54,6 +54,7 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
   await requireAdmin();
 
   const id = formData.get("id") as string;
+  const redirectTo = formData.get("redirectTo")?.toString();
 
   const rawData = {
     date: formData.get("date"),
@@ -79,5 +80,11 @@ export async function updateScheduleAssignmentAction(formData: FormData) {
   });
 
   revalidatePath("/dashboard/schedule-assignments");
+
+  if (redirectTo) {
+    revalidatePath(redirectTo);
+    redirect(`${redirectTo}?success=assignment-updated`);
+  }
+
   redirect("/dashboard/schedule-assignments?success=updated");
 }

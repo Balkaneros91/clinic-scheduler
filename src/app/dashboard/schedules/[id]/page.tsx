@@ -52,7 +52,12 @@ export default async function ScheduleDetailsPage({
           department: true,
           shift: true,
         },
-        orderBy: [{ date: "asc" }, { shift: { startTime: "asc" } }],
+        orderBy: [
+          { date: "asc" },
+          { shift: { startTime: "asc" } },
+          { department: { name: "asc" } },
+          { employee: { firstName: "asc" } },
+        ],
       },
     },
   });
@@ -72,6 +77,26 @@ export default async function ScheduleDetailsPage({
     return groups;
   }, {});
 
+  Object.values(assignmentsByDate).forEach((assignments) => {
+    assignments.sort((a, b) => {
+      const shiftCompare = a.shift.startTime.localeCompare(b.shift.startTime);
+
+      if (shiftCompare !== 0) {
+        return shiftCompare;
+      }
+
+      const departmentCompare = a.department.name.localeCompare(
+        b.department.name,
+      );
+
+      if (departmentCompare !== 0) {
+        return departmentCompare;
+      }
+
+      return a.employee.firstName.localeCompare(b.employee.firstName);
+    });
+  });
+
   const assignmentCount = schedule.assignments.length;
   const scheduledDaysCount = Object.keys(assignmentsByDate).length;
 
@@ -79,6 +104,7 @@ export default async function ScheduleDetailsPage({
     generated: "Schedule assignments generated successfully.",
     regenerated:
       "Schedule regenerated. Existing generated assignments were replaced, while manual assignments were preserved.",
+    "assignment-updated": "Schedule assignment updated.",
   };
 
   return (
