@@ -33,6 +33,30 @@ const monthNames = [
   "December",
 ];
 
+function startOfDay(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function hasApprovedAbsenceOnDate(
+  assignmentDate: Date,
+  absences: { startDate: Date; endDate: Date | null; status: string }[],
+) {
+  const targetDate = startOfDay(assignmentDate);
+
+  return absences.some((absence) => {
+    if (absence.status !== "APPROVED") {
+      return false;
+    }
+
+    const absenceStart = startOfDay(absence.startDate);
+    const absenceEnd = absence.endDate ? startOfDay(absence.endDate) : null;
+
+    return (
+      targetDate >= absenceStart && (!absenceEnd || targetDate <= absenceEnd)
+    );
+  });
+}
+
 export default async function ScheduleDetailsPage({
   params,
   searchParams,
@@ -48,7 +72,11 @@ export default async function ScheduleDetailsPage({
     include: {
       assignments: {
         include: {
-          employee: true,
+          employee: {
+            include: {
+              absences: true,
+            },
+          },
           department: true,
           shift: true,
         },
@@ -249,56 +277,71 @@ export default async function ScheduleDetailsPage({
                   </thead>
 
                   <tbody className="divide-y">
-                    {assignments.map((assignment) => (
-                      <tr
-                        key={assignment.id}
-                        className="transition duration-150 hover:bg-slate-50">
-                        <td className="px-4 py-3 font-medium text-slate-950">
-                          {assignment.employee.firstName}{" "}
-                          {assignment.employee.lastName}
-                        </td>
+                    {assignments.map((assignment) => {
+                      const hasAbsenceConflict = hasApprovedAbsenceOnDate(
+                        assignment.date,
+                        assignment.employee.absences,
+                      );
 
-                        <td className="px-4 py-3 text-slate-700">
-                          {assignment.department.name}
-                        </td>
-
-                        <td className="px-4 py-3">
-                          <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700">
-                            {assignment.shift.name}
-                          </span>
-                        </td>
-
-                        <td className="px-4 py-3 text-slate-700">
-                          {assignment.shift.startTime}–
-                          {assignment.shift.endTime}
-                        </td>
-
-                        <td className="px-4 py-3">
-                          {assignment.notes === "Generated automatically" ? (
-                            <span className="inline-flex whitespace-nowrap rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                              Auto-generated
-                            </span>
-                          ) : (
-                            <span className="text-slate-700">
-                              {assignment.notes ?? "-"}
-                            </span>
-                          )}
-                        </td>
-
-                        {isAdmin && (
+                      return (
+                        <tr
+                          key={assignment.id}
+                          className="transition duration-150 hover:bg-slate-50">
                           <td className="px-4 py-3">
-                            <div className="flex justify-end">
-                              <Button asChild variant="outline">
-                                <Link
-                                  href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
-                                  Edit
-                                </Link>
-                              </Button>
+                            <div className="font-medium text-slate-950">
+                              {assignment.employee.firstName}{" "}
+                              {assignment.employee.lastName}
                             </div>
+
+                            {hasAbsenceConflict && (
+                              <span className="mt-1 inline-flex rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
+                                Absence conflict
+                              </span>
+                            )}
                           </td>
-                        )}
-                      </tr>
-                    ))}
+
+                          <td className="px-4 py-3 text-slate-700">
+                            {assignment.department.name}
+                          </td>
+
+                          <td className="px-4 py-3">
+                            <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-medium text-slate-700">
+                              {assignment.shift.name}
+                            </span>
+                          </td>
+
+                          <td className="px-4 py-3 text-slate-700">
+                            {assignment.shift.startTime}–
+                            {assignment.shift.endTime}
+                          </td>
+
+                          <td className="px-4 py-3">
+                            {assignment.notes === "Generated automatically" ? (
+                              <span className="inline-flex whitespace-nowrap rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                                Auto-generated
+                              </span>
+                            ) : (
+                              <span className="text-slate-700">
+                                {assignment.notes ?? "-"}
+                              </span>
+                            )}
+                          </td>
+
+                          {isAdmin && (
+                            <td className="px-4 py-3">
+                              <div className="flex justify-end">
+                                <Button asChild variant="outline">
+                                  <Link
+                                    href={`/dashboard/schedule-assignments/${assignment.id}/edit`}>
+                                    Edit
+                                  </Link>
+                                </Button>
+                              </div>
+                            </td>
+                          )}
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
