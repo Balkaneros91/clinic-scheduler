@@ -9,6 +9,7 @@ The application provides an admin dashboard for managing employees, departments,
 - [Clinic Scheduler](#clinic-scheduler)
   - [Contents](#contents)
   - [Features](#features)
+  - [Project Purpose](#project-purpose)
   - [Database Design](#database-design)
   - [System Architecture](#system-architecture)
   - [Design Planning](#design-planning)
@@ -24,6 +25,7 @@ The application provides an admin dashboard for managing employees, departments,
   - [Run the Development Server](#run-the-development-server)
   - [Build for Production](#build-for-production)
   - [Security](#security)
+  - [API Security Testing](#api-security-testing)
   - [Schedule Regeneration Behavior](#schedule-regeneration-behavior)
   - [Application Screenshots](#application-screenshots)
     - [Authentication](#authentication)
@@ -36,6 +38,7 @@ The application provides an admin dashboard for managing employees, departments,
     - [Schedule Assignment Management](#schedule-assignment-management)
     - [Absence Management](#absence-management)
     - [API Security](#api-security)
+  - [Testing and Debugging](#testing-and-debugging)
   - [Manual Testing](#manual-testing)
   - [Known Limitations](#known-limitations)
   - [Future Improvements](#future-improvements)
@@ -54,6 +57,22 @@ The application provides an admin dashboard for managing employees, departments,
 - Email notification support
 - Prisma ORM with PostgreSQL
 - Supabase authentication integration
+
+---
+
+[Back to content list](#contents)
+
+## Project Purpose
+
+The purpose of Clinic Scheduler is to simplify staff scheduling workflows for smaller clinics by combining employee management, absence handling and schedule generation into one centralized web application.
+
+The project was developed as a full-stack thesis project with focus on:
+
+- role-based security
+- schedule generation workflows
+- absence-aware planning
+- API protection
+- maintainable full-stack architecture
 
 ---
 
@@ -227,6 +246,100 @@ The application includes:
 - Server-side authorization checks
 - Request validation using Zod
 - Removal of development/debug API endpoints
+
+---
+
+[Back to content list](#contents)
+
+## API Security Testing
+
+Protected API routes were manually tested using unauthenticated requests through the terminal with `curl`.
+
+Example verification commands:
+
+```bash
+# Employees API
+
+curl -i http://localhost:3000/api/employees
+
+curl -i -X POST http://localhost:3000/api/employees
+
+curl -i -X PUT http://localhost:3000/api/employees/test-id
+
+curl -i -X DELETE http://localhost:3000/api/employees/test-id
+
+
+# Absences API
+
+curl -i http://localhost:3000/api/absences
+
+curl -i -X POST http://localhost:3000/api/absences
+
+curl -i -X PUT http://localhost:3000/api/absences/test-id
+
+curl -i -X DELETE http://localhost:3000/api/absences/test-id
+
+
+# Departments API
+
+curl -i http://localhost:3000/api/departments
+
+curl -i -X POST http://localhost:3000/api/departments
+
+curl -i -X PUT http://localhost:3000/api/departments/test-id
+
+curl -i -X DELETE http://localhost:3000/api/departments/test-id
+
+
+# Schedules API
+
+curl -i http://localhost:3000/api/schedules
+
+curl -i -X POST http://localhost:3000/api/schedules
+
+curl -i -X PUT http://localhost:3000/api/schedules/test-id
+
+curl -i -X DELETE http://localhost:3000/api/schedules/test-id
+
+
+# Schedule Assignments API
+
+curl -i http://localhost:3000/api/schedule-assignments
+
+curl -i -X POST http://localhost:3000/api/schedule-assignments
+
+curl -i -X PUT http://localhost:3000/api/schedule-assignments/test-id
+
+curl -i -X DELETE http://localhost:3000/api/schedule-assignments/test-id
+
+
+# Shift Templates API
+
+curl -i http://localhost:3000/api/shift-templates
+
+curl -i -X POST http://localhost:3000/api/shift-templates
+
+curl -i -X PUT http://localhost:3000/api/shift-templates/test-id
+
+curl -i -X DELETE http://localhost:3000/api/shift-templates/test-id
+
+
+# Removed debug route
+
+curl -i http://localhost:3000/api/test-db
+```
+
+Expected result for protected routes:
+
+```txt
+401 Unauthorized
+```
+
+Expected result for removed debug route:
+
+```txt
+404 Not Found
+```
 
 ---
 
@@ -506,6 +619,27 @@ API Authentication Protection
 
 </details>
 
+---
+
+[Back to content list](#contents)
+
+## Testing and Debugging
+
+The application was manually tested throughout development using:
+
+- browser-based UI testing
+- role-based authorization testing
+- protected API route verification
+- terminal-based API security testing using curl
+- build verification using `npm run build`
+- validation testing for forms and protected actions
+
+Runtime errors, validation issues and authorization problems were debugged and resolved incrementally during development.
+
+---
+
+[Back to content list](#contents)
+
 ## Manual Testing
 
 Manual MVP testing checklist is available in:
@@ -513,10 +647,6 @@ Manual MVP testing checklist is available in:
 ```txt
 docs/manual-test-checklist.md
 ```
-
----
-
-[Back to content list](#contents)
 
 ## Known Limitations
 
@@ -543,6 +673,12 @@ Potential future improvements for the application include:
 - Add pagination, date filtering and lazy loading to schedule detail views when handling larger clinics or longer planning periods.
 - Extend filtering across employees, departments, shifts, absences and schedules as the dataset grows.
 - Add performance-focused data loading strategies for high-volume assignment data.
+- Improved custom error handling pages (401, 403 and 404) for better user experience and clearer authorization feedback.
+- Prevent duplicate absence registrations for overlapping employee dates.
+- Add conflict validation for overlapping absence periods.
+- Add password visibility toggle with eye icon on login and password update forms to improve usability and reduce typing mistakes.
+- Add an available-employee helper when reassigning schedule assignments, filtering out absent employees and employees already assigned to overlapping shifts.
+- Add stronger absence conflict handling, such as warning admins before saving assignments that conflict with approved absences.
 
 ---
 
