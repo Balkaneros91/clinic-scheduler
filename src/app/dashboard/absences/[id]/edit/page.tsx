@@ -7,6 +7,8 @@ import { updateAbsenceAction } from "@/app/dashboard/absences/actions/absence.ac
 import { Button } from "@/components/ui/button";
 import { DateSelectField } from "@/components/DateSelectField";
 
+import { requireRole } from "@/lib/auth/requireRole";
+
 type EditAbsencePageProps = {
   params: Promise<{
     id: string;
@@ -17,6 +19,8 @@ export default async function EditAbsencePage({
   params,
 }: EditAbsencePageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const absence = await prisma.absence.findUnique({
     where: { id },

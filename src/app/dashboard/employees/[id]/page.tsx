@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { employeeService } from "@/server/services/employee.service";
 
+import { requireRole } from "@/lib/auth/requireRole";
+
 type EmployeePageProps = {
   params: Promise<{
     id: string;
@@ -9,6 +11,8 @@ type EmployeePageProps = {
 
 export default async function EmployeePage({ params }: EmployeePageProps) {
   const { id } = await params;
+
+  await requireRole("ADMIN");
 
   const employee = await employeeService.getEmployeeById(id);
 

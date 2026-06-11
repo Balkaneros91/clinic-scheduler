@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { ConfirmActionButton } from "@/components/ConfirmActionButton";
 import { Button } from "@/components/ui/button";
-import { getCurrentUser } from "@/lib/auth/getCurrentUser";
+import { requireRole } from "@/lib/auth/requireRole";
 import { prisma } from "@/lib/prisma";
 
 import { ToastMessage } from "@/components/ToastMessage";
@@ -23,8 +23,7 @@ export default async function DepartmentsPage({
 }: DepartmentsPageProps) {
   const { success } = await searchParams;
 
-  const currentUser = await getCurrentUser();
-  const isAdmin = currentUser?.appRole === "ADMIN";
+  await requireRole("ADMIN");
 
   const departments = await prisma.department.findMany({
     orderBy: {
@@ -67,33 +66,31 @@ export default async function DepartmentsPage({
         </div>
       </div>
 
-      {isAdmin && (
-        <form
-          action={createDepartmentAction}
-          className="rounded-2xl border bg-white p-5 shadow-sm">
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-slate-950">
-              Add department
-            </h2>
-            <p className="mt-1 text-sm text-slate-600">
-              Create a work area such as reception, phone support or examination
-              room.
-            </p>
-          </div>
+      <form
+        action={createDepartmentAction}
+        className="rounded-2xl border bg-white p-5 shadow-sm">
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold text-slate-950">
+            Add department
+          </h2>
+          <p className="mt-1 text-sm text-slate-600">
+            Create a work area such as reception, phone support or examination
+            room.
+          </p>
+        </div>
 
-          <div className="grid items-end gap-3 sm:grid-cols-[1fr_auto]">
-            <input
-              type="text"
-              name="name"
-              placeholder="Example: Reception"
-              className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
-              required
-            />
+        <div className="grid items-end gap-3 sm:grid-cols-[1fr_auto]">
+          <input
+            type="text"
+            name="name"
+            placeholder="Example: Reception"
+            className="h-10 rounded-lg border bg-white px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-2 focus:ring-slate-200"
+            required
+          />
 
-            <Button type="submit">Add Department</Button>
-          </div>
-        </form>
-      )}
+          <Button type="submit">Add Department</Button>
+        </div>
+      </form>
 
       <div className="overflow-x-auto rounded-2xl border bg-white shadow-sm">
         <div className="border-b px-5 py-4">
@@ -119,7 +116,7 @@ export default async function DepartmentsPage({
             <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
               <tr>
                 <th className="px-4 py-3">Name</th>
-                {isAdmin && <th className="px-4 py-3 text-right">Actions</th>}
+                <th className="px-4 py-3 text-right">Actions</th>
               </tr>
             </thead>
 
@@ -137,28 +134,22 @@ export default async function DepartmentsPage({
                     </div>
                   </td>
 
-                  {isAdmin && (
-                    <td className="px-4 py-3">
-                      <div className="flex items-center justify-end gap-2">
-                        <Button asChild variant="outline">
-                          <Link
-                            href={`/dashboard/departments/${department.id}/edit`}>
-                            Edit
-                          </Link>
-                        </Button>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center justify-end gap-2">
+                      <Button asChild variant="outline">
+                        <Link
+                          href={`/dashboard/departments/${department.id}/edit`}>
+                          Edit
+                        </Link>
+                      </Button>
 
-                        <form action={deleteDepartmentAction}>
-                          <input
-                            type="hidden"
-                            name="id"
-                            value={department.id}
-                          />
+                      <form action={deleteDepartmentAction}>
+                        <input type="hidden" name="id" value={department.id} />
 
-                          <ConfirmActionButton message="Are you sure you want to delete this department?" />
-                        </form>
-                      </div>
-                    </td>
-                  )}
+                        <ConfirmActionButton message="Are you sure you want to delete this department?" />
+                      </form>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

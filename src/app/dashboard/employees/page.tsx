@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import { employeeService } from "@/server/services/employee.service";
 import { deleteEmployeeAction } from "@/app/dashboard/employees/actions/employee.actions";
-import { getCurrentUser } from "@/lib/auth/getCurrentUser";
+import { requireRole } from "@/lib/auth/requireRole";
 
 import { ToastMessage } from "@/components/ToastMessage";
 
@@ -20,8 +20,7 @@ export default async function EmployeesPage({
 }: EmployeesPageProps) {
   const { success } = await searchParams;
 
-  const currentUser = await getCurrentUser();
-  const isAdmin = currentUser?.appRole === "ADMIN";
+  await requireRole("ADMIN");
 
   const employees = await employeeService.getAllEmployees();
 
@@ -60,11 +59,9 @@ export default async function EmployeesPage({
             {employees.length === 1 ? "employee" : "employees"}
           </div>
 
-          {isAdmin && (
-            <Button asChild>
-              <Link href="/dashboard/employees/new">Create employee</Link>
-            </Button>
-          )}
+          <Button asChild>
+            <Link href="/dashboard/employees/new">Create employee</Link>
+          </Button>
         </div>
       </div>
 
@@ -87,7 +84,7 @@ export default async function EmployeesPage({
                 <th className="px-4 py-3">Employment type</th>
                 <th className="px-4 py-3">Responsibilities</th>
                 <th className="px-4 py-3">Status</th>
-                {isAdmin && <th className="px-4 py-3 text-right">Actions</th>}
+                <th className="px-4 py-3 text-right">Actions</th>
               </tr>
             </thead>
 
@@ -123,23 +120,20 @@ export default async function EmployeesPage({
                     </span>
                   </td>
 
-                  {isAdmin && (
-                    <td className="px-4 py-3">
-                      <div className="flex items-center justify-end gap-2">
-                        <Button asChild variant="outline">
-                          <Link
-                            href={`/dashboard/employees/${employee.id}/edit`}>
-                            Edit
-                          </Link>
-                        </Button>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center justify-end gap-2">
+                      <Button asChild variant="outline">
+                        <Link href={`/dashboard/employees/${employee.id}/edit`}>
+                          Edit
+                        </Link>
+                      </Button>
 
-                        <form action={deleteEmployeeAction}>
-                          <input type="hidden" name="id" value={employee.id} />
-                          <ConfirmActionButton message="Are you sure you want to delete this employee?" />
-                        </form>
-                      </div>
-                    </td>
-                  )}
+                      <form action={deleteEmployeeAction}>
+                        <input type="hidden" name="id" value={employee.id} />
+                        <ConfirmActionButton message="Are you sure you want to delete this employee?" />
+                      </form>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>
