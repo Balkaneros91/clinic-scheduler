@@ -1,5 +1,13 @@
 # Manual Test Checklist
 
+## Authentication
+
+- [ ] Login page loads successfully.
+- [ ] Forgot password flow opens correctly.
+- [ ] Reset password email can be received.
+- [ ] Update password form validates input.
+- [ ] User can log out successfully.
+
 ## Admin flow
 
 - [ ] Admin can log in successfully.
@@ -7,12 +15,18 @@
 - [ ] Admin can view employees.
 - [ ] Admin can create an employee.
 - [ ] Admin can edit an employee.
+- [ ] Admin can delete an employee.
 - [ ] Admin can view departments.
 - [ ] Admin can create and edit departments.
+- [ ] Admin can delete a department.
 - [ ] Admin can view shift templates.
 - [ ] Admin can create and edit shift templates.
+- [ ] Admin can delete a shift template.
 - [ ] Admin can view schedules.
+- [ ] Admin can create, edit, and delete schedules.
 - [ ] Admin can view schedule assignments.
+- [ ] Admin can create, edit, and delete schedule assignments.
+- [ ] Admin can search/filter schedule assignments.
 
 ## Employee flow
 
@@ -20,8 +34,13 @@
 - [ ] Employee does not have access to admin-only dashboard actions.
 - [ ] Employee cannot directly access protected API routes.
 - [ ] Employee is redirected or blocked when trying to access restricted pages.
+- [ ] Employee can view their schedules.
+- [ ] Employee can view their schedule assignments.
+- [ ] Employee can view absence records.
+- [ ] Employee can create an absence request.
+- [ ] Employee can access shared employee/admin functionality if allowed.
 
-## Absence approval
+## Absence flow
 
 - [ ] Admin can view absence records.
 - [ ] Admin can create an absence.
@@ -57,6 +76,8 @@
 - [ ] Unauthenticated mutation routes for schedules return `401`.
 - [ ] Unauthenticated mutation routes for schedule assignments return `401`.
 - [ ] Unauthenticated mutation routes for shift templates return `401`.
+- [ ] Unauthenticated `GET` routes for all API resources return `401`.
+- [ ] Employee role cannot access admin-only API routes.
 - [ ] Debug route `/api/test-db` has been removed.
 
 ## Build verification
