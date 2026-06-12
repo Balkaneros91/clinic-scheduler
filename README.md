@@ -42,6 +42,10 @@ The application provides an admin dashboard for managing employees, departments,
   - [Manual Testing](#manual-testing)
   - [Known Limitations](#known-limitations)
   - [Future Improvements](#future-improvements)
+    - [Scheduling and planning](#scheduling-and-planning)
+    - [Employee self-service](#employee-self-service)
+    - [HR and document handling](#hr-and-document-handling)
+    - [Management and analytics](#management-and-analytics)
   - [Author](#author)
 
 ## Features
@@ -660,29 +664,60 @@ docs/manual-test-checklist.md
 
 ## Future Improvements
 
-Potential future improvements for the application include:
+The current version of Clinic Scheduler focuses on the core MVP: employee management, department management, shift templates, absence handling, schedule assignments, automatic schedule generation, authentication, role-based access, API protection, and manual testing.
 
-- Employee self-service absence requests
-- Advanced schedule optimization logic
-- Calendar-based schedule visualization
-- Automated testing suite
-- Email queue and retry handling
-- Role-based employee dashboard
-- Audit logging for schedule changes
-- Export schedules to PDF or Excel
-- Add pagination, date filtering and lazy loading to schedule detail views when handling larger clinics or longer planning periods.
-- Extend filtering across employees, departments, shifts, absences and schedules as the dataset grows.
-- Add performance-focused data loading strategies for high-volume assignment data.
-- Improved custom error handling pages (401, 403 and 404) for better user experience and clearer authorization feedback.
-- Prevent duplicate absence registrations for overlapping employee dates.
-- Add conflict validation for overlapping absence periods.
-- Add password visibility toggle with eye icon on login and password update forms to improve usability and reduce typing mistakes.
-- Add an available-employee helper when reassigning schedule assignments, filtering out absent employees and employees already assigned to overlapping shifts.
-- Add stronger absence conflict handling, such as warning admins before saving assignments that conflict with approved absences.
+A future version of the application could evolve from a scheduling tool into a broader **Clinic Staff Management Platform**. The goal would be to support more of the daily administrative work around employees, schedules, absences, documents, and internal communication.
 
----
+Possible future improvements include:
 
-[Back to content list](#contents)
+### Scheduling and planning
+
+- Calendar-based schedule visualization.
+- Available-employee helper when reassigning schedule assignments, filtering out absent employees and employees already assigned to overlapping shifts.
+- Stronger absence conflict handling, such as warnings before saving assignments that conflict with approved absences.
+- Conflict validation for overlapping absence periods.
+- Calendar export for generated schedules, for example `.ics` files for Google Calendar, Apple Calendar, or Outlook.
+- More advanced schedule generation rules based on workload balance, employee status, responsibilities, and fairness.
+- Schedule publishing workflow where admins can work with draft schedules before publishing them to employees.
+- Drag-and-drop schedule editing for faster manual adjustments.
+- Recurring absences and recurring shift patterns.
+- Public holiday support for Sweden.
+- Shift swap requests between employees.
+
+### Employee self-service
+
+- Employee profile pages with role, employment type, responsibilities, status, and contact information.
+- Employee overview for worked days, scheduled hours, upcoming shifts, and registered absences.
+- Absence request history where employees can follow previous, pending, approved, and rejected absence requests.
+- Mobile-friendly employee dashboard for checking schedules, absences, documents, and benefits from a phone.
+- Email notifications for employees when absence requests are approved or rejected or when schedules are updated.
+
+### HR and document handling
+
+- Payslip document handling where employees can view and download their own payslips securely.
+- Employee document center for contracts, policies, onboarding documents, internal instructions, payslips, benefit documents, and employee-submitted documents.
+- Secure employee document upload, for example sick-leave certificates or other work-related documents that need admin review.
+- Document status handling, such as submitted, reviewed, approved, or rejected.
+- Access control so employees can only view their own uploaded documents, while admins can review documents relevant to their role.
+- Healthcare benefits and employee benefits overview.
+- Employment details such as working percentage, start date, contract information, and employment status.
+- Onboarding checklist for new employees.
+
+### Management and analytics
+
+- Automated testing suite.
+- Email queue and retry handling.
+- Pagination, date filtering and lazy loading for larger clinics or longer planning periods.
+- Extended filtering across employees, departments, shifts, absences and schedules.
+- Performance-focused data loading strategies for high-volume assignment data.
+- Improved custom error handling pages, such as 401, 403 and 404 pages.
+- Reporting dashboard for schedule coverage, workload distribution, absence statistics, and staffing gaps.
+- Audit log for important admin actions such as creating, updating, deleting, approving, or publishing records.
+- Competence and certification tracking for employees.
+- Multi-clinic or multi-location support.
+- Export of reports to PDF or Excel.
+
+These improvements were intentionally left outside the MVP scope to keep the project focused and realistic within the available timeframe. The MVP prioritizes the most important scheduling and administration flows, while the future improvements show how the system could scale into a more complete staff management platform.
 
 ## Author
 
@@ -693,7 +728,3 @@ Chas Academy
 ---
 
 [Back to content list](#contents)
-
----
-
-Happy coder :)
