@@ -721,9 +721,9 @@ These improvements were intentionally left outside the MVP scope to keep the pro
 
 ## Author
 
-Antonio-Claudio
-Full-stack JavaScript Developer Student
-Chas Academy
+- **Antonio-Claudio**
+- Full-stack JavaScript Developer Student
+- _Chas Academy_
 
 ---
 
