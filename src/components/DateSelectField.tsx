@@ -56,8 +56,6 @@ export function DateSelectField({
   const [month, setMonth] = useState(defaultMonth);
   const [day, setDay] = useState(defaultDay);
 
-  const [warningMessage, setWarningMessage] = useState("");
-
   const years = Array.from({ length: yearsBack + yearsAhead + 1 }, (_, index) =>
     String(currentYear - yearsBack + index),
   );
@@ -68,11 +66,6 @@ export function DateSelectField({
   const days = Array.from({ length: daysInMonth }, (_, index) =>
     String(index + 1).padStart(2, "0"),
   );
-
-  const today = new Date();
-
-  const currentMonth = String(today.getMonth() + 1).padStart(2, "0");
-  const currentDay = String(today.getDate()).padStart(2, "0");
 
   const availableMonths =
     minDate && year === minDate.split("-")[0]
@@ -155,11 +148,9 @@ export function DateSelectField({
     if (!isDateAllowed(nextDateValue)) {
       setDay("");
       onDateChange?.("");
-      setWarningMessage("Only today or future dates can be selected.");
       return;
     }
 
-    setWarningMessage("");
     setDay(value);
     onDateChange?.(nextDateValue);
   }
