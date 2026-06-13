@@ -721,9 +721,13 @@ These improvements were intentionally left outside the MVP scope to keep the pro
 
 ## Author
 
-- **Antonio-Claudio**
-- Full-stack JavaScript Developer Student
-- _Chas Academy_
+```js
+const author = {
+  name: "Antonio-Claudio Andelic",
+  role: "Full-stack JavaScript Developer Student",
+  school: "Chas Academy",
+};
+```
 
 ---
 
