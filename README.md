@@ -673,7 +673,8 @@ Possible future improvements include:
 ### Scheduling and planning
 
 - Calendar-based schedule visualization.
-- Available-employee helper when reassigning schedule assignments, filtering out absent employees and employees already assigned to overlapping shifts.
+- Available-employee helper when reassigning schedule assignments, filtering out absent employees, employees already assigned to overlapping shifts, and employees without the correct responsibility for the selected department.
+- More flexible schedule regeneration, allowing administrators to regenerate assignments for a specific week or date instead of regenerating the whole monthly schedule. This would be useful when unexpected absences happen after the monthly schedule has already been created.
 - Stronger absence conflict handling, such as warnings before saving assignments that conflict with approved absences.
 - Conflict validation for overlapping absence periods.
 - Calendar export for generated schedules, for example `.ics` files for Google Calendar, Apple Calendar, or Outlook.
