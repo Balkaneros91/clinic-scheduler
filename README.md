@@ -4,9 +4,23 @@ Clinic Scheduler is a full-stack web application developed as a thesis project f
 
 The application provides an admin dashboard for managing employees, departments, shift templates, schedules, and absence handling while supporting secure API access and schedule regeneration workflows.
 
+## Live Deployment
+
+The deployed MVP version of Clinic Scheduler is available here:
+
+[Clinic Scheduler – Live Demo](https://clinic-scheduler-swart.vercel.app/auth/login)
+
+## GitHub Repository
+
+The source code for Clinic Scheduler is available here:
+
+[Clinic Scheduler – GitHub Repository](https://github.com/Balkaneros91/clinic-scheduler)
+
 ## Contents
 
 - [Clinic Scheduler](#clinic-scheduler)
+  - [Live Deployment](#live-deployment)
+  - [GitHub Repository](#github-repository)
   - [Contents](#contents)
   - [Features](#features)
   - [Project Purpose](#project-purpose)
@@ -38,6 +52,7 @@ The application provides an admin dashboard for managing employees, departments,
     - [Schedule Assignment Management](#schedule-assignment-management)
     - [Absence Management](#absence-management)
     - [API Security](#api-security)
+  - [Responsive Design Testing](#responsive-design-testing)
   - [Testing and Debugging](#testing-and-debugging)
   - [Manual Testing](#manual-testing)
   - [Known Limitations](#known-limitations)
@@ -620,6 +635,19 @@ for unauthenticated access attempts.
 API Authentication Protection
 
 ![API Authentication Protection](docs/screenshots/api_auth_protection.png)
+
+</details>
+
+## Responsive Design Testing
+
+The application was tested with the Am I Responsive tool to verify that the main interface adapts across desktop, laptop, tablet, and mobile screen sizes.
+
+<details>
+<summary>Click here!</summary>
+
+Am I Responsive
+
+![Clinic Scheduler shown in Am I Responsive](docs/screenshots/AmIResponsive.png)
 
 </details>
 
