@@ -38,6 +38,7 @@ The source code for Clinic Scheduler is available here:
   - [Database Setup](#database-setup)
   - [Run the Development Server](#run-the-development-server)
   - [Build for Production](#build-for-production)
+  - [Deployment](#deployment)
   - [Security](#security)
   - [API Security Testing](#api-security-testing)
   - [Schedule Regeneration Behavior](#schedule-regeneration-behavior)
@@ -250,6 +251,18 @@ http://localhost:3000
 ```bash
 npm run build
 ```
+
+## Deployment
+
+The MVP version of Clinic Scheduler is deployed with Vercel.
+
+The deployed application uses:
+
+- Vercel for hosting the Next.js application
+- Supabase PostgreSQL for database hosting
+- Supabase Authentication for user authentication
+- Prisma ORM for database access
+- Environment variables configured in Vercel for database, authentication, and email settings
 
 ---
 
