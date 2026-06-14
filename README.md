@@ -28,6 +28,7 @@ The source code for Clinic Scheduler is available here:
   - [System Architecture](#system-architecture)
   - [Design Planning](#design-planning)
     - [Initial Wireframes](#initial-wireframes)
+  - [Project Planning](#project-planning)
   - [Tech Stack](#tech-stack)
     - [Frontend](#frontend)
     - [Backend](#backend)
@@ -151,6 +152,12 @@ Admin Absence View Wireframe
 ---
 
 [Back to content list](#contents)
+
+## Project Planning
+
+The project was planned and tracked using a Kanban board. The board was used to organize MVP tasks, development progress, testing work, documentation tasks, and future improvements.
+
+![Clinic Scheduler Kanban Board](docs/screenshots/kanban_board.png)
 
 ## Tech Stack
 
